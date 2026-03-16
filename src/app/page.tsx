@@ -123,7 +123,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="relative border-t border-white/[0.04] mt-20">
         <div className="max-w-6xl mx-auto px-5 py-5 flex items-center justify-between text-xs text-zinc-600">
-          <span>por <a href="https://github.com/andy-viera" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-400 transition-colors">Andres Viera</a></span>
+          <span>by <a href="https://github.com/andy-viera" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-400 transition-colors">andy-viera</a></span>
           <a
             href="https://github.com/andy-viera/ort-calendar"
             target="_blank"
