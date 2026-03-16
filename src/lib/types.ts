@@ -44,7 +44,7 @@ export interface AcademicEvent {
 }
 
 export const EVENT_COLORS: Record<EventType, { bg: string; text: string; label: string }> = {
-  parcial: { bg: "bg-red-500", text: "text-white", label: "Parcial" },
+  parcial: { bg: "bg-[#ef063d]", text: "text-white", label: "Parcial" },
   parcial_2da: { bg: "bg-orange-500", text: "text-white", label: "2da Inst. Parcial" },
   entrega_obl: { bg: "bg-blue-500", text: "text-white", label: "Entrega OBL" },
   entrega_obl_2da: { bg: "bg-sky-400", text: "text-white", label: "2da Inst. Entrega" },

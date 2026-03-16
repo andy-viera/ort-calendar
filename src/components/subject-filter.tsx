@@ -39,7 +39,7 @@ export function SubjectFilter({
             Materias
           </span>
           {selected.size > 0 && (
-            <span className="text-[11px] font-mono text-red-400 bg-red-950/50 px-1.5 py-0.5 rounded">
+            <span className="text-[11px] font-mono text-[#ef063d] bg-[#661020]/50 px-1.5 py-0.5 rounded">
               {selected.size}
             </span>
           )}
@@ -47,7 +47,7 @@ export function SubjectFilter({
         <div className="flex gap-3">
           <button
             onClick={onSelectAll}
-            className="text-[11px] text-zinc-600 hover:text-red-400 transition-colors"
+            className="text-[11px] text-zinc-600 hover:text-[#ef063d] transition-colors"
           >
             Todas
           </button>
@@ -90,7 +90,7 @@ export function SubjectFilter({
                         eventCount === 0
                           ? "opacity-20 cursor-default"
                           : isSelected
-                          ? "bg-red-950/20 border border-red-900/30"
+                          ? "bg-[#661020]/20 border border-[#ef063d]/20"
                           : "hover:bg-zinc-900/50 border border-transparent"
                       }`}
                     >
@@ -100,7 +100,7 @@ export function SubjectFilter({
                           onChange(subject.id, checked === true)
                         }
                         disabled={eventCount === 0}
-                        className="data-[state=checked]:bg-red-600 data-[state=checked]:border-red-600 border-zinc-700"
+                        className="data-[state=checked]:bg-[#ef063d] data-[state=checked]:border-[#ef063d] border-zinc-700"
                       />
                       <span className="text-[13px] text-zinc-300 flex-1 leading-tight">
                         {subject.name}

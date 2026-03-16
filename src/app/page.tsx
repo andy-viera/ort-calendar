@@ -61,14 +61,14 @@ export default function Home() {
         }}
       />
       {/* Top glow */}
-      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-red-600/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#ef063d]/10 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Header */}
       <header className="relative sticky top-0 z-50 backdrop-blur-2xl bg-[#09090b]/70 border-b border-white/[0.04]">
         <div className="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <h1 className="text-base font-medium tracking-tight">
-              <span className="text-red-500 font-bold">ORT</span>{" "}
+              <span className="text-[#ef063d] font-bold">ORT</span>{" "}
               <span className="text-zinc-300">Calendar</span>
             </h1>
             <span className="text-[10px] font-mono text-zinc-600 bg-zinc-900 border border-zinc-800 px-2 py-0.5 rounded-md">

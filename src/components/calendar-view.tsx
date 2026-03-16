@@ -114,7 +114,7 @@ export function CalendarView({ subjects, selectedSubjects }: CalendarViewProps) 
                   <span
                     className={`text-[11px] font-mono inline-flex items-center justify-center w-6 h-6 rounded-md ${
                       isToday(data.day)
-                        ? "bg-red-600 text-white font-bold shadow-[0_0_12px_rgba(220,38,38,0.4)]"
+                        ? "bg-[#ef063d] text-white font-bold shadow-[0_0_12px_rgba(239,6,61,0.4)]"
                         : "text-zinc-600"
                     }`}
                   >

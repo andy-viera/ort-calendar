@@ -27,7 +27,7 @@ export function ActionBar({ careerId, selectedSubjects }: ActionBarProps) {
         rel="noopener noreferrer"
         className={`flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
           hasSelection
-            ? "bg-red-600 text-white shadow-[0_0_30px_rgba(220,38,38,0.25)] hover:shadow-[0_0_40px_rgba(220,38,38,0.4)] hover:bg-red-500"
+            ? "bg-[#661020] text-white shadow-[0_0_30px_rgba(239,6,61,0.2)] hover:shadow-[0_0_40px_rgba(239,6,61,0.35)] hover:bg-[#7a1426] border border-[#ef063d]/30"
             : "bg-zinc-900 text-zinc-700 cursor-not-allowed border border-zinc-800"
         }`}
         onClick={(e) => !hasSelection && e.preventDefault()}

@@ -16,7 +16,7 @@ export function CareerSelector({ selected, onChange }: CareerSelectorProps) {
           onClick={() => onChange(career.id)}
           className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
             selected === career.id
-              ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.3)]"
+              ? "bg-[#661020] text-white shadow-[0_0_20px_rgba(239,6,61,0.3)] border border-[#ef063d]/30"
               : "bg-zinc-900 text-zinc-400 border border-zinc-800 hover:border-zinc-700 hover:text-zinc-200"
           }`}
         >
