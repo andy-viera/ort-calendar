@@ -1,7 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async rewrites() {
+    return [
+      {
+        source: "/api/cal/:career.ics",
+        destination: "/api/cal/:career",
+      },
+    ];
+  },
 };
 
 export default nextConfig;

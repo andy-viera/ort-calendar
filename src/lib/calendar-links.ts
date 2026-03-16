@@ -1,7 +1,7 @@
 const BASE_URL = "https://ortcal.aviera.me";
 
 export function getIcsUrl(careerId: string, subjectIds?: string[]): string {
-  const base = `${BASE_URL}/api/cal/${careerId}`;
+  const base = `${BASE_URL}/api/cal/${careerId}.ics`;
   if (subjectIds && subjectIds.length > 0) {
     return `${base}?subjects=${subjectIds.join(",")}`;
   }
@@ -19,7 +19,7 @@ export function getWebcalUrl(careerId: string, subjectIds?: string[]): string {
 }
 
 export function getDownloadUrl(careerId: string, subjectIds?: string[]): string {
-  const base = `/api/cal/${careerId}`;
+  const base = `/api/cal/${careerId}.ics`;
   if (subjectIds && subjectIds.length > 0) {
     return `${base}?subjects=${subjectIds.join(",")}&download=1`;
   }
