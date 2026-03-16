@@ -9,15 +9,15 @@ interface CareerSelectorProps {
 
 export function CareerSelector({ selected, onChange }: CareerSelectorProps) {
   return (
-    <div className="flex gap-1.5 p-1 bg-muted/50 rounded-xl w-fit">
+    <div className="flex gap-2 flex-wrap">
       {CAREER_OPTIONS.map((career) => (
         <button
           key={career.id}
           onClick={() => onChange(career.id)}
-          className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+          className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
             selected === career.id
-              ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
-              : "text-muted-foreground hover:text-foreground hover:bg-muted"
+              ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.3)]"
+              : "bg-zinc-900 text-zinc-400 border border-zinc-800 hover:border-zinc-700 hover:text-zinc-200"
           }`}
         >
           {career.name}

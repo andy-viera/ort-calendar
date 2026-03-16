@@ -27,13 +27,19 @@ export function CalendarView({ subjects, selectedSubjects }: CalendarViewProps) 
   const startOffset = (firstDay.getDay() + 6) % 7;
   const daysInMonth = lastDay.getDate();
 
-  type DayData = { day: number; events: (AcademicEvent & { subjectName: string })[] } | null;
+  type DayData = {
+    day: number;
+    events: (AcademicEvent & { subjectName: string })[];
+  } | null;
   const days: DayData[] = [];
 
   for (let i = 0; i < startOffset; i++) days.push(null);
   for (let d = 1; d <= daysInMonth; d++) {
     const dateStr = `${year}-${String(month + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
-    days.push({ day: d, events: allEvents.filter((e) => e.date === dateStr) });
+    days.push({
+      day: d,
+      events: allEvents.filter((e) => e.date === dateStr),
+    });
   }
 
   const monthNames = [
@@ -46,7 +52,9 @@ export function CalendarView({ subjects, selectedSubjects }: CalendarViewProps) 
 
   const today = new Date();
   const isToday = (d: number) =>
-    d === today.getDate() && month === today.getMonth() && year === today.getFullYear();
+    d === today.getDate() &&
+    month === today.getMonth() &&
+    year === today.getFullYear();
 
   const monthEvents = allEvents
     .filter((e) => {
@@ -61,48 +69,53 @@ export function CalendarView({ subjects, selectedSubjects }: CalendarViewProps) 
       <div className="flex items-center justify-between">
         <button
           onClick={prevMonth}
-          className="p-2 rounded-xl hover:bg-muted transition-colors text-muted-foreground hover:text-foreground"
+          className="p-2 rounded-lg text-zinc-600 hover:text-zinc-300 hover:bg-zinc-900 transition-all"
         >
-          <ChevronLeft className="w-5 h-5" />
+          <ChevronLeft className="w-4 h-4" />
         </button>
-        <h2 className="text-base font-semibold tracking-tight">
-          {monthNames[month]} <span className="text-muted-foreground font-normal">{year}</span>
+        <h2 className="text-sm font-medium tracking-wide">
+          <span className="text-zinc-200">{monthNames[month]}</span>{" "}
+          <span className="text-zinc-600">{year}</span>
         </h2>
         <button
           onClick={nextMonth}
-          className="p-2 rounded-xl hover:bg-muted transition-colors text-muted-foreground hover:text-foreground"
+          className="p-2 rounded-lg text-zinc-600 hover:text-zinc-300 hover:bg-zinc-900 transition-all"
         >
-          <ChevronRight className="w-5 h-5" />
+          <ChevronRight className="w-4 h-4" />
         </button>
       </div>
 
-      {/* Calendar grid */}
-      <div className="bg-card rounded-2xl border border-border overflow-hidden">
+      {/* Grid */}
+      <div className="rounded-xl border border-zinc-800/80 bg-zinc-950/50 backdrop-blur-sm overflow-hidden">
         <div className="grid grid-cols-7">
-          {["Lu", "Ma", "Mi", "Ju", "Vi", "Sa", "Do"].map((d) => (
+          {["LU", "MA", "MI", "JU", "VI", "SA", "DO"].map((d) => (
             <div
               key={d}
-              className="text-center text-[11px] font-semibold text-muted-foreground/50 uppercase tracking-widest py-3"
+              className="text-center text-[10px] font-mono text-zinc-600 tracking-widest py-3 border-b border-zinc-800/50"
             >
               {d}
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-7 border-t border-border">
+        <div className="grid grid-cols-7">
           {days.map((data, i) => (
             <div
               key={i}
-              className={`min-h-[5.5rem] p-1.5 border-b border-r border-border/50 transition-colors ${
-                !data ? "bg-muted/20" : data.events.length > 0 ? "bg-muted/30" : ""
+              className={`min-h-[5rem] p-1.5 border-b border-r border-zinc-800/30 transition-colors ${
+                !data
+                  ? "bg-zinc-950/30"
+                  : data.events.length > 0
+                  ? "bg-zinc-900/40"
+                  : ""
               }`}
             >
               {data && (
                 <>
                   <span
-                    className={`text-xs inline-flex items-center justify-center w-6 h-6 rounded-full ${
+                    className={`text-[11px] font-mono inline-flex items-center justify-center w-6 h-6 rounded-md ${
                       isToday(data.day)
-                        ? "bg-primary text-primary-foreground font-bold"
-                        : "text-muted-foreground"
+                        ? "bg-red-600 text-white font-bold shadow-[0_0_12px_rgba(220,38,38,0.4)]"
+                        : "text-zinc-600"
                     }`}
                   >
                     {data.day}
@@ -113,7 +126,7 @@ export function CalendarView({ subjects, selectedSubjects }: CalendarViewProps) 
                       return (
                         <div
                           key={event.id}
-                          className={`${color.bg} ${color.text} text-[9px] leading-tight px-1 py-[2px] rounded-md truncate font-medium`}
+                          className={`${color.bg} ${color.text} text-[8px] leading-tight px-1 py-[2px] rounded truncate font-medium`}
                           title={`${event.title}${event.startTime ? ` ${event.startTime}` : ""}`}
                         >
                           {event.startTime && <span>{event.startTime} </span>}
@@ -122,7 +135,7 @@ export function CalendarView({ subjects, selectedSubjects }: CalendarViewProps) 
                       );
                     })}
                     {data.events.length > 3 && (
-                      <div className="text-[9px] text-muted-foreground pl-1">
+                      <div className="text-[8px] text-zinc-600 pl-1">
                         +{data.events.length - 3}
                       </div>
                     )}
@@ -136,39 +149,40 @@ export function CalendarView({ subjects, selectedSubjects }: CalendarViewProps) 
 
       {/* Event list */}
       {monthEvents.length > 0 && (
-        <div className="bg-card rounded-2xl border border-border p-4 space-y-3">
-          <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            Eventos en {monthNames[month]}
-          </h3>
-          <div className="space-y-1">
+        <div className="rounded-xl border border-zinc-800/80 bg-zinc-950/50 backdrop-blur-sm p-4 space-y-3">
+          <div className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+            {monthNames[month]} {year}
+          </div>
+          <div className="space-y-0.5">
             {monthEvents.map((event) => {
               const color = EVENT_COLORS[event.type];
               const [, , day] = event.date.split("-");
               return (
                 <div
                   key={event.id}
-                  className="flex items-center gap-3 py-2.5 px-3 rounded-xl hover:bg-muted/50 transition-colors group"
+                  className="flex items-center gap-3 py-2.5 px-3 rounded-lg hover:bg-zinc-900/60 transition-colors group"
                 >
-                  <div className="text-right min-w-[2rem]">
-                    <span className="text-sm font-bold tabular-nums text-muted-foreground group-hover:text-foreground transition-colors">
-                      {parseInt(day)}
-                    </span>
-                  </div>
-                  <div className={`${color.bg} w-0.5 h-8 rounded-full flex-shrink-0`} />
+                  <span className="text-sm font-mono font-bold text-zinc-600 group-hover:text-zinc-400 min-w-[1.5rem] text-right tabular-nums transition-colors">
+                    {parseInt(day)}
+                  </span>
+                  <div
+                    className={`${color.bg} w-0.5 h-7 rounded-full flex-shrink-0 opacity-80`}
+                  />
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium truncate">{event.title}</p>
-                    <p className="text-[11px] text-muted-foreground">
-                      {event.allDay ? "Todo el dia" : `${event.startTime} - ${event.endTime}`}
+                    <p className="text-[13px] text-zinc-200 font-medium truncate">
+                      {event.title}
+                    </p>
+                    <p className="text-[11px] text-zinc-600">
+                      {event.allDay
+                        ? "Todo el dia"
+                        : `${event.startTime} - ${event.endTime}`}
                       {event.notes && ` · ${event.notes}`}
                     </p>
                   </div>
                   <span
-                    className={`${color.bg}/20 text-[10px] px-2 py-0.5 rounded-full flex-shrink-0 font-medium`}
-                    style={{ color: `var(--tw-${color.bg})` }}
+                    className={`${color.bg} ${color.text} text-[9px] px-1.5 py-0.5 rounded font-medium flex-shrink-0`}
                   >
-                    <span className={`${color.bg} ${color.text} px-1.5 py-0.5 rounded-full text-[10px]`}>
-                      {color.label}
-                    </span>
+                    {color.label}
                   </span>
                 </div>
               );
@@ -178,18 +192,18 @@ export function CalendarView({ subjects, selectedSubjects }: CalendarViewProps) 
       )}
 
       {selectedSubjects.size > 0 && monthEvents.length === 0 && (
-        <p className="text-sm text-muted-foreground text-center py-8">
-          No hay eventos en {monthNames[month]}
+        <p className="text-sm text-zinc-600 text-center py-8 font-mono">
+          Sin eventos en {monthNames[month].toLowerCase()}
         </p>
       )}
 
       {selectedSubjects.size === 0 && (
-        <div className="text-center py-12 space-y-2">
-          <p className="text-sm text-muted-foreground">
-            Selecciona materias para ver sus eventos
+        <div className="text-center py-16 space-y-2">
+          <p className="text-zinc-500 text-sm">
+            Selecciona materias para ver eventos
           </p>
-          <p className="text-xs text-muted-foreground/50">
-            Usa el panel de la izquierda o hacé click en &quot;Todas&quot;
+          <p className="text-zinc-700 text-xs font-mono">
+            click &quot;Todas&quot; para seleccionar todas
           </p>
         </div>
       )}

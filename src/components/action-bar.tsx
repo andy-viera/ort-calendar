@@ -18,13 +18,17 @@ export function ActionBar({ careerId, selectedSubjects }: ActionBarProps) {
   return (
     <div className="flex flex-col gap-2">
       <a
-        href={hasSelection ? getGoogleCalendarUrl(careerId, selectedSubjects) : "#"}
+        href={
+          hasSelection
+            ? getGoogleCalendarUrl(careerId, selectedSubjects)
+            : "#"
+        }
         target="_blank"
         rel="noopener noreferrer"
         className={`flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
           hasSelection
-            ? "bg-primary text-primary-foreground shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:brightness-110"
-            : "bg-muted text-muted-foreground/40 cursor-not-allowed"
+            ? "bg-red-600 text-white shadow-[0_0_30px_rgba(220,38,38,0.25)] hover:shadow-[0_0_40px_rgba(220,38,38,0.4)] hover:bg-red-500"
+            : "bg-zinc-900 text-zinc-700 cursor-not-allowed border border-zinc-800"
         }`}
         onClick={(e) => !hasSelection && e.preventDefault()}
       >
@@ -33,11 +37,15 @@ export function ActionBar({ careerId, selectedSubjects }: ActionBarProps) {
       </a>
       <div className="grid grid-cols-2 gap-2">
         <a
-          href={hasSelection ? getWebcalUrl(careerId, selectedSubjects) : "#"}
-          className={`flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-medium transition-all duration-200 ${
+          href={
             hasSelection
-              ? "bg-secondary text-secondary-foreground hover:bg-secondary/80 border border-border"
-              : "bg-muted text-muted-foreground/40 cursor-not-allowed"
+              ? getWebcalUrl(careerId, selectedSubjects)
+              : "#"
+          }
+          className={`flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-lg text-xs font-medium transition-all ${
+            hasSelection
+              ? "bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-zinc-700 hover:text-white"
+              : "bg-zinc-900/50 text-zinc-700 cursor-not-allowed border border-zinc-800/50"
           }`}
           onClick={(e) => !hasSelection && e.preventDefault()}
         >
@@ -45,12 +53,16 @@ export function ActionBar({ careerId, selectedSubjects }: ActionBarProps) {
           Apple
         </a>
         <a
-          href={hasSelection ? getDownloadUrl(careerId, selectedSubjects) : "#"}
-          download={hasSelection ? `ort-${careerId}.ics` : undefined}
-          className={`flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-medium transition-all duration-200 ${
+          href={
             hasSelection
-              ? "bg-secondary text-secondary-foreground hover:bg-secondary/80 border border-border"
-              : "bg-muted text-muted-foreground/40 cursor-not-allowed"
+              ? getDownloadUrl(careerId, selectedSubjects)
+              : "#"
+          }
+          download={hasSelection ? `ort-${careerId}.ics` : undefined}
+          className={`flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-lg text-xs font-medium transition-all ${
+            hasSelection
+              ? "bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-zinc-700 hover:text-white"
+              : "bg-zinc-900/50 text-zinc-700 cursor-not-allowed border border-zinc-800/50"
           }`}
           onClick={(e) => !hasSelection && e.preventDefault()}
         >

@@ -24,29 +24,36 @@ export function SubjectFilter({
     list.push(subject);
     bySemester.set(subject.semesterNumber, list);
   }
-  const semesters = Array.from(bySemester.entries()).sort((a, b) => a[0] - b[0]);
+  const semesters = Array.from(bySemester.entries()).sort(
+    (a, b) => a[0] - b[0]
+  );
 
   const hasEvents = (s: Subject) => s.events.length > 0;
   const subjectsWithEvents = subjects.filter(hasEvents);
 
   return (
-    <div className="space-y-3 bg-card rounded-2xl border border-border p-4">
+    <div className="rounded-xl border border-zinc-800/80 bg-zinc-950/50 backdrop-blur-sm p-4 space-y-3">
       <div className="flex items-center justify-between">
-        <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-          Materias
-          <span className="ml-2 text-primary">{selected.size}</span>
-        </h3>
-        <div className="flex gap-2">
+        <div className="flex items-center gap-2">
+          <span className="text-[11px] font-semibold uppercase tracking-widest text-zinc-500">
+            Materias
+          </span>
+          {selected.size > 0 && (
+            <span className="text-[11px] font-mono text-red-400 bg-red-950/50 px-1.5 py-0.5 rounded">
+              {selected.size}
+            </span>
+          )}
+        </div>
+        <div className="flex gap-3">
           <button
             onClick={onSelectAll}
-            className="text-[11px] text-muted-foreground hover:text-primary transition-colors"
+            className="text-[11px] text-zinc-600 hover:text-red-400 transition-colors"
           >
             Todas
           </button>
-          <span className="text-[11px] text-border">|</span>
           <button
             onClick={onDeselectAll}
-            className="text-[11px] text-muted-foreground hover:text-primary transition-colors"
+            className="text-[11px] text-zinc-600 hover:text-zinc-400 transition-colors"
           >
             Ninguna
           </button>
@@ -54,46 +61,52 @@ export function SubjectFilter({
       </div>
 
       {subjectsWithEvents.length === 0 && (
-        <p className="text-xs text-muted-foreground/60 italic py-2">
-          No hay eventos cargados para esta carrera todavia.
+        <p className="text-[11px] text-zinc-700 py-2">
+          Sin eventos cargados aun.
         </p>
       )}
 
-      <div className="space-y-4 max-h-[55vh] overflow-y-auto pr-1 scrollbar-thin">
+      <div className="space-y-3 max-h-[55vh] overflow-y-auto pr-1">
         {semesters.map(([semNum, subs]) => {
-          const subsWithEvents = subs.filter(hasEvents);
-          if (subsWithEvents.length === 0 && subjects.some(hasEvents)) return null;
+          if (
+            subs.every((s) => !hasEvents(s)) &&
+            subjects.some(hasEvents)
+          )
+            return null;
 
           return (
             <div key={semNum}>
-              <h4 className="text-[10px] font-bold text-muted-foreground/50 uppercase tracking-widest mb-1.5">
-                Semestre {semNum}
-              </h4>
-              <div className="space-y-0.5">
+              <div className="text-[10px] font-mono text-zinc-700 uppercase tracking-widest mb-1">
+                sem {semNum}
+              </div>
+              <div className="space-y-px">
                 {subs.map((subject) => {
                   const eventCount = subject.events.length;
+                  const isSelected = selected.has(subject.id);
                   return (
                     <label
                       key={subject.id}
-                      className={`flex items-center gap-2.5 py-1.5 px-2 rounded-lg cursor-pointer transition-all duration-150 ${
+                      className={`flex items-center gap-2 py-1.5 px-2 rounded-md cursor-pointer transition-all ${
                         eventCount === 0
-                          ? "opacity-25 cursor-default"
-                          : selected.has(subject.id)
-                          ? "bg-primary/10"
-                          : "hover:bg-muted"
+                          ? "opacity-20 cursor-default"
+                          : isSelected
+                          ? "bg-red-950/20 border border-red-900/30"
+                          : "hover:bg-zinc-900/50 border border-transparent"
                       }`}
                     >
                       <Checkbox
-                        checked={selected.has(subject.id)}
+                        checked={isSelected}
                         onCheckedChange={(checked) =>
                           onChange(subject.id, checked === true)
                         }
                         disabled={eventCount === 0}
-                        className="data-[state=checked]:bg-primary data-[state=checked]:border-primary"
+                        className="data-[state=checked]:bg-red-600 data-[state=checked]:border-red-600 border-zinc-700"
                       />
-                      <span className="text-[13px] flex-1 leading-tight">{subject.name}</span>
+                      <span className="text-[13px] text-zinc-300 flex-1 leading-tight">
+                        {subject.name}
+                      </span>
                       {eventCount > 0 && (
-                        <span className="text-[11px] text-muted-foreground tabular-nums">
+                        <span className="text-[11px] font-mono text-zinc-600">
                           {eventCount}
                         </span>
                       )}
