@@ -31,7 +31,11 @@ function eventToIcs(event: AcademicEvent): EventAttributes {
   return {
     title: event.title,
     start,
+    startInputType: "local" as const,
+    startOutputType: "local" as const,
     end,
+    endInputType: "local" as const,
+    endOutputType: "local" as const,
     description: event.notes || undefined,
     status: "CONFIRMED" as const,
     uid: `${event.id}@ortcal.aviera.me`,
@@ -46,7 +50,6 @@ export function generateIcs(career: Career, subjectIds?: string[]): string {
   const allEvents = subjects.flatMap((s) => s.events);
 
   if (allEvents.length === 0) {
-    // Return a valid but empty calendar
     return [
       "BEGIN:VCALENDAR",
       "VERSION:2.0",
@@ -68,5 +71,11 @@ export function generateIcs(career: Career, subjectIds?: string[]): string {
     throw new Error(`Failed to generate ICS: ${error}`);
   }
 
-  return value || "";
+  // Add timezone header for Google Calendar / Apple Calendar
+  const withTimezone = (value || "").replace(
+    "BEGIN:VCALENDAR",
+    "BEGIN:VCALENDAR\r\nX-WR-TIMEZONE:America/Montevideo"
+  );
+
+  return withTimezone;
 }
