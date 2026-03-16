@@ -1,65 +1,131 @@
-import Image from "next/image";
+"use client";
+
+import { useState, useCallback, useMemo } from "react";
+import { getAllCareers, CAREER_OPTIONS } from "@/lib/data";
+import { CareerSelector } from "@/components/career-selector";
+import { SubjectFilter } from "@/components/subject-filter";
+import { CalendarView } from "@/components/calendar-view";
+import { ActionBar } from "@/components/action-bar";
+import { Badge } from "@/components/ui/badge";
+import { Github } from "lucide-react";
 
 export default function Home() {
+  const careers = useMemo(() => getAllCareers(), []);
+  const [selectedCareer, setSelectedCareer] = useState("sistemas");
+  const [selectedSubjects, setSelectedSubjects] = useState<Set<string>>(() => new Set());
+
+  const career = useMemo(
+    () => careers.find((c) => c.id === selectedCareer)!,
+    [careers, selectedCareer]
+  );
+
+  const handleCareerChange = useCallback(
+    (careerId: string) => {
+      setSelectedCareer(careerId);
+      setSelectedSubjects(new Set());
+    },
+    []
+  );
+
+  const handleSubjectChange = useCallback(
+    (subjectId: string, checked: boolean) => {
+      setSelectedSubjects((prev) => {
+        const next = new Set(prev);
+        if (checked) next.add(subjectId);
+        else next.delete(subjectId);
+        return next;
+      });
+    },
+    []
+  );
+
+  const handleSelectAll = useCallback(() => {
+    setSelectedSubjects(
+      new Set(career.subjects.filter((s) => s.events.length > 0).map((s) => s.id))
+    );
+  }, [career]);
+
+  const handleDeselectAll = useCallback(() => {
+    setSelectedSubjects(new Set());
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="min-h-screen bg-background">
+      {/* Header */}
+      <header className="border-b border-border">
+        <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <h1 className="text-xl font-bold tracking-tight">ORT Calendar</h1>
+            <Badge variant="secondary" className="text-xs">
+              1er Sem. 2026
+            </Badge>
+          </div>
+          <a
+            href="/about"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Acerca de
+          </a>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+      </header>
+
+      <main className="max-w-5xl mx-auto px-4 py-6 space-y-6">
+        {/* Tagline */}
+        <p className="text-muted-foreground text-sm">
+          Todos tus parciales y entregas en tu calendario, en un click.
+        </p>
+
+        {/* Career selector */}
+        <section>
+          <CareerSelector selected={selectedCareer} onChange={handleCareerChange} />
+        </section>
+
+        {/* Action bar */}
+        <section>
+          <ActionBar
+            careerId={selectedCareer}
+            selectedSubjects={Array.from(selectedSubjects)}
+          />
+        </section>
+
+        {/* Two-column layout on desktop */}
+        <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6">
+          {/* Subject filter */}
+          <aside>
+            <SubjectFilter
+              subjects={career.subjects}
+              selected={selectedSubjects}
+              onChange={handleSubjectChange}
+              onSelectAll={handleSelectAll}
+              onDeselectAll={handleDeselectAll}
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </aside>
+
+          {/* Calendar */}
+          <section>
+            <CalendarView
+              subjects={career.subjects}
+              selectedSubjects={selectedSubjects}
+            />
+          </section>
         </div>
       </main>
+
+      {/* Footer */}
+      <footer className="border-t border-border mt-12">
+        <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between text-xs text-muted-foreground">
+          <span>Open source</span>
+          <a
+            href="https://github.com/andresvn/ort-calendar"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 hover:text-foreground transition-colors"
+          >
+            <Github className="w-3.5 h-3.5" />
+            GitHub
+          </a>
+        </div>
+      </footer>
     </div>
   );
 }
