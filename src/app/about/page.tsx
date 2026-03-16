@@ -79,13 +79,13 @@ export default function AboutPage() {
         </div>
 
         <a
-          href="https://github.com/andresvn/ort-calendar"
+          href="https://github.com/andy-viera/ort-calendar"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-sm hover:text-foreground transition-colors text-muted-foreground"
         >
           <Github className="w-4 h-4" />
-          github.com/andresvn/ort-calendar
+          github.com/andy-viera/ort-calendar
         </a>
       </main>
     </div>

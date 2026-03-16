@@ -116,7 +116,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between text-xs text-muted-foreground">
           <span>Open source</span>
           <a
-            href="https://github.com/andresvn/ort-calendar"
+            href="https://github.com/andy-viera/ort-calendar"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 hover:text-foreground transition-colors"
