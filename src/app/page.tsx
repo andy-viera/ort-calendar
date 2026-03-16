@@ -6,7 +6,6 @@ import { CareerSelector } from "@/components/career-selector";
 import { SubjectFilter } from "@/components/subject-filter";
 import { CalendarView } from "@/components/calendar-view";
 import { ActionBar } from "@/components/action-bar";
-import { Badge } from "@/components/ui/badge";
 import { Github } from "lucide-react";
 
 export default function Home() {
@@ -50,48 +49,42 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
-      <header className="border-b border-border">
-        <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+      <header className="sticky top-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <h1 className="text-xl font-bold tracking-tight">ORT Calendar</h1>
-            <Badge variant="secondary" className="text-xs">
-              1er Sem. 2026
-            </Badge>
+            <h1 className="text-lg font-semibold tracking-tight">
+              <span className="text-primary">ORT</span> Calendar
+            </h1>
+            <span className="text-[11px] font-medium text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
+              2026-1
+            </span>
           </div>
           <a
             href="/about"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            className="text-xs text-muted-foreground hover:text-foreground transition-colors"
           >
             Acerca de
           </a>
         </div>
       </header>
 
-      <main className="max-w-5xl mx-auto px-4 py-6 space-y-6">
-        {/* Tagline */}
-        <p className="text-muted-foreground text-sm">
-          Todos tus parciales y entregas en tu calendario, en un click.
-        </p>
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 py-8 space-y-8">
+        {/* Hero */}
+        <div className="space-y-1">
+          <p className="text-muted-foreground text-sm">
+            Todos tus parciales y entregas en tu calendario, en un click.
+          </p>
+        </div>
 
         {/* Career selector */}
-        <section>
-          <CareerSelector selected={selectedCareer} onChange={handleCareerChange} />
-        </section>
+        <CareerSelector selected={selectedCareer} onChange={handleCareerChange} />
 
-        {/* Action bar */}
-        <section>
-          <ActionBar
-            careerId={selectedCareer}
-            selectedSubjects={Array.from(selectedSubjects)}
-          />
-        </section>
-
-        {/* Two-column layout on desktop */}
-        <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6">
-          {/* Subject filter */}
-          <aside>
+        {/* Two-column layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-8">
+          {/* Sidebar */}
+          <div className="space-y-6">
             <SubjectFilter
               subjects={career.subjects}
               selected={selectedSubjects}
@@ -99,21 +92,25 @@ export default function Home() {
               onSelectAll={handleSelectAll}
               onDeselectAll={handleDeselectAll}
             />
-          </aside>
+
+            {/* Action bar below subjects */}
+            <ActionBar
+              careerId={selectedCareer}
+              selectedSubjects={Array.from(selectedSubjects)}
+            />
+          </div>
 
           {/* Calendar */}
-          <section>
-            <CalendarView
-              subjects={career.subjects}
-              selectedSubjects={selectedSubjects}
-            />
-          </section>
+          <CalendarView
+            subjects={career.subjects}
+            selectedSubjects={selectedSubjects}
+          />
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border mt-12">
-        <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between text-xs text-muted-foreground">
+      <footer className="border-t border-border mt-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-5 flex items-center justify-between text-xs text-muted-foreground">
           <span>Open source</span>
           <a
             href="https://github.com/andy-viera/ort-calendar"

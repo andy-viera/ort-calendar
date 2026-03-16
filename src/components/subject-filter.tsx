@@ -18,7 +18,6 @@ export function SubjectFilter({
   onSelectAll,
   onDeselectAll,
 }: SubjectFilterProps) {
-  // Group by semester
   const bySemester = new Map<number, Subject[]>();
   for (const subject of subjects) {
     const list = bySemester.get(subject.semesterNumber) || [];
@@ -31,22 +30,23 @@ export function SubjectFilter({
   const subjectsWithEvents = subjects.filter(hasEvents);
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-3 bg-card rounded-2xl border border-border p-4">
       <div className="flex items-center justify-between">
-        <h3 className="text-sm font-medium text-muted-foreground">
-          Materias ({selected.size} seleccionadas)
+        <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          Materias
+          <span className="ml-2 text-primary">{selected.size}</span>
         </h3>
         <div className="flex gap-2">
           <button
             onClick={onSelectAll}
-            className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+            className="text-[11px] text-muted-foreground hover:text-primary transition-colors"
           >
             Todas
           </button>
-          <span className="text-xs text-muted-foreground">|</span>
+          <span className="text-[11px] text-border">|</span>
           <button
             onClick={onDeselectAll}
-            className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+            className="text-[11px] text-muted-foreground hover:text-primary transition-colors"
           >
             Ninguna
           </button>
@@ -54,29 +54,33 @@ export function SubjectFilter({
       </div>
 
       {subjectsWithEvents.length === 0 && (
-        <p className="text-sm text-muted-foreground italic">
-          No hay eventos cargados para esta carrera todavía. Los datos se agregarán cuando se procesen los PDFs de Bedelía.
+        <p className="text-xs text-muted-foreground/60 italic py-2">
+          No hay eventos cargados para esta carrera todavia.
         </p>
       )}
 
-      <div className="space-y-4 max-h-[60vh] overflow-y-auto pr-2">
+      <div className="space-y-4 max-h-[55vh] overflow-y-auto pr-1 scrollbar-thin">
         {semesters.map(([semNum, subs]) => {
           const subsWithEvents = subs.filter(hasEvents);
           if (subsWithEvents.length === 0 && subjects.some(hasEvents)) return null;
 
           return (
             <div key={semNum}>
-              <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+              <h4 className="text-[10px] font-bold text-muted-foreground/50 uppercase tracking-widest mb-1.5">
                 Semestre {semNum}
               </h4>
-              <div className="space-y-1.5">
+              <div className="space-y-0.5">
                 {subs.map((subject) => {
                   const eventCount = subject.events.length;
                   return (
                     <label
                       key={subject.id}
-                      className={`flex items-center gap-2.5 py-1 px-2 rounded-md hover:bg-accent/50 cursor-pointer transition-colors ${
-                        eventCount === 0 ? "opacity-40" : ""
+                      className={`flex items-center gap-2.5 py-1.5 px-2 rounded-lg cursor-pointer transition-all duration-150 ${
+                        eventCount === 0
+                          ? "opacity-25 cursor-default"
+                          : selected.has(subject.id)
+                          ? "bg-primary/10"
+                          : "hover:bg-muted"
                       }`}
                     >
                       <Checkbox
@@ -85,10 +89,11 @@ export function SubjectFilter({
                           onChange(subject.id, checked === true)
                         }
                         disabled={eventCount === 0}
+                        className="data-[state=checked]:bg-primary data-[state=checked]:border-primary"
                       />
-                      <span className="text-sm flex-1">{subject.name}</span>
+                      <span className="text-[13px] flex-1 leading-tight">{subject.name}</span>
                       {eventCount > 0 && (
-                        <span className="text-xs text-muted-foreground">
+                        <span className="text-[11px] text-muted-foreground tabular-nums">
                           {eventCount}
                         </span>
                       )}
