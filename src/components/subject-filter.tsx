@@ -66,7 +66,7 @@ export function SubjectFilter({
         </p>
       )}
 
-      <div className="space-y-3 max-h-[55vh] overflow-y-auto pr-1">
+      <div className="space-y-3 max-h-[55vh] overflow-y-auto pr-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
         {semesters.map(([semNum, subs]) => {
           if (
             subs.every((s) => !hasEvents(s)) &&
