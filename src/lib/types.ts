@@ -31,6 +31,8 @@ export type EventType =
   | "consulta"
   | "cierre_curso";
 
+export type Turno = "matutino" | "vespertino" | "nocturno";
+
 export interface AcademicEvent {
   id: string;
   type: EventType;
@@ -39,9 +41,16 @@ export interface AcademicEvent {
   startTime?: string;
   endTime?: string;
   allDay: boolean;
+  turno?: Turno;
   notes?: string;
   source: "bedelia_pdf" | "aulas_manual";
 }
+
+export const TURNO_LABELS: Record<Turno, string> = {
+  matutino: "Matutino",
+  vespertino: "Vespertino",
+  nocturno: "Nocturno",
+};
 
 export const EVENT_COLORS: Record<EventType, { bg: string; text: string; label: string }> = {
   parcial: { bg: "bg-[#ef063d]", text: "text-white", label: "Parcial" },

@@ -1,5 +1,5 @@
 import { createEvents, type EventAttributes } from "ics";
-import type { Career, AcademicEvent } from "./types";
+import type { Career, AcademicEvent, Turno } from "./types";
 
 function parseDate(date: string, time?: string): [number, number, number, number, number] {
   const [year, month, day] = date.split("-").map(Number);
@@ -42,12 +42,18 @@ function eventToIcs(event: AcademicEvent): EventAttributes {
   };
 }
 
-export function generateIcs(career: Career, subjectIds?: string[]): string {
+export function generateIcs(career: Career, subjectIds?: string[], turnos?: Turno[]): string {
   const subjects = subjectIds && subjectIds.length > 0
     ? career.subjects.filter((s) => subjectIds.includes(s.id))
     : career.subjects;
 
-  const allEvents = subjects.flatMap((s) => s.events);
+  const turnoSet = turnos && turnos.length > 0 ? new Set(turnos) : null;
+  const allEvents = subjects
+    .flatMap((s) => s.events)
+    .filter((e) => {
+      if (!turnoSet || !e.turno) return true;
+      return turnoSet.has(e.turno);
+    });
 
   if (allEvents.length === 0) {
     return [

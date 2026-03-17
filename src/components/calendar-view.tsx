@@ -1,23 +1,28 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import type { AcademicEvent, Subject } from "@/lib/types";
-import { EVENT_COLORS } from "@/lib/types";
+import type { AcademicEvent, Subject, Turno } from "@/lib/types";
+import { EVENT_COLORS, TURNO_LABELS } from "@/lib/types";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface CalendarViewProps {
   subjects: Subject[];
   selectedSubjects: Set<string>;
+  selectedTurnos?: Set<Turno>;
 }
 
-export function CalendarView({ subjects, selectedSubjects }: CalendarViewProps) {
+export function CalendarView({ subjects, selectedSubjects, selectedTurnos }: CalendarViewProps) {
   const [currentDate, setCurrentDate] = useState(() => new Date());
 
   const allEvents = useMemo(() => {
     return subjects
       .filter((s) => selectedSubjects.has(s.id))
-      .flatMap((s) => s.events.map((e) => ({ ...e, subjectName: s.name })));
-  }, [subjects, selectedSubjects]);
+      .flatMap((s) => s.events.map((e) => ({ ...e, subjectName: s.name })))
+      .filter((e) => {
+        if (!selectedTurnos || !e.turno) return true;
+        return selectedTurnos.has(e.turno);
+      });
+  }, [subjects, selectedSubjects, selectedTurnos]);
 
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
@@ -176,6 +181,7 @@ export function CalendarView({ subjects, selectedSubjects }: CalendarViewProps) 
                       {event.allDay
                         ? "Todo el dia"
                         : `${event.startTime} - ${event.endTime}`}
+                      {event.turno && ` · ${TURNO_LABELS[event.turno]}`}
                       {event.notes && ` · ${event.notes}`}
                     </p>
                   </div>

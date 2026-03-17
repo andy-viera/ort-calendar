@@ -2,8 +2,10 @@
 
 import { useState, useCallback, useMemo } from "react";
 import { getAllCareers } from "@/lib/data";
+import type { Turno } from "@/lib/types";
 import { CareerSelector } from "@/components/career-selector";
 import { SubjectFilter } from "@/components/subject-filter";
+import { TurnoFilter } from "@/components/turno-filter";
 import { CalendarView } from "@/components/calendar-view";
 import { ActionBar } from "@/components/action-bar";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -14,6 +16,9 @@ export default function Home() {
   const [selectedCareer, setSelectedCareer] = useState("sistemas");
   const [selectedSubjects, setSelectedSubjects] = useState<Set<string>>(
     () => new Set()
+  );
+  const [selectedTurnos, setSelectedTurnos] = useState<Set<Turno>>(
+    () => new Set(["matutino", "vespertino", "nocturno"])
   );
 
   const career = useMemo(
@@ -50,6 +55,20 @@ export default function Home() {
     setSelectedSubjects(new Set());
   }, []);
 
+  const handleTurnoChange = useCallback((turno: Turno, checked: boolean) => {
+    setSelectedTurnos((prev) => {
+      const next = new Set(prev);
+      if (checked) next.add(turno);
+      else next.delete(turno);
+      return next;
+    });
+  }, []);
+
+  // Check if any events in the current career have turno data
+  const hasTurnoData = useMemo(() => {
+    return career.subjects.some((s) => s.events.some((e) => e.turno));
+  }, [career]);
+
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
       {/* Dot grid bg */}
@@ -68,7 +87,7 @@ export default function Home() {
       <header className="relative sticky top-0 z-50 backdrop-blur-2xl bg-background/80 border-b border-border">
         <div className="max-w-5xl mx-auto px-5 py-4 flex items-center justify-between">
           <h1 className="text-base font-semibold tracking-tight">
-            <span style={{ color: "#ef063d" }} className="font-bold">ORT</span>{" "}
+            <span style={{ color: "#661020" }} className="font-bold">ORT</span>{" "}
             <span className="text-muted-foreground">Calendar</span>
           </h1>
           <div className="flex items-center gap-2">
@@ -109,6 +128,12 @@ export default function Home() {
               onSelectAll={handleSelectAll}
               onDeselectAll={handleDeselectAll}
             />
+            {hasTurnoData && (
+              <TurnoFilter
+                selected={selectedTurnos}
+                onChange={handleTurnoChange}
+              />
+            )}
             <ActionBar
               careerId={selectedCareer}
               selectedSubjects={Array.from(selectedSubjects)}
@@ -118,6 +143,7 @@ export default function Home() {
           <CalendarView
             subjects={career.subjects}
             selectedSubjects={selectedSubjects}
+            selectedTurnos={selectedTurnos}
           />
         </div>
       </main>

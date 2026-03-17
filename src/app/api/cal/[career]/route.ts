@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getCareer } from "@/lib/data";
 import { generateIcs } from "@/lib/ics-generator";
+import type { Turno } from "@/lib/types";
 
 export async function GET(
   request: NextRequest,
@@ -18,9 +19,11 @@ export async function GET(
   const { searchParams } = request.nextUrl;
   const subjectsParam = searchParams.get("subjects");
   const subjectIds = subjectsParam ? subjectsParam.split(",").filter(Boolean) : undefined;
+  const turnosParam = searchParams.get("turnos");
+  const turnos = turnosParam ? turnosParam.split(",").filter(Boolean) as Turno[] : undefined;
   const isDownload = searchParams.get("download") === "1";
 
-  const icsContent = generateIcs(career, subjectIds);
+  const icsContent = generateIcs(career, subjectIds, turnos);
 
   const headers: Record<string, string> = {
     "Content-Type": "text/calendar; charset=utf-8",
