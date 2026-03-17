@@ -2,55 +2,1790 @@
   "id": "biotecnologia",
   "name": "Ingeniería en Biotecnología",
   "subjects": [
-    { "id": "mat-1", "name": "Matemática 1", "semesterNumber": 1, "events": [] },
-    { "id": "quim-gen", "name": "Química general", "semesterNumber": 1, "events": [] },
-    { "id": "biologia", "name": "Biología", "semesterNumber": 1, "events": [] },
-    { "id": "intro-bio", "name": "Introducción a la biotecnología", "semesterNumber": 1, "events": [] },
-    { "id": "intro-lab", "name": "Introducción al laboratorio", "semesterNumber": 1, "events": [] },
-    { "id": "mat-2", "name": "Matemática 2", "semesterNumber": 2, "events": [] },
-    { "id": "quim-org", "name": "Química orgánica", "semesterNumber": 2, "events": [] },
-    { "id": "quim-bio", "name": "Química biológica", "semesterNumber": 2, "events": [] },
-    { "id": "fisica-1", "name": "Física 1", "semesterNumber": 2, "events": [] },
-    { "id": "etica-bio", "name": "Aspectos éticos y sociales de la biotecnología", "semesterNumber": 2, "events": [] },
-    { "id": "lab-macro", "name": "Laboratorio de macromoléculas", "semesterNumber": 2, "events": [] },
-    { "id": "prob-est", "name": "Probabilidad y estadística", "semesterNumber": 3, "events": [] },
-    { "id": "bioquimica", "name": "Bioquímica", "semesterNumber": 3, "events": [] },
-    { "id": "bio-celular", "name": "Biología celular", "semesterNumber": 3, "events": [] },
-    { "id": "fisicoquim-1", "name": "Fisicoquímica 1", "semesterNumber": 3, "events": [] },
-    { "id": "fisica-2", "name": "Física 2", "semesterNumber": 3, "events": [] },
-    { "id": "lab-bio-cel", "name": "Laboratorio de biología celular", "semesterNumber": 3, "events": [] },
-    { "id": "mat-3", "name": "Matemática 3", "semesterNumber": 4, "events": [] },
-    { "id": "genetica", "name": "Genética y evolución", "semesterNumber": 4, "events": [] },
-    { "id": "economia", "name": "Economía", "semesterNumber": 4, "events": [] },
-    { "id": "bio-mol", "name": "Biología molecular", "semesterNumber": 4, "events": [] },
-    { "id": "fisicoquim-2", "name": "Fisicoquímica 2", "semesterNumber": 4, "events": [] },
-    { "id": "lab-enzim", "name": "Laboratorio de enzimología", "semesterNumber": 4, "events": [] },
-    { "id": "prog", "name": "Programación", "semesterNumber": 5, "events": [] },
-    { "id": "microbio", "name": "Microbiología", "semesterNumber": 5, "events": [] },
-    { "id": "lab-bio-mol", "name": "Laboratorio de biología molecular", "semesterNumber": 5, "events": [] },
-    { "id": "fen-transp", "name": "Fenómenos de transporte", "semesterNumber": 5, "events": [] },
-    { "id": "gestion", "name": "Gestión de empresas", "semesterNumber": 5, "events": [] },
-    { "id": "bioinf-1", "name": "Bioinformática 1", "semesterNumber": 6, "events": [] },
-    { "id": "inmuno-1", "name": "Inmunotecnologías", "semesterNumber": 6, "events": [] },
-    { "id": "bioprocesos", "name": "Bioprocesos", "semesterNumber": 6, "events": [] },
-    { "id": "lab-micro", "name": "Laboratorio de microbiología", "semesterNumber": 6, "events": [] },
-    { "id": "metodos-analiticos", "name": "Métodos y equipos analíticos", "semesterNumber": 6, "events": [] },
-    { "id": "bioinf-2", "name": "Bioinformática 2", "semesterNumber": 7, "events": [] },
-    { "id": "bionegocios", "name": "Bionegocios", "semesterNumber": 7, "events": [] },
-    { "id": "ing-gen", "name": "Ingeniería genética", "semesterNumber": 7, "events": [] },
-    { "id": "prop-int", "name": "Propiedad intelectual e industrial", "semesterNumber": 7, "events": [] },
-    { "id": "biosep", "name": "Bioseparaciones", "semesterNumber": 7, "events": [] },
-    { "id": "lab-control", "name": "Laboratorio de control de calidad", "semesterNumber": 7, "events": [] },
-    { "id": "agrobio", "name": "Agrobiotecnologías", "semesterNumber": 8, "events": [] },
-    { "id": "inmuno-2", "name": "Inmunotecnologías 2", "semesterNumber": 8, "events": [] },
-    { "id": "analisis-bioprocesos", "name": "Análisis y diseño de bioprocesos", "semesterNumber": 8, "events": [] },
-    { "id": "temas-avanzados", "name": "Temas avanzados en biotecnología", "semesterNumber": 8, "events": [] },
-    { "id": "lab-bio-veg", "name": "Laboratorio de biotecnología vegetal", "semesterNumber": 8, "events": [] },
-    { "id": "tec-alimentos", "name": "Tecnología de los alimentos", "semesterNumber": 9, "events": [] },
-    { "id": "virologia", "name": "Virología", "semesterNumber": 9, "events": [] },
-    { "id": "vacunas", "name": "Vacunas", "semesterNumber": 10, "events": [] },
-    { "id": "nanobio", "name": "Nanobiotecnología", "semesterNumber": 10, "events": [] },
-    { "id": "biorrem", "name": "Biorremediación", "semesterNumber": 10, "events": [] },
-    { "id": "tfc", "name": "Trabajo final de carrera", "semesterNumber": 10, "events": [] }
+    {
+      "id": "mat-1",
+      "name": "Matemática 1",
+      "semesterNumber": 1,
+      "events": [
+        {
+          "id": "mat-1-parcial-0",
+          "type": "parcial",
+          "title": "Parcial 1 - Matemática 1",
+          "date": "2026-04-28",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "15:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "mat-1-parcial-1",
+          "type": "parcial",
+          "title": "Parcial 2 y Entrega de Ejercicios - Matemática 1",
+          "date": "2026-07-23",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "15:00",
+          "turno": "matutino",
+          "notes": "VER EN AULAS"
+        },
+        {
+          "id": "mat-1-cierre-curso-2",
+          "type": "cierre_curso",
+          "title": "Consulta de cierre de curso - Matemática 1",
+          "date": "2026-08-06",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "quim-gen",
+      "name": "Química general",
+      "semesterNumber": 1,
+      "events": [
+        {
+          "id": "quim-gen-parcial-0",
+          "type": "parcial",
+          "title": "Parcial 1 - Química General",
+          "date": "2026-05-12",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "15:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "quim-gen-parcial-1",
+          "type": "parcial",
+          "title": "Parcial 2 y Entrega de Ejercicios - Química General",
+          "date": "2026-07-13",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "15:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "quim-gen-cierre-curso-2",
+          "type": "cierre_curso",
+          "title": "Consulta de cierre de curso - Química General",
+          "date": "2026-07-27",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "biologia",
+      "name": "Biología",
+      "semesterNumber": 1,
+      "events": [
+        {
+          "id": "biologia-parcial-0",
+          "type": "parcial",
+          "title": "Parcial 1 - Biología",
+          "date": "2026-05-19",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "15:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "biologia-parcial-1",
+          "type": "parcial",
+          "title": "Parcial 2 y Entrega Ejercicios - Biología",
+          "date": "2026-07-15",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "15:00",
+          "turno": "matutino",
+          "notes": "VER EN AULAS"
+        },
+        {
+          "id": "biologia-parcial-2da-2",
+          "type": "parcial_2da",
+          "title": "2da. Instancia - Parcial - Biología",
+          "date": "2026-08-06",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "15:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "biologia-consulta-3",
+          "type": "consulta",
+          "title": "Consulta de 2da. Instancia - Biología",
+          "date": "2026-07-29",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        },
+        {
+          "id": "biologia-cierre-curso-4",
+          "type": "cierre_curso",
+          "title": "Consulta de cierre de curso - Biología",
+          "date": "2026-08-17",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "intro-bio",
+      "name": "Introducción a la biotecnología",
+      "semesterNumber": 1,
+      "events": [
+        {
+          "id": "intro-bio-parcial-0",
+          "type": "parcial",
+          "title": "Parcial 1 - Introducción a la Biotecnología",
+          "date": "2026-05-05",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "15:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "intro-bio-parcial-1",
+          "type": "parcial",
+          "title": "Parcial 2 y Entrega de Informes - Introducción a la Biotecnología",
+          "date": "2026-07-20",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "15:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "intro-bio-parcial-2da-2",
+          "type": "parcial_2da",
+          "title": "2da. Instancia - Parcial - Introducción a la Biotecnología",
+          "date": "2026-08-11",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "15:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "intro-bio-consulta-3",
+          "type": "consulta",
+          "title": "Consulta de 2da. Instancia - Introducción a la Biotecnología",
+          "date": "2026-08-03",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        },
+        {
+          "id": "intro-bio-cierre-curso-4",
+          "type": "cierre_curso",
+          "title": "Consulta de cierre de curso - Introducción a la Biotecnología",
+          "date": "2026-08-20",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "intro-lab",
+      "name": "Introducción al laboratorio",
+      "semesterNumber": 1,
+      "events": [
+        {
+          "id": "intro-lab-parcial-0",
+          "type": "parcial",
+          "title": "Parcial - Labo 1 - Introducción al Laboratorio",
+          "date": "2026-07-06",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "08:30",
+          "notes": "Labo 1"
+        },
+        {
+          "id": "intro-lab-parcial-1",
+          "type": "parcial",
+          "title": "Parcial - Labo 2 - Introducción al Laboratorio",
+          "date": "2026-07-06",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "13:00",
+          "notes": "Labo 2"
+        },
+        {
+          "id": "intro-lab-entrega-obl-2",
+          "type": "entrega_obl",
+          "title": "Entrega de informes - Introducción al Laboratorio",
+          "date": "2026-07-06",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "endTime": "21:00",
+          "notes": "Entrega online hasta las 21 hs."
+        },
+        {
+          "id": "intro-lab-parcial-3",
+          "type": "parcial",
+          "title": "Parcial - Labo 3 - Introducción al Laboratorio",
+          "date": "2026-07-08",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "17:30",
+          "notes": "Labo 3"
+        },
+        {
+          "id": "intro-lab-entrega-obl-4",
+          "type": "entrega_obl",
+          "title": "Entrega de informes - Introducción al Laboratorio",
+          "date": "2026-07-08",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "endTime": "21:00",
+          "notes": "Entrega online hasta las 21 hs."
+        },
+        {
+          "id": "intro-lab-parcial-5",
+          "type": "parcial",
+          "title": "Parcial - Labo 4 - Introducción al Laboratorio",
+          "date": "2026-07-10",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "08:30",
+          "notes": "Labo 4. Fin del semestre."
+        },
+        {
+          "id": "intro-lab-parcial-6",
+          "type": "parcial",
+          "title": "Parcial - Labo 5 - Introducción al Laboratorio",
+          "date": "2026-07-10",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "13:00",
+          "notes": "Labo 5. Fin del semestre."
+        },
+        {
+          "id": "intro-lab-parcial-2da-7",
+          "type": "parcial_2da",
+          "title": "2da. Instancia Parcial - Introducción al Laboratorio",
+          "date": "2026-08-03",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "15:00",
+          "notes": "TODOS LOS GRUPOS - 15:00 hs."
+        },
+        {
+          "id": "intro-lab-consulta-8",
+          "type": "consulta",
+          "title": "Consulta de 2da. Instancia - Introducción al Laboratorio",
+          "date": "2026-07-22",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        },
+        {
+          "id": "intro-lab-cierre-curso-9",
+          "type": "cierre_curso",
+          "title": "Consulta de cierre de curso - Introducción al Laboratorio",
+          "date": "2026-08-13",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "mat-2",
+      "name": "Matemática 2",
+      "semesterNumber": 2,
+      "events": []
+    },
+    {
+      "id": "quim-org",
+      "name": "Química orgánica",
+      "semesterNumber": 2,
+      "events": []
+    },
+    {
+      "id": "quim-bio",
+      "name": "Química biológica",
+      "semesterNumber": 2,
+      "events": []
+    },
+    {
+      "id": "fisica-1",
+      "name": "Física 1",
+      "semesterNumber": 2,
+      "events": []
+    },
+    {
+      "id": "etica-bio",
+      "name": "Aspectos éticos y sociales de la biotecnología",
+      "semesterNumber": 2,
+      "events": []
+    },
+    {
+      "id": "lab-macro",
+      "name": "Laboratorio de macromoléculas",
+      "semesterNumber": 2,
+      "events": []
+    },
+    {
+      "id": "prob-est",
+      "name": "Probabilidad y estadística",
+      "semesterNumber": 3,
+      "events": [
+        {
+          "id": "prob-est-parcial-0",
+          "type": "parcial",
+          "title": "Parcial 1 - Probabilidad y Estadística",
+          "date": "2026-05-04",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "15:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "prob-est-parcial-1",
+          "type": "parcial",
+          "title": "Parcial 2 y Entrega de Ejercicios - Probabilidad y Estadística",
+          "date": "2026-07-20",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "12:00",
+          "turno": "matutino",
+          "notes": "VER EN AULAS"
+        },
+        {
+          "id": "prob-est-cierre-curso-2",
+          "type": "cierre_curso",
+          "title": "Consulta de cierre de curso - Probabilidad y Estadística",
+          "date": "2026-08-04",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "bioquimica",
+      "name": "Bioquímica",
+      "semesterNumber": 3,
+      "events": [
+        {
+          "id": "bioquimica-parcial-0",
+          "type": "parcial",
+          "title": "Parcial 1 - Bioquímica",
+          "date": "2026-05-11",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "15:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "bioquimica-parcial-1",
+          "type": "parcial",
+          "title": "Parcial 2 y Entrega de Ejercicios - Bioquímica",
+          "date": "2026-07-13",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "12:00",
+          "turno": "matutino",
+          "notes": "VER EN AULAS"
+        },
+        {
+          "id": "bioquimica-cierre-curso-2",
+          "type": "cierre_curso",
+          "title": "Consulta de cierre de curso - Bioquímica",
+          "date": "2026-07-28",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "bio-celular",
+      "name": "Biología celular",
+      "semesterNumber": 3,
+      "events": [
+        {
+          "id": "bio-celular-planteo-obl-0",
+          "type": "planteo_obl",
+          "title": "Planteo OBL. - Biología Celular",
+          "date": "2026-03-23",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "bio-celular-entrega-obl-1",
+          "type": "entrega_obl",
+          "title": "Entrega OBL. - Biología Celular",
+          "date": "2026-06-16",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "endTime": "21:00",
+          "notes": "Entrega online hasta las 21 hs."
+        },
+        {
+          "id": "bio-celular-parcial-2",
+          "type": "parcial",
+          "title": "Parcial y Entrega de Ejercicios - Biología Celular",
+          "date": "2026-07-16",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "12:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "bio-celular-parcial-2da-3",
+          "type": "parcial_2da",
+          "title": "2da. Instancia - Parcial - Biología Celular",
+          "date": "2026-08-04",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "12:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "bio-celular-consulta-4",
+          "type": "consulta",
+          "title": "Consulta de 2da. Instancia - Biología Celular",
+          "date": "2026-07-29",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        },
+        {
+          "id": "bio-celular-cierre-curso-5",
+          "type": "cierre_curso",
+          "title": "Consulta de cierre de curso - Biología Celular",
+          "date": "2026-08-17",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "fisicoquim-1",
+      "name": "Fisicoquímica 1",
+      "semesterNumber": 3,
+      "events": [
+        {
+          "id": "fisicoquim-1-parcial-0",
+          "type": "parcial",
+          "title": "Parcial 1 - Fisicoquímica 1",
+          "date": "2026-04-27",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "15:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "fisicoquim-1-parcial-1",
+          "type": "parcial",
+          "title": "Parcial 2 y Entrega de Ejercicios - Fisicoquímica 1",
+          "date": "2026-07-10",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "12:00",
+          "turno": "matutino",
+          "notes": "VER EN AULAS"
+        },
+        {
+          "id": "fisicoquim-1-cierre-curso-2",
+          "type": "cierre_curso",
+          "title": "Consulta de cierre de curso - Fisicoquímica 1",
+          "date": "2026-07-23",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "fisica-2",
+      "name": "Física 2",
+      "semesterNumber": 3,
+      "events": [
+        {
+          "id": "fisica-2-parcial-0",
+          "type": "parcial",
+          "title": "Parcial 1 - Física 2",
+          "date": "2026-04-20",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "15:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "fisica-2-parcial-1",
+          "type": "parcial",
+          "title": "Parcial 2 y Entrega de Ejercicios - Física 2",
+          "date": "2026-07-07",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "12:00",
+          "turno": "matutino",
+          "notes": "VER EN AULAS"
+        },
+        {
+          "id": "fisica-2-cierre-curso-2",
+          "type": "cierre_curso",
+          "title": "Consulta de cierre de curso - Física 2",
+          "date": "2026-07-23",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "lab-bio-cel",
+      "name": "Laboratorio de biología celular",
+      "semesterNumber": 3,
+      "events": [
+        {
+          "id": "lab-bio-cel-parcial-0",
+          "type": "parcial",
+          "title": "Parcial 1 - Labo 1 Miércoles - Laboratorio de Biología Celular",
+          "date": "2026-05-27",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "08:30",
+          "notes": "Labo 1 Miércoles"
+        },
+        {
+          "id": "lab-bio-cel-parcial-1",
+          "type": "parcial",
+          "title": "Parcial 1 - Labo 2 Miércoles - Laboratorio de Biología Celular",
+          "date": "2026-05-27",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "13:00",
+          "notes": "Labo 2 Miércoles"
+        },
+        {
+          "id": "lab-bio-cel-parcial-2",
+          "type": "parcial",
+          "title": "Parcial 1 - Labo 3 Jueves - Laboratorio de Biología Celular",
+          "date": "2026-05-28",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "08:30",
+          "notes": "Labo 3 Jueves"
+        },
+        {
+          "id": "lab-bio-cel-parcial-3",
+          "type": "parcial",
+          "title": "Parcial 1 - Labo 4 Jueves - Laboratorio de Biología Celular",
+          "date": "2026-05-28",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "13:00",
+          "notes": "Labo 4 Jueves"
+        },
+        {
+          "id": "lab-bio-cel-parcial-4",
+          "type": "parcial",
+          "title": "Parcial 1 - Labo 5 Jueves - Laboratorio de Biología Celular",
+          "date": "2026-05-28",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "17:30",
+          "notes": "Labo 5 Jueves"
+        },
+        {
+          "id": "lab-bio-cel-parcial-5",
+          "type": "parcial",
+          "title": "Parcial 2 - Labo 1 Miércoles - Laboratorio de Biología Celular",
+          "date": "2026-07-01",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "08:30",
+          "notes": "Labo 1 Miércoles"
+        },
+        {
+          "id": "lab-bio-cel-parcial-6",
+          "type": "parcial",
+          "title": "Parcial 2 - Labo 2 Miércoles - Laboratorio de Biología Celular",
+          "date": "2026-07-01",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "13:00",
+          "notes": "Labo 2 Miércoles"
+        },
+        {
+          "id": "lab-bio-cel-parcial-7",
+          "type": "parcial",
+          "title": "Parcial 2 - Labo 3 Jueves - Laboratorio de Biología Celular",
+          "date": "2026-07-02",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "08:30",
+          "notes": "Labo 3 Jueves"
+        },
+        {
+          "id": "lab-bio-cel-parcial-8",
+          "type": "parcial",
+          "title": "Parcial 2 - Labo 4 Jueves - Laboratorio de Biología Celular",
+          "date": "2026-07-02",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "13:00",
+          "notes": "Labo 4 Jueves"
+        },
+        {
+          "id": "lab-bio-cel-parcial-9",
+          "type": "parcial",
+          "title": "Parcial 2 - Labo 5 Jueves - Laboratorio de Biología Celular",
+          "date": "2026-07-02",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "17:30",
+          "notes": "Labo 5 Jueves"
+        },
+        {
+          "id": "lab-bio-cel-parcial-2da-10",
+          "type": "parcial_2da",
+          "title": "2da. Instancia Parcial 2 - Laboratorio de Biología Celular",
+          "date": "2026-07-30",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "12:00",
+          "notes": "TODOS 12:00 hs."
+        },
+        {
+          "id": "lab-bio-cel-consulta-11",
+          "type": "consulta",
+          "title": "Consulta de 2da. Instancia - Laboratorio de Biología Celular",
+          "date": "2026-07-16",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        },
+        {
+          "id": "lab-bio-cel-cierre-curso-12",
+          "type": "cierre_curso",
+          "title": "Consulta de cierre de curso - Laboratorio de Biología Celular",
+          "date": "2026-08-12",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "mat-3",
+      "name": "Matemática 3",
+      "semesterNumber": 4,
+      "events": []
+    },
+    {
+      "id": "genetica",
+      "name": "Genética y evolución",
+      "semesterNumber": 4,
+      "events": []
+    },
+    {
+      "id": "economia",
+      "name": "Economía",
+      "semesterNumber": 4,
+      "events": []
+    },
+    {
+      "id": "bio-mol",
+      "name": "Biología molecular",
+      "semesterNumber": 4,
+      "events": [
+        {
+          "id": "bio-mol-parcial-0",
+          "type": "parcial",
+          "title": "Parcial 1 - Biología",
+          "date": "2026-05-19",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "15:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "bio-mol-parcial-1",
+          "type": "parcial",
+          "title": "Parcial 2 y Entrega Ejercicios - Biología",
+          "date": "2026-07-15",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "15:00",
+          "turno": "matutino",
+          "notes": "VER EN AULAS"
+        },
+        {
+          "id": "bio-mol-parcial-2da-2",
+          "type": "parcial_2da",
+          "title": "2da. Instancia - Parcial - Biología",
+          "date": "2026-08-06",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "15:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "bio-mol-consulta-3",
+          "type": "consulta",
+          "title": "Consulta de 2da. Instancia - Biología",
+          "date": "2026-07-29",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        },
+        {
+          "id": "bio-mol-cierre-curso-4",
+          "type": "cierre_curso",
+          "title": "Consulta de cierre de curso - Biología",
+          "date": "2026-08-17",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "fisicoquim-2",
+      "name": "Fisicoquímica 2",
+      "semesterNumber": 4,
+      "events": []
+    },
+    {
+      "id": "lab-enzim",
+      "name": "Laboratorio de enzimología",
+      "semesterNumber": 4,
+      "events": []
+    },
+    {
+      "id": "prog",
+      "name": "Programación",
+      "semesterNumber": 5,
+      "events": [
+        {
+          "id": "prog-planteo-obl-0",
+          "type": "planteo_obl",
+          "title": "Planteo OBL. 1 - Programación",
+          "date": "2026-04-13",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "prog-entrega-obl-1",
+          "type": "entrega_obl",
+          "title": "Entrega OBL. 1 y Planteo OBL. 2 - Programación",
+          "date": "2026-05-25",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "endTime": "21:00",
+          "notes": "Entrega online hasta las 21 hs."
+        },
+        {
+          "id": "prog-entrega-obl-2",
+          "type": "entrega_obl",
+          "title": "Entrega OBL. 2 - Programación",
+          "date": "2026-06-22",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "endTime": "21:00",
+          "notes": "Entrega online hasta las 21 hs."
+        },
+        {
+          "id": "prog-parcial-3",
+          "type": "parcial",
+          "title": "Parcial - Programación",
+          "date": "2026-07-13",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:30",
+          "turno": "nocturno"
+        },
+        {
+          "id": "prog-parcial-2da-4",
+          "type": "parcial_2da",
+          "title": "2da. Instancia - Parcial - Programación",
+          "date": "2026-08-13",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:30",
+          "turno": "nocturno"
+        },
+        {
+          "id": "prog-consulta-5",
+          "type": "consulta",
+          "title": "Consulta de 2da. Instancia - Programación",
+          "date": "2026-07-29",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        },
+        {
+          "id": "prog-cierre-curso-6",
+          "type": "cierre_curso",
+          "title": "Consulta de cierre de curso - Programación",
+          "date": "2026-08-26",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "microbio",
+      "name": "Microbiología",
+      "semesterNumber": 5,
+      "events": [
+        {
+          "id": "microbio-planteo-obl-0",
+          "type": "planteo_obl",
+          "title": "Planteo OBL. - Microbiología",
+          "date": "2026-03-11",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "microbio-entrega-obl-1",
+          "type": "entrega_obl",
+          "title": "Entrega OBL. - Microbiología",
+          "date": "2026-06-25",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "endTime": "21:00",
+          "notes": "Entrega online hasta las 21 hs."
+        },
+        {
+          "id": "microbio-parcial-2",
+          "type": "parcial",
+          "title": "Parcial 1 - Microbiología",
+          "date": "2026-05-13",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "15:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "microbio-parcial-3",
+          "type": "parcial",
+          "title": "Parcial 2 - Microbiología",
+          "date": "2026-07-06",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:30",
+          "turno": "nocturno"
+        },
+        {
+          "id": "microbio-parcial-2da-4",
+          "type": "parcial_2da",
+          "title": "2da. Instancia - Parcial - Microbiología",
+          "date": "2026-08-04",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:30",
+          "turno": "nocturno"
+        },
+        {
+          "id": "microbio-consulta-5",
+          "type": "consulta",
+          "title": "Consulta de 2da. Instancia - Microbiología",
+          "date": "2026-07-29",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        },
+        {
+          "id": "microbio-cierre-curso-6",
+          "type": "cierre_curso",
+          "title": "Consulta de cierre de curso - Microbiología",
+          "date": "2026-08-14",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "lab-bio-mol",
+      "name": "Laboratorio de biología molecular",
+      "semesterNumber": 5,
+      "events": [
+        {
+          "id": "lab-bio-mol-planteo-obl-0",
+          "type": "planteo_obl",
+          "title": "Planteo OBL. - Laboratorio de Biología Molecular",
+          "date": "2026-03-10",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "lab-bio-mol-entrega-obl-1",
+          "type": "entrega_obl",
+          "title": "Entrega OBL. - Laboratorio de Biología Molecular",
+          "date": "2026-05-28",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "endTime": "21:00",
+          "notes": "Entrega online hasta las 21 hs."
+        },
+        {
+          "id": "lab-bio-mol-parcial-2",
+          "type": "parcial",
+          "title": "Parcial 1 - Labo 1 Mat - Laboratorio de Biología Molecular",
+          "date": "2026-04-21",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "08:30",
+          "notes": "Labo 1 Mat"
+        },
+        {
+          "id": "lab-bio-mol-parcial-3",
+          "type": "parcial",
+          "title": "Parcial 1 - Labo 2 Vesp - Laboratorio de Biología Molecular",
+          "date": "2026-04-21",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "13:00",
+          "notes": "Labo 2 Vesp"
+        },
+        {
+          "id": "lab-bio-mol-parcial-4",
+          "type": "parcial",
+          "title": "Parcial 1 - Labo 3 Noct - Laboratorio de Biología Molecular",
+          "date": "2026-04-21",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "17:00",
+          "notes": "Labo 3 Noct"
+        },
+        {
+          "id": "lab-bio-mol-parcial-5",
+          "type": "parcial",
+          "title": "Parcial 1 - Labo 4 Noct - Laboratorio de Biología Molecular",
+          "date": "2026-04-23",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "17:30",
+          "notes": "Labo 4 Noct"
+        },
+        {
+          "id": "lab-bio-mol-parcial-6",
+          "type": "parcial",
+          "title": "Parcial 2 - Labo 1 Mat - Laboratorio de Biología Molecular",
+          "date": "2026-06-30",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "08:30",
+          "notes": "Labo 1 Mat"
+        },
+        {
+          "id": "lab-bio-mol-parcial-7",
+          "type": "parcial",
+          "title": "Parcial 2 - Labo 2 Vesp - Laboratorio de Biología Molecular",
+          "date": "2026-06-30",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "13:00",
+          "notes": "Labo 2 Vesp"
+        },
+        {
+          "id": "lab-bio-mol-parcial-8",
+          "type": "parcial",
+          "title": "Parcial 2 - Labo 3 Noct - Laboratorio de Biología Molecular",
+          "date": "2026-06-30",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "17:00",
+          "notes": "Labo 3 Noct"
+        },
+        {
+          "id": "lab-bio-mol-parcial-9",
+          "type": "parcial",
+          "title": "Parcial 2 - Labo 4 Noct - Laboratorio de Biología Molecular",
+          "date": "2026-07-02",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "17:30",
+          "notes": "Labo 4 Noct"
+        },
+        {
+          "id": "lab-bio-mol-parcial-2da-10",
+          "type": "parcial_2da",
+          "title": "2da. Instancia - Parcial - Laboratorio de Biología Molecular",
+          "date": "2026-07-23",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:30",
+          "notes": "TODOS 18:30 hs."
+        },
+        {
+          "id": "lab-bio-mol-consulta-11",
+          "type": "consulta",
+          "title": "Consulta de 2da. Instancia - Laboratorio de Biología Molecular",
+          "date": "2026-07-15",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        },
+        {
+          "id": "lab-bio-mol-cierre-curso-12",
+          "type": "cierre_curso",
+          "title": "Consulta de cierre de curso - Laboratorio de Biología Molecular",
+          "date": "2026-08-04",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "fen-transp",
+      "name": "Fenómenos de transporte",
+      "semesterNumber": 5,
+      "events": [
+        {
+          "id": "fen-transp-parcial-0",
+          "type": "parcial",
+          "title": "Parcial 1 - Fenómenos de Transporte",
+          "date": "2026-05-06",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "15:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "fen-transp-parcial-1",
+          "type": "parcial",
+          "title": "Parcial 2 - Fenómenos de Transporte",
+          "date": "2026-07-16",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:30",
+          "turno": "nocturno"
+        },
+        {
+          "id": "fen-transp-cierre-curso-2",
+          "type": "cierre_curso",
+          "title": "Consulta de cierre de curso - Fenómenos de Transporte",
+          "date": "2026-07-30",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "gestion",
+      "name": "Gestión de empresas",
+      "semesterNumber": 5,
+      "events": [
+        {
+          "id": "gestion-parcial-0",
+          "type": "parcial",
+          "title": "Parcial 1 - Gestión de Empresas",
+          "date": "2026-04-29",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "15:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "gestion-parcial-1",
+          "type": "parcial",
+          "title": "Parcial 2 y Ejercicios - Gestión de Empresas",
+          "date": "2026-07-20",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "09:00",
+          "notes": "VER EN AULAS"
+        },
+        {
+          "id": "gestion-cierre-curso-2",
+          "type": "cierre_curso",
+          "title": "Consulta de cierre de curso - Gestión de Empresas",
+          "date": "2026-08-03",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "bioinf-1",
+      "name": "Bioinformática 1",
+      "semesterNumber": 6,
+      "events": []
+    },
+    {
+      "id": "inmuno-1",
+      "name": "Inmunotecnologías",
+      "semesterNumber": 6,
+      "events": []
+    },
+    {
+      "id": "bioprocesos",
+      "name": "Bioprocesos",
+      "semesterNumber": 6,
+      "events": []
+    },
+    {
+      "id": "lab-micro",
+      "name": "Laboratorio de microbiología",
+      "semesterNumber": 6,
+      "events": [
+        {
+          "id": "lab-micro-parcial-0",
+          "type": "parcial",
+          "title": "Parcial 1 - Biología",
+          "date": "2026-05-19",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "15:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "lab-micro-parcial-1",
+          "type": "parcial",
+          "title": "Parcial 2 y Entrega Ejercicios - Biología",
+          "date": "2026-07-15",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "15:00",
+          "turno": "matutino",
+          "notes": "VER EN AULAS"
+        },
+        {
+          "id": "lab-micro-parcial-2da-2",
+          "type": "parcial_2da",
+          "title": "2da. Instancia - Parcial - Biología",
+          "date": "2026-08-06",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "15:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "lab-micro-consulta-3",
+          "type": "consulta",
+          "title": "Consulta de 2da. Instancia - Biología",
+          "date": "2026-07-29",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        },
+        {
+          "id": "lab-micro-cierre-curso-4",
+          "type": "cierre_curso",
+          "title": "Consulta de cierre de curso - Biología",
+          "date": "2026-08-17",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "metodos-analiticos",
+      "name": "Métodos y equipos analíticos",
+      "semesterNumber": 6,
+      "events": []
+    },
+    {
+      "id": "bioinf-2",
+      "name": "Bioinformática 2",
+      "semesterNumber": 7,
+      "events": [
+        {
+          "id": "bioinf-2-planteo-obl-0",
+          "type": "planteo_obl",
+          "title": "Planteo OBL. - Bioinformática 2",
+          "date": "2026-03-23",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "bioinf-2-parcial-1",
+          "type": "parcial",
+          "title": "Parcial 1 - Bioinformática 2",
+          "date": "2026-04-16",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "15:00",
+          "turno": "matutino",
+          "notes": "Grupos M7A y M7B"
+        },
+        {
+          "id": "bioinf-2-entrega-obl-2",
+          "type": "entrega_obl",
+          "title": "Entrega OBL. - Bioinformática 2",
+          "date": "2026-07-13",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "endTime": "21:00",
+          "notes": "Entrega online hasta las 21 hs."
+        },
+        {
+          "id": "bioinf-2-entrega-obl-2da-3",
+          "type": "entrega_obl_2da",
+          "title": "2da. Instancia - Entrega OBL. - Bioinformática 2",
+          "date": "2026-08-12",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "endTime": "21:00"
+        },
+        {
+          "id": "bioinf-2-consulta-4",
+          "type": "consulta",
+          "title": "Consulta de 2da. Instancia - Bioinformática 2",
+          "date": "2026-07-27",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        },
+        {
+          "id": "bioinf-2-cierre-curso-5",
+          "type": "cierre_curso",
+          "title": "Consulta de cierre de curso - Bioinformática 2",
+          "date": "2026-08-27",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "bionegocios",
+      "name": "Bionegocios",
+      "semesterNumber": 7,
+      "events": [
+        {
+          "id": "bionegocios-planteo-obl-0",
+          "type": "planteo_obl",
+          "title": "Planteo OBL. - Bionegocios",
+          "date": "2026-03-16",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "bionegocios-parcial-1",
+          "type": "parcial",
+          "title": "Presentaciones orales 1 - Bionegocios - M7B",
+          "date": "2026-04-28",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "10:00",
+          "turno": "matutino",
+          "notes": "Grupo M7B"
+        },
+        {
+          "id": "bionegocios-parcial-2",
+          "type": "parcial",
+          "title": "Presentaciones orales 1 - Bionegocios - M7A",
+          "date": "2026-04-29",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "08:00",
+          "turno": "matutino",
+          "notes": "Grupo M7A"
+        },
+        {
+          "id": "bionegocios-parcial-3",
+          "type": "parcial",
+          "title": "Presentaciones orales 2 - Bionegocios - M7B",
+          "date": "2026-06-23",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "10:00",
+          "turno": "matutino",
+          "notes": "Grupo M7B"
+        },
+        {
+          "id": "bionegocios-parcial-4",
+          "type": "parcial",
+          "title": "Presentaciones orales 2 - Bionegocios - M7A",
+          "date": "2026-06-25",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "08:00",
+          "turno": "matutino",
+          "notes": "Grupo M7A"
+        },
+        {
+          "id": "bionegocios-entrega-obl-5",
+          "type": "entrega_obl",
+          "title": "Entrega OBL. - Bionegocios",
+          "date": "2026-07-20",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "endTime": "21:00",
+          "notes": "Entrega online hasta las 21 hs."
+        },
+        {
+          "id": "bionegocios-entrega-obl-2da-6",
+          "type": "entrega_obl_2da",
+          "title": "2da. Instancia - Entrega OBL. - Bionegocios",
+          "date": "2026-08-10",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "endTime": "21:00"
+        },
+        {
+          "id": "bionegocios-consulta-7",
+          "type": "consulta",
+          "title": "Consulta de 2da. Instancia - Bionegocios",
+          "date": "2026-08-03",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        },
+        {
+          "id": "bionegocios-cierre-curso-8",
+          "type": "cierre_curso",
+          "title": "Consulta de cierre de curso - Bionegocios",
+          "date": "2026-08-20",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "ing-gen",
+      "name": "Ingeniería genética",
+      "semesterNumber": 7,
+      "events": [
+        {
+          "id": "ing-gen-planteo-obl-0",
+          "type": "planteo_obl",
+          "title": "Planteo OBL. - Ingeniería Genética",
+          "date": "2026-04-20",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "ing-gen-entrega-obl-1",
+          "type": "entrega_obl",
+          "title": "Entrega OBL. - Ingeniería Genética",
+          "date": "2026-07-08",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "endTime": "21:00",
+          "notes": "Entrega online hasta las 21 hs."
+        },
+        {
+          "id": "ing-gen-parcial-2",
+          "type": "parcial",
+          "title": "Parcial y presentaciones orales - Ingeniería Genética",
+          "date": "2026-07-09",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:30",
+          "turno": "nocturno"
+        },
+        {
+          "id": "ing-gen-parcial-2da-3",
+          "type": "parcial_2da",
+          "title": "2da. Instancia - Parcial - Ingeniería Genética",
+          "date": "2026-07-28",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:30",
+          "turno": "nocturno"
+        },
+        {
+          "id": "ing-gen-consulta-4",
+          "type": "consulta",
+          "title": "Consulta de 2da. Instancia - Ingeniería Genética",
+          "date": "2026-07-22",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        },
+        {
+          "id": "ing-gen-cierre-curso-5",
+          "type": "cierre_curso",
+          "title": "Consulta de cierre de curso - Ingeniería Genética",
+          "date": "2026-08-10",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "prop-int",
+      "name": "Propiedad intelectual e industrial",
+      "semesterNumber": 7,
+      "events": [
+        {
+          "id": "prop-int-parcial-0",
+          "type": "parcial",
+          "title": "Parcial y Presentaciones Orales - Propiedad Intelectual",
+          "date": "2026-07-06",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "12:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "prop-int-parcial-2da-1",
+          "type": "parcial_2da",
+          "title": "2da. Instancia - Parcial - Propiedad Intelectual",
+          "date": "2026-07-27",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "09:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "prop-int-consulta-2",
+          "type": "consulta",
+          "title": "Consulta de 2da. Instancia - Propiedad Intelectual",
+          "date": "2026-07-20",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        },
+        {
+          "id": "prop-int-cierre-curso-3",
+          "type": "cierre_curso",
+          "title": "Consulta de cierre de curso - Propiedad Intelectual",
+          "date": "2026-08-06",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "biosep",
+      "name": "Bioseparaciones",
+      "semesterNumber": 7,
+      "events": [
+        {
+          "id": "biosep-parcial-0",
+          "type": "parcial",
+          "title": "Parcial 1 - Bioseparaciones",
+          "date": "2026-05-28",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "15:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "biosep-parcial-1",
+          "type": "parcial",
+          "title": "Parcial 2 y Entrega de Trabajos - Bioseparaciones",
+          "date": "2026-07-16",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "09:00",
+          "turno": "matutino",
+          "notes": "VER EN AULAS"
+        },
+        {
+          "id": "biosep-parcial-2da-2",
+          "type": "parcial_2da",
+          "title": "2da. Instancia - Parcial - Bioseparaciones",
+          "date": "2026-08-06",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "09:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "biosep-consulta-3",
+          "type": "consulta",
+          "title": "Consulta de 2da. Instancia - Bioseparaciones",
+          "date": "2026-07-20",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        },
+        {
+          "id": "biosep-cierre-curso-4",
+          "type": "cierre_curso",
+          "title": "Consulta de cierre de curso - Bioseparaciones",
+          "date": "2026-08-18",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "lab-control",
+      "name": "Laboratorio de control de calidad",
+      "semesterNumber": 7,
+      "events": [
+        {
+          "id": "lab-control-parcial-0",
+          "type": "parcial",
+          "title": "Parcial 1 - Laboratorio de Control de Calidad",
+          "date": "2026-04-21",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00",
+          "turno": "nocturno",
+          "notes": "Todos los grupos"
+        },
+        {
+          "id": "lab-control-parcial-1",
+          "type": "parcial",
+          "title": "Presentaciones orales - Laboratorio de Control de Calidad - GRUPO 1",
+          "date": "2026-06-22",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00",
+          "turno": "nocturno",
+          "notes": "GRUPO 1"
+        },
+        {
+          "id": "lab-control-parcial-2",
+          "type": "parcial",
+          "title": "Presentaciones orales - Laboratorio de Control de Calidad - GRUPO 2",
+          "date": "2026-06-23",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00",
+          "turno": "nocturno",
+          "notes": "GRUPO 2"
+        },
+        {
+          "id": "lab-control-parcial-3",
+          "type": "parcial",
+          "title": "Presentaciones orales - Laboratorio de Control de Calidad - GRUPO 3",
+          "date": "2026-06-24",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00",
+          "turno": "nocturno",
+          "notes": "GRUPO 3"
+        },
+        {
+          "id": "lab-control-parcial-4",
+          "type": "parcial",
+          "title": "Parcial 2 - Laboratorio de Control de Calidad - GRUPO 1",
+          "date": "2026-06-29",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00",
+          "turno": "nocturno",
+          "notes": "GRUPO 1"
+        },
+        {
+          "id": "lab-control-parcial-5",
+          "type": "parcial",
+          "title": "Parcial 2 - Laboratorio de Control de Calidad - GRUPO 2",
+          "date": "2026-06-30",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00",
+          "turno": "nocturno",
+          "notes": "GRUPO 2"
+        },
+        {
+          "id": "lab-control-parcial-6",
+          "type": "parcial",
+          "title": "Parcial 2 - Laboratorio de Control de Calidad - GRUPO 3",
+          "date": "2026-07-01",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00",
+          "turno": "nocturno",
+          "notes": "GRUPO 3"
+        },
+        {
+          "id": "lab-control-parcial-2da-7",
+          "type": "parcial_2da",
+          "title": "2da. Instancia Parcial 2 - Laboratorio de Control de Calidad",
+          "date": "2026-08-04",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00",
+          "notes": "Vesp. 18:00 hs."
+        },
+        {
+          "id": "lab-control-cierre-curso-8",
+          "type": "cierre_curso",
+          "title": "Consulta de cierre de curso - Laboratorio de Control de Calidad",
+          "date": "2026-08-19",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "agrobio",
+      "name": "Agrobiotecnologías",
+      "semesterNumber": 8,
+      "events": []
+    },
+    {
+      "id": "inmuno-2",
+      "name": "Inmunotecnologías 2",
+      "semesterNumber": 8,
+      "events": []
+    },
+    {
+      "id": "analisis-bioprocesos",
+      "name": "Análisis y diseño de bioprocesos",
+      "semesterNumber": 8,
+      "events": []
+    },
+    {
+      "id": "temas-avanzados",
+      "name": "Temas avanzados en biotecnología",
+      "semesterNumber": 8,
+      "events": []
+    },
+    {
+      "id": "lab-bio-veg",
+      "name": "Laboratorio de biotecnología vegetal",
+      "semesterNumber": 8,
+      "events": []
+    },
+    {
+      "id": "tec-alimentos",
+      "name": "Tecnología de los alimentos",
+      "semesterNumber": 9,
+      "events": [
+        {
+          "id": "tec-alimentos-planteo-obl-0",
+          "type": "planteo_obl",
+          "title": "Planteo OBL. 1 - Tecnología de los Alimentos",
+          "date": "2026-03-25",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "tec-alimentos-entrega-obl-1",
+          "type": "entrega_obl",
+          "title": "Entrega OBL. 1 y Planteo OBL. 2 - Tecnología de los Alimentos",
+          "date": "2026-05-25",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "endTime": "21:00",
+          "notes": "Entrega online hasta las 21 hs."
+        },
+        {
+          "id": "tec-alimentos-entrega-obl-2",
+          "type": "entrega_obl",
+          "title": "Entrega OBL. 2 - Tecnología de los Alimentos",
+          "date": "2026-07-07",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "endTime": "21:00",
+          "notes": "Entrega online hasta las 21 hs."
+        },
+        {
+          "id": "tec-alimentos-entrega-obl-2da-3",
+          "type": "entrega_obl_2da",
+          "title": "2da. Instancia - Entrega OBL. 2 - Tecnología de los Alimentos",
+          "date": "2026-08-03",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "endTime": "21:00"
+        },
+        {
+          "id": "tec-alimentos-consulta-4",
+          "type": "consulta",
+          "title": "Consulta de 2da. Instancia - Tecnología de los Alimentos",
+          "date": "2026-07-22",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        },
+        {
+          "id": "tec-alimentos-cierre-curso-5",
+          "type": "cierre_curso",
+          "title": "Consulta de cierre de curso - Tecnología de los Alimentos",
+          "date": "2026-08-13",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "virologia",
+      "name": "Virología",
+      "semesterNumber": 9,
+      "events": [
+        {
+          "id": "virologia-parcial-0",
+          "type": "parcial",
+          "title": "Parcial 1 - Virología",
+          "date": "2026-05-08",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "08:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "virologia-parcial-1",
+          "type": "parcial",
+          "title": "Presentaciones Orales y Parcial 2 - Virología",
+          "date": "2026-07-22",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "09:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "virologia-parcial-2da-2",
+          "type": "parcial_2da",
+          "title": "2da. Instancia - Parcial - Virología",
+          "date": "2026-08-13",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "09:00",
+          "turno": "matutino"
+        },
+        {
+          "id": "virologia-consulta-3",
+          "type": "consulta",
+          "title": "Consulta de 2da. Instancia - Virología",
+          "date": "2026-08-06",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        },
+        {
+          "id": "virologia-cierre-curso-4",
+          "type": "cierre_curso",
+          "title": "Consulta de cierre de curso - Virología",
+          "date": "2026-08-27",
+          "allDay": false,
+          "source": "bedelia_pdf",
+          "startTime": "18:00"
+        }
+      ]
+    },
+    {
+      "id": "vacunas",
+      "name": "Vacunas",
+      "semesterNumber": 10,
+      "events": []
+    },
+    {
+      "id": "nanobio",
+      "name": "Nanobiotecnología",
+      "semesterNumber": 10,
+      "events": []
+    },
+    {
+      "id": "biorrem",
+      "name": "Biorremediación",
+      "semesterNumber": 10,
+      "events": []
+    },
+    {
+      "id": "tfc",
+      "name": "Trabajo final de carrera",
+      "semesterNumber": 10,
+      "events": []
+    }
   ]
 }

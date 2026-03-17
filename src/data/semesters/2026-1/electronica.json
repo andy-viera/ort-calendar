@@ -2,36 +2,1199 @@
   "id": "electronica",
   "name": "Ingeniería en Electrónica",
   "subjects": [
-    { "id": "prog-1", "name": "Programación 1", "semesterNumber": 1, "events": [] },
-    { "id": "calculo-1", "name": "Cálculo en una variable", "semesterNumber": 1, "events": [] },
-    { "id": "algebra", "name": "Álgebra lineal", "semesterNumber": 1, "events": [] },
-    { "id": "inicio-ing", "name": "Iniciación a la ingeniería", "semesterNumber": 1, "events": [] },
-    { "id": "prog-2", "name": "Programación 2", "semesterNumber": 2, "events": [] },
-    { "id": "calculo-2", "name": "Cálculo en varias variables", "semesterNumber": 2, "events": [] },
-    { "id": "fisica-1", "name": "Física 1", "semesterNumber": 2, "events": [] },
-    { "id": "cde-1", "name": "Circuitos y dispositivos eléctricos 1", "semesterNumber": 2, "events": [] },
-    { "id": "prob-est", "name": "Probabilidad y estadística", "semesterNumber": 3, "events": [] },
-    { "id": "calculo-vec", "name": "Cálculo vectorial", "semesterNumber": 3, "events": [] },
-    { "id": "diseno-dig", "name": "Diseño digital", "semesterNumber": 3, "events": [] },
-    { "id": "cde-2", "name": "Circuitos y dispositivos eléctricos 2", "semesterNumber": 3, "events": [] },
-    { "id": "fisica-2", "name": "Física 2", "semesterNumber": 4, "events": [] },
-    { "id": "ec-dif", "name": "Ecuaciones diferenciales", "semesterNumber": 4, "events": [] },
-    { "id": "eda-1", "name": "Estructuras de datos y algoritmos 1", "semesterNumber": 4, "events": [] },
-    { "id": "pi-1", "name": "Proyecto integrador 1", "semesterNumber": 4, "events": [] },
-    { "id": "sdm", "name": "Sistemas digitales y microprocesadores", "semesterNumber": 5, "events": [] },
-    { "id": "syst-cont", "name": "Señales y sistemas de tiempo continuo", "semesterNumber": 5, "events": [] },
-    { "id": "ondas", "name": "Ondas electromagnéticas", "semesterNumber": 5, "events": [] },
-    { "id": "micro", "name": "Microeconomía", "semesterNumber": 5, "events": [] },
-    { "id": "sist-din", "name": "Sistemas dinámicos", "semesterNumber": 6, "events": [] },
-    { "id": "syst-disc", "name": "Señales y sistemas de tiempo discreto", "semesterNumber": 6, "events": [] },
-    { "id": "redes-datos", "name": "Redes de datos", "semesterNumber": 6, "events": [] },
-    { "id": "pi-2", "name": "Proyecto integrador 2", "semesterNumber": 6, "events": [] },
-    { "id": "control", "name": "Automatismos Industriales", "semesterNumber": 7, "events": [] },
-    { "id": "so", "name": "Sistemas operativos", "semesterNumber": 7, "events": [] },
-    { "id": "instrum", "name": "Instrumentación y medidas", "semesterNumber": 7, "events": [] },
-    { "id": "elec-pot", "name": "Electrónica de potencia", "semesterNumber": 8, "events": [] },
-    { "id": "sist-emb", "name": "Sistemas embebidos", "semesterNumber": 8, "events": [] },
-    { "id": "pi-3", "name": "Proyecto integrador 3", "semesterNumber": 8, "events": [] },
-    { "id": "diseno-se", "name": "Diseño de sistemas electrónicos", "semesterNumber": 9, "events": [] }
+    {
+      "id": "prog-1",
+      "name": "Programación 1",
+      "semesterNumber": 1,
+      "events": [
+        {
+          "id": "prog1-obl1-entrega",
+          "type": "entrega_obl",
+          "title": "Entrega OBL. 1 - Programación 1",
+          "date": "2026-06-01",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "prog1-parcial1-mat",
+          "type": "parcial",
+          "title": "Parcial 1 - Programación 1",
+          "date": "2026-04-28",
+          "startTime": "14:00",
+          "allDay": false,
+          "turno": "matutino",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "prog1-parcial1-noc",
+          "type": "parcial",
+          "title": "Parcial 1 - Programación 1",
+          "date": "2026-04-28",
+          "startTime": "20:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "prog1-planteo-obl1-obl2",
+          "type": "planteo_obl",
+          "title": "Planteo OBL. 1 y OBL. 2 - Programación 1",
+          "date": "2026-05-11",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "prog1-obl2-entrega",
+          "type": "entrega_obl",
+          "title": "Entrega OBL. 2 - Programación 1",
+          "date": "2026-06-29",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "prog1-parcial2-noc",
+          "type": "parcial",
+          "title": "Parcial 2 - Programación 1",
+          "date": "2026-07-06",
+          "startTime": "18:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "prog1-parcial2-mat",
+          "type": "parcial",
+          "title": "Parcial 2 - Programación 1",
+          "date": "2026-07-07",
+          "startTime": "09:00",
+          "allDay": false,
+          "turno": "matutino",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "prog1-consulta-cierre",
+          "type": "consulta",
+          "title": "Consulta cierre de curso - Programación 1",
+          "date": "2026-07-23",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        }
+      ]
+    },
+    {
+      "id": "calculo-1",
+      "name": "Cálculo en una variable",
+      "semesterNumber": 1,
+      "events": [
+        {
+          "id": "calc1-parcial1-mat",
+          "type": "parcial",
+          "title": "Parcial 1 - Cálculo en una variable",
+          "date": "2026-05-25",
+          "startTime": "14:00",
+          "allDay": false,
+          "turno": "matutino",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "calc1-parcial1-noc",
+          "type": "parcial",
+          "title": "Parcial 1 - Cálculo en una variable",
+          "date": "2026-05-25",
+          "startTime": "17:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "calc1-parcial2-noc",
+          "type": "parcial",
+          "title": "Parcial 2 - Cálculo en una variable",
+          "date": "2026-07-09",
+          "startTime": "18:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "notes": "Entrega de Ejercicios (VER EN AULAS)",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "calc1-parcial2-mat",
+          "type": "parcial",
+          "title": "Parcial 2 - Cálculo en una variable",
+          "date": "2026-07-10",
+          "startTime": "09:00",
+          "allDay": false,
+          "turno": "matutino",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "calc1-ejercicios",
+          "type": "entrega_ejercicios",
+          "title": "Entrega de Ejercicios - Cálculo en una variable",
+          "date": "2026-07-09",
+          "allDay": true,
+          "notes": "VER EN AULAS",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "calc1-2da-parcial2",
+          "type": "parcial_2da",
+          "title": "2da Instancia Parcial 2 - Cálculo en una variable",
+          "date": "2026-07-28",
+          "startTime": "14:00",
+          "allDay": false,
+          "notes": "Todos: 14:00 hs.",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "calc1-consulta-2da",
+          "type": "consulta",
+          "title": "Consulta 2da Instancia - Cálculo en una variable",
+          "date": "2026-07-20",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "calc1-consulta-cierre",
+          "type": "consulta",
+          "title": "Consulta cierre de curso - Cálculo en una variable",
+          "date": "2026-08-10",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        }
+      ]
+    },
+    {
+      "id": "algebra",
+      "name": "Álgebra lineal",
+      "semesterNumber": 1,
+      "events": [
+        {
+          "id": "alg-parcial1-mat",
+          "type": "parcial",
+          "title": "Parcial 1 - Álgebra lineal",
+          "date": "2026-05-05",
+          "startTime": "14:00",
+          "allDay": false,
+          "turno": "matutino",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "alg-parcial1-noc",
+          "type": "parcial",
+          "title": "Parcial 1 - Álgebra lineal",
+          "date": "2026-05-05",
+          "startTime": "19:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "alg-parcial2-noc",
+          "type": "parcial",
+          "title": "Parcial 2 - Álgebra lineal",
+          "date": "2026-07-13",
+          "startTime": "18:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "notes": "Entrega de Ejercicios (VER EN AULAS)",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "alg-parcial2-mat",
+          "type": "parcial",
+          "title": "Parcial 2 - Álgebra lineal",
+          "date": "2026-07-14",
+          "startTime": "09:00",
+          "allDay": false,
+          "turno": "matutino",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "alg-ejercicios",
+          "type": "entrega_ejercicios",
+          "title": "Entrega de Ejercicios - Álgebra lineal",
+          "date": "2026-07-13",
+          "allDay": true,
+          "notes": "VER EN AULAS",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "alg-2da-parcial2",
+          "type": "parcial_2da",
+          "title": "2da Instancia Parcial 2 - Álgebra lineal",
+          "date": "2026-08-04",
+          "startTime": "14:00",
+          "allDay": false,
+          "notes": "Todos: 14:00 hs.",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "alg-consulta-2da",
+          "type": "consulta",
+          "title": "Consulta 2da Instancia - Álgebra lineal",
+          "date": "2026-07-28",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "alg-consulta-cierre",
+          "type": "consulta",
+          "title": "Consulta cierre de curso - Álgebra lineal",
+          "date": "2026-08-17",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        }
+      ]
+    },
+    {
+      "id": "inicio-ing",
+      "name": "Iniciación a la ingeniería",
+      "semesterNumber": 1,
+      "events": [
+        {
+          "id": "inicio-planteo-obl",
+          "type": "planteo_obl",
+          "title": "Planteo OBL. - Iniciación a la Ingeniería",
+          "date": "2026-04-20",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "inicio-entrega-obl",
+          "type": "entrega_obl",
+          "title": "Entrega OBL. - Iniciación a la Ingeniería",
+          "date": "2026-07-20",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "inicio-2da-obl",
+          "type": "entrega_obl_2da",
+          "title": "2da. Instancia - Entrega OBL. - Iniciación a la Ingeniería",
+          "date": "2026-08-12",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "inicio-consulta-2da",
+          "type": "consulta",
+          "title": "Consulta 2da Instancia - Iniciación a la Ingeniería",
+          "date": "2026-08-03",
+          "startTime": "18:30",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "inicio-consulta-cierre",
+          "type": "consulta",
+          "title": "Consulta cierre de curso - Iniciación a la Ingeniería",
+          "date": "2026-08-24",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        }
+      ]
+    },
+    {
+      "id": "prog-2",
+      "name": "Programación 2",
+      "semesterNumber": 2,
+      "events": []
+    },
+    {
+      "id": "calculo-2",
+      "name": "Cálculo en varias variables",
+      "semesterNumber": 2,
+      "events": []
+    },
+    {
+      "id": "fisica-1",
+      "name": "Física 1",
+      "semesterNumber": 2,
+      "events": []
+    },
+    {
+      "id": "cde-1",
+      "name": "Circuitos y dispositivos eléctricos 1",
+      "semesterNumber": 2,
+      "events": []
+    },
+    {
+      "id": "prob-est",
+      "name": "Probabilidad y estadística",
+      "semesterNumber": 3,
+      "events": [
+        {
+          "id": "pe-parcial1-mat",
+          "type": "parcial",
+          "title": "Parcial 1 - Probabilidad y estadística",
+          "date": "2026-04-22",
+          "startTime": "14:00",
+          "allDay": false,
+          "turno": "matutino",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "pe-parcial1-noc",
+          "type": "parcial",
+          "title": "Parcial 1 - Probabilidad y estadística",
+          "date": "2026-04-22",
+          "startTime": "17:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "pe-parcial2-mat",
+          "type": "parcial",
+          "title": "Parcial 2 - Probabilidad y estadística",
+          "date": "2026-07-02",
+          "startTime": "09:00",
+          "allDay": false,
+          "turno": "matutino",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "pe-parcial2-noc",
+          "type": "parcial",
+          "title": "Parcial 2 - Probabilidad y estadística",
+          "date": "2026-07-02",
+          "startTime": "18:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "pe-ejercicios",
+          "type": "entrega_ejercicios",
+          "title": "Entrega de Ejercicios - Probabilidad y estadística",
+          "date": "2026-07-02",
+          "allDay": true,
+          "notes": "VER EN AULAS",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "pe-consulta-cierre",
+          "type": "consulta",
+          "title": "Consulta cierre de curso - Probabilidad y estadística",
+          "date": "2026-07-16",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        }
+      ]
+    },
+    {
+      "id": "calculo-vec",
+      "name": "Cálculo vectorial",
+      "semesterNumber": 3,
+      "events": [
+        {
+          "id": "cv-parcial1-mat",
+          "type": "parcial",
+          "title": "Parcial 1 - Cálculo vectorial",
+          "date": "2026-05-20",
+          "startTime": "08:00",
+          "allDay": false,
+          "turno": "matutino",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "cv-parcial2-mat",
+          "type": "parcial",
+          "title": "Parcial 2 - Cálculo vectorial",
+          "date": "2026-07-09",
+          "startTime": "09:00",
+          "allDay": false,
+          "turno": "matutino",
+          "notes": "Entrega de Ejercicios (VER EN AULAS)",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "cv-ejercicios",
+          "type": "entrega_ejercicios",
+          "title": "Entrega de Ejercicios - Cálculo vectorial",
+          "date": "2026-07-09",
+          "allDay": true,
+          "notes": "VER EN AULAS",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "cv-2da-parcial2",
+          "type": "parcial_2da",
+          "title": "2da Instancia Parcial 2 - Cálculo vectorial",
+          "date": "2026-07-31",
+          "startTime": "14:00",
+          "allDay": false,
+          "notes": "14:00 hs",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "cv-consulta-2da",
+          "type": "consulta",
+          "title": "Consulta 2da Instancia - Cálculo vectorial",
+          "date": "2026-07-21",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "cv-consulta-cierre",
+          "type": "consulta",
+          "title": "Consulta cierre de curso - Cálculo vectorial",
+          "date": "2026-08-11",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        }
+      ]
+    },
+    {
+      "id": "diseno-dig",
+      "name": "Diseño digital",
+      "semesterNumber": 3,
+      "events": [
+        {
+          "id": "dd-planteo-obl1",
+          "type": "planteo_obl",
+          "title": "Planteo OBL. 1 - Diseño digital",
+          "date": "2026-03-16",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "dd-entrega-obl1",
+          "type": "entrega_obl",
+          "title": "Entrega OBL. 1 - Diseño digital",
+          "date": "2026-04-28",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "dd-planteo-obl2",
+          "type": "planteo_obl",
+          "title": "Planteo OBL. 2 - Diseño digital",
+          "date": "2026-05-11",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "dd-parcial1-mat",
+          "type": "parcial",
+          "title": "Parcial 1 - Diseño digital",
+          "date": "2026-05-12",
+          "startTime": "08:00",
+          "allDay": false,
+          "turno": "matutino",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "dd-parcial2-mat",
+          "type": "parcial",
+          "title": "Parcial 2 y Entrega OBL. 2 - Diseño digital",
+          "date": "2026-07-06",
+          "startTime": "09:00",
+          "allDay": false,
+          "turno": "matutino",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "dd-2da-parcial2",
+          "type": "parcial_2da",
+          "title": "2da Instancia Parcial 2 - Diseño digital",
+          "date": "2026-08-05",
+          "startTime": "09:00",
+          "allDay": false,
+          "turno": "matutino",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "dd-consulta-2da",
+          "type": "consulta",
+          "title": "Consulta 2da Instancia - Diseño digital",
+          "date": "2026-07-20",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "dd-consulta-cierre",
+          "type": "consulta",
+          "title": "Consulta cierre de curso - Diseño digital",
+          "date": "2026-08-18",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        }
+      ]
+    },
+    {
+      "id": "cde-2",
+      "name": "Circuitos y dispositivos eléctricos 2",
+      "semesterNumber": 3,
+      "events": [
+        {
+          "id": "cde2-planteo-obl1",
+          "type": "planteo_obl",
+          "title": "Planteo OBL. 1 - Circuitos y dispositivos eléctricos 2",
+          "date": "2026-03-10",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "cde2-planteo-obl2",
+          "type": "planteo_obl",
+          "title": "Planteo OBL. 2 - Circuitos y dispositivos eléctricos 2",
+          "date": "2026-04-21",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "cde2-planteo-obl3",
+          "type": "planteo_obl",
+          "title": "Planteo OBL. 3 - Circuitos y dispositivos eléctricos 2",
+          "date": "2026-05-26",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "cde2-entrega-obl2",
+          "type": "entrega_obl",
+          "title": "Entrega OBL. 2 - Circuitos y dispositivos eléctricos 2",
+          "date": "2026-06-03",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "cde2-parcial1-mat",
+          "type": "parcial",
+          "title": "Parcial 1 y Entrega OBL. 1 - Circuitos y dispositivos eléctricos 2",
+          "date": "2026-05-07",
+          "startTime": "10:00",
+          "allDay": false,
+          "turno": "matutino",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "cde2-parcial2-mat",
+          "type": "parcial",
+          "title": "Parcial 2 y Entrega OBL. 3 - Circuitos y dispositivos eléctricos 2",
+          "date": "2026-06-29",
+          "startTime": "09:00",
+          "allDay": false,
+          "turno": "matutino",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "cde2-2da-parcial2",
+          "type": "parcial_2da",
+          "title": "2da Instancia Parcial 2 - Circuitos y dispositivos eléctricos 2",
+          "date": "2026-07-20",
+          "startTime": "09:00",
+          "allDay": false,
+          "turno": "matutino",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "cde2-consulta-2da",
+          "type": "consulta",
+          "title": "Consulta 2da Instancia - Circuitos y dispositivos eléctricos 2",
+          "date": "2026-07-13",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "cde2-consulta-cierre",
+          "type": "consulta",
+          "title": "Consulta cierre de curso - Circuitos y dispositivos eléctricos 2",
+          "date": "2026-07-30",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        }
+      ]
+    },
+    {
+      "id": "fisica-2",
+      "name": "Física 2",
+      "semesterNumber": 4,
+      "events": []
+    },
+    {
+      "id": "ec-dif",
+      "name": "Ecuaciones diferenciales",
+      "semesterNumber": 4,
+      "events": []
+    },
+    {
+      "id": "eda-1",
+      "name": "Estructuras de datos y algoritmos 1",
+      "semesterNumber": 4,
+      "events": []
+    },
+    {
+      "id": "pi-1",
+      "name": "Proyecto integrador 1",
+      "semesterNumber": 4,
+      "events": []
+    },
+    {
+      "id": "sdm",
+      "name": "Sistemas digitales y microprocesadores",
+      "semesterNumber": 5,
+      "events": [
+        {
+          "id": "sdm-planteo-obl",
+          "type": "planteo_obl",
+          "title": "Planteo OBL. - Sistemas Digitales y microprocesadores",
+          "date": "2026-05-06",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "sdm-entrega-obl",
+          "type": "entrega_obl",
+          "title": "Entrega OBL. - Sistemas Digitales y microprocesadores",
+          "date": "2026-06-24",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "sdm-parcial-noc",
+          "type": "parcial",
+          "title": "Parcial - Sistemas Digitales y microprocesadores",
+          "date": "2026-07-09",
+          "startTime": "18:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "notes": "Entrega de Ejercicios (VER EN AULAS)",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "sdm-ejercicios",
+          "type": "entrega_ejercicios",
+          "title": "Entrega de Ejercicios - Sistemas Digitales y microprocesadores",
+          "date": "2026-07-09",
+          "allDay": true,
+          "notes": "VER EN AULAS (PSIO)",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "sdm-2da-parcial",
+          "type": "parcial_2da",
+          "title": "2da Instancia Parcial - Sistemas Digitales y microprocesadores",
+          "date": "2026-08-05",
+          "startTime": "18:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "sdm-consulta-2da",
+          "type": "consulta",
+          "title": "Consulta 2da Instancia - Sistemas Digitales y microprocesadores",
+          "date": "2026-07-21",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "sdm-consulta-cierre",
+          "type": "consulta",
+          "title": "Consulta cierre de curso - Sistemas Digitales y microprocesadores",
+          "date": "2026-08-17",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        }
+      ]
+    },
+    {
+      "id": "syst-cont",
+      "name": "Señales y sistemas de tiempo continuo",
+      "semesterNumber": 5,
+      "events": [
+        {
+          "id": "sc-parcial1-noc",
+          "type": "parcial",
+          "title": "Parcial 1 - Señales y sistemas de tiempo continuo",
+          "date": "2026-04-27",
+          "startTime": "17:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "sc-parcial2-noc",
+          "type": "parcial",
+          "title": "Parcial 2 - Señales y sistemas de tiempo continuo",
+          "date": "2026-06-29",
+          "startTime": "18:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "notes": "Entrega de Ejercicios (VER EN AULAS)",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "sc-ejercicios",
+          "type": "entrega_ejercicios",
+          "title": "Entrega de Ejercicios - Señales y sistemas de tiempo continuo",
+          "date": "2026-06-29",
+          "allDay": true,
+          "notes": "VER EN AULAS",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "sc-2da-parcial2",
+          "type": "parcial_2da",
+          "title": "2da Instancia Parcial 2 - Señales y sistemas de tiempo continuo",
+          "date": "2026-07-20",
+          "startTime": "18:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "sc-consulta-2da",
+          "type": "consulta",
+          "title": "Consulta 2da Instancia - Señales y sistemas de tiempo continuo",
+          "date": "2026-07-13",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "sc-consulta-cierre",
+          "type": "consulta",
+          "title": "Consulta cierre de curso - Señales y sistemas de tiempo continuo",
+          "date": "2026-07-30",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        }
+      ]
+    },
+    {
+      "id": "ondas",
+      "name": "Ondas electromagnéticas",
+      "semesterNumber": 5,
+      "events": [
+        {
+          "id": "ondas-parcial1-noc",
+          "type": "parcial",
+          "title": "Parcial 1 - Ondas electromagnéticas",
+          "date": "2026-05-12",
+          "startTime": "17:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "ondas-parcial2-noc",
+          "type": "parcial",
+          "title": "Parcial 2 - Ondas electromagnéticas",
+          "date": "2026-07-06",
+          "startTime": "18:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "notes": "Entrega de Ejercicios y Laboratorio (VER EN AULAS)",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "ondas-ejercicios",
+          "type": "entrega_ejercicios",
+          "title": "Entrega de Ejercicios y Laboratorio - Ondas electromagnéticas",
+          "date": "2026-07-06",
+          "allDay": true,
+          "notes": "VER EN AULAS",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "ondas-2da-parcial2",
+          "type": "parcial_2da",
+          "title": "2da Instancia Parcial 2 - Ondas electromagnéticas",
+          "date": "2026-07-29",
+          "startTime": "18:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "ondas-consulta-2da",
+          "type": "consulta",
+          "title": "Consulta 2da Instancia - Ondas electromagnéticas",
+          "date": "2026-07-17",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "ondas-consulta-cierre",
+          "type": "consulta",
+          "title": "Consulta cierre de curso - Ondas electromagnéticas",
+          "date": "2026-08-10",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        }
+      ]
+    },
+    {
+      "id": "micro",
+      "name": "Microeconomía",
+      "semesterNumber": 5,
+      "events": [
+        {
+          "id": "micro-parcial1-noc",
+          "type": "parcial",
+          "title": "Parcial 1 - Microeconomía",
+          "date": "2026-04-23",
+          "startTime": "19:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "micro-parcial2-noc",
+          "type": "parcial",
+          "title": "Parcial 2 - Microeconomía",
+          "date": "2026-07-02",
+          "startTime": "18:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "micro-2da-parcial2",
+          "type": "parcial_2da",
+          "title": "2da Instancia Parcial 2 - Microeconomía",
+          "date": "2026-07-23",
+          "startTime": "18:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "micro-consulta-2da",
+          "type": "consulta",
+          "title": "Consulta 2da Instancia - Microeconomía",
+          "date": "2026-07-14",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "micro-consulta-cierre",
+          "type": "consulta",
+          "title": "Consulta cierre de curso - Microeconomía",
+          "date": "2026-08-04",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        }
+      ]
+    },
+    {
+      "id": "sist-din",
+      "name": "Sistemas dinámicos",
+      "semesterNumber": 6,
+      "events": []
+    },
+    {
+      "id": "syst-disc",
+      "name": "Señales y sistemas de tiempo discreto",
+      "semesterNumber": 6,
+      "events": []
+    },
+    {
+      "id": "redes-datos",
+      "name": "Redes de datos",
+      "semesterNumber": 6,
+      "events": []
+    },
+    {
+      "id": "pi-2",
+      "name": "Proyecto integrador 2",
+      "semesterNumber": 6,
+      "events": []
+    },
+    {
+      "id": "control",
+      "name": "Automatismos Industriales",
+      "semesterNumber": 7,
+      "events": [
+        {
+          "id": "ctrl-planteo-obl1",
+          "type": "planteo_obl",
+          "title": "Planteo OBL. 1 - Diseño de sistemas de control",
+          "date": "2026-04-06",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "ctrl-entrega-obl1-planteo-obl2",
+          "type": "entrega_obl",
+          "title": "Entrega OBL. 1 y Planteo OBL. 2 - Diseño de sistemas de control",
+          "date": "2026-05-14",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "ctrl-parcial1-noc",
+          "type": "parcial",
+          "title": "Parcial 1 y Entrega OBL. 2 - Diseño de sistemas de control",
+          "date": "2026-07-02",
+          "startTime": "18:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "ctrl-2da-parcial",
+          "type": "parcial_2da",
+          "title": "2da Instancia Parcial - Diseño de sistemas de control",
+          "date": "2026-08-04",
+          "startTime": "18:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "ctrl-consulta-2da",
+          "type": "consulta",
+          "title": "Consulta 2da Instancia - Diseño de sistemas de control",
+          "date": "2026-07-27",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "ctrl-consulta-cierre",
+          "type": "consulta",
+          "title": "Consulta cierre de curso - Diseño de sistemas de control",
+          "date": "2026-08-17",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        }
+      ]
+    },
+    {
+      "id": "so",
+      "name": "Sistemas operativos",
+      "semesterNumber": 7,
+      "events": [
+        {
+          "id": "so-planteo-obl",
+          "type": "planteo_obl",
+          "title": "Planteo OBL. - Sistemas operativos",
+          "date": "2026-03-25",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "so-parcial1-noc",
+          "type": "parcial",
+          "title": "Parcial 1 - Sistemas operativos",
+          "date": "2026-04-29",
+          "startTime": "20:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "so-parcial2-noc",
+          "type": "parcial",
+          "title": "Parcial 2 y Entrega OBL. - Sistemas operativos",
+          "date": "2026-07-09",
+          "startTime": "18:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "so-consulta-cierre",
+          "type": "consulta",
+          "title": "Consulta cierre de curso - Sistemas operativos",
+          "date": "2026-07-23",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        }
+      ]
+    },
+    {
+      "id": "instrum",
+      "name": "Instrumentación y medidas",
+      "semesterNumber": 7,
+      "events": [
+        {
+          "id": "instrum-planteo-obl",
+          "type": "planteo_obl",
+          "title": "Planteo OBL. - Instrumentación y medidas",
+          "date": "2026-04-06",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "instrum-entrega-obl",
+          "type": "entrega_obl",
+          "title": "Entrega OBL. - Instrumentación y medidas",
+          "date": "2026-06-16",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "instrum-parcial1-noc",
+          "type": "parcial",
+          "title": "Parcial 1 - Instrumentación y medidas",
+          "date": "2026-04-22",
+          "startTime": "17:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "instrum-parcial2-noc",
+          "type": "parcial",
+          "title": "Parcial 2 - Instrumentación y medidas",
+          "date": "2026-06-29",
+          "startTime": "18:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "instrum-2da-parcial2",
+          "type": "parcial_2da",
+          "title": "2da Instancia Parcial 2 - Instrumentación y medidas",
+          "date": "2026-07-20",
+          "startTime": "18:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "instrum-consulta-2da",
+          "type": "consulta",
+          "title": "Consulta 2da Instancia - Instrumentación y medidas",
+          "date": "2026-07-13",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "instrum-consulta-cierre",
+          "type": "consulta",
+          "title": "Consulta cierre de curso - Instrumentación y medidas",
+          "date": "2026-07-30",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        }
+      ]
+    },
+    {
+      "id": "elec-pot",
+      "name": "Electrónica de potencia",
+      "semesterNumber": 8,
+      "events": []
+    },
+    {
+      "id": "sist-emb",
+      "name": "Sistemas embebidos",
+      "semesterNumber": 8,
+      "events": []
+    },
+    {
+      "id": "pi-3",
+      "name": "Proyecto integrador 3",
+      "semesterNumber": 8,
+      "events": []
+    },
+    {
+      "id": "diseno-se",
+      "name": "Diseño de sistemas electrónicos",
+      "semesterNumber": 9,
+      "events": [
+        {
+          "id": "dse-planteo-obl1",
+          "type": "planteo_obl",
+          "title": "Planteo OBL. 1 - Diseño de sistemas electrónicos",
+          "date": "2026-03-25",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "dse-entrega-obl1",
+          "type": "entrega_obl",
+          "title": "Entrega OBL. 1 - Diseño de sistemas electrónicos",
+          "date": "2026-05-11",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "dse-planteo-obl2",
+          "type": "planteo_obl",
+          "title": "Planteo OBL. 2 - Diseño de sistemas electrónicos",
+          "date": "2026-05-13",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "dse-entrega-obl2",
+          "type": "entrega_obl",
+          "title": "Entrega OBL. 2 - Diseño de sistemas electrónicos",
+          "date": "2026-06-23",
+          "allDay": true,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "dse-parcial-noc",
+          "type": "parcial",
+          "title": "Parcial - Diseño de sistemas electrónicos",
+          "date": "2026-06-30",
+          "startTime": "18:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "dse-2da-parcial",
+          "type": "parcial_2da",
+          "title": "2da Instancia Parcial - Diseño de sistemas electrónicos",
+          "date": "2026-07-22",
+          "startTime": "18:30",
+          "allDay": false,
+          "turno": "nocturno",
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "dse-consulta-2da",
+          "type": "consulta",
+          "title": "Consulta 2da Instancia - Diseño de sistemas electrónicos",
+          "date": "2026-07-14",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        },
+        {
+          "id": "dse-consulta-cierre",
+          "type": "consulta",
+          "title": "Consulta cierre de curso - Diseño de sistemas electrónicos",
+          "date": "2026-08-04",
+          "startTime": "18:00",
+          "allDay": false,
+          "source": "bedelia_pdf"
+        }
+      ]
+    }
   ]
 }
