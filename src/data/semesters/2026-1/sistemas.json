@@ -2,50 +2,379 @@
   "id": "sistemas",
   "name": "Ingeniería en Sistemas",
   "subjects": [
-    { "id": "taller-tec-1", "name": "Taller de tecnologías 1", "semesterNumber": 1, "events": [] },
-    { "id": "prog-1", "name": "Programación 1", "semesterNumber": 1, "events": [] },
-    { "id": "algebra", "name": "Álgebra lineal", "semesterNumber": 1, "events": [] },
-    { "id": "calculo-1", "name": "Cálculo en una variable", "semesterNumber": 1, "events": [] },
-    { "id": "fund-comp", "name": "Fundamentos de computación", "semesterNumber": 2, "events": [] },
-    { "id": "prog-2", "name": "Programación 2", "semesterNumber": 2, "events": [] },
-    { "id": "mat-discreta", "name": "Matemática discreta", "semesterNumber": 2, "events": [] },
-    { "id": "fund-scf", "name": "Fundamentos de sistemas ciberfísicos", "semesterNumber": 2, "events": [] },
-    { "id": "logica", "name": "Lógica para computación", "semesterNumber": 3, "events": [] },
-    { "id": "eda-1", "name": "Estructuras de datos y algoritmos 1", "semesterNumber": 3, "events": [] },
-    { "id": "arq-sistemas", "name": "Arquitectura de sistemas", "semesterNumber": 3, "events": [] },
-    { "id": "prob-est", "name": "Probabilidad y estadística", "semesterNumber": 3, "events": [] },
-    { "id": "fund-is", "name": "Fundamentos de ingeniería de software", "semesterNumber": 4, "events": [] },
-    { "id": "eda-2", "name": "Estructuras de datos y algoritmos 2", "semesterNumber": 4, "events": [] },
-    { "id": "bd-1", "name": "Bases de datos 1", "semesterNumber": 4, "events": [] },
-    { "id": "so", "name": "Sistemas operativos", "semesterNumber": 4, "events": [] },
-    { "id": "teoria-comp", "name": "Teoría de la computación", "semesterNumber": 5, "events": [] },
-    { "id": "da-1", "name": "Diseño de aplicaciones 1", "semesterNumber": 5, "events": [] },
-    { "id": "bd-2", "name": "Bases de datos 2", "semesterNumber": 5, "events": [] },
-    { "id": "redes", "name": "Redes", "semesterNumber": 5, "events": [] },
-    { "id": "isa-1", "name": "Ingeniería de software ágil 1", "semesterNumber": 6, "events": [] },
-    { "id": "da-2", "name": "Diseño de aplicaciones 2", "semesterNumber": 6, "events": [] },
+    {
+      "id": "algebra",
+      "name": "Álgebra lineal",
+      "code": "2103",
+      "semesterNumber": 1,
+      "events": [
+        { "id": "alg-parcial1-mat", "type": "parcial", "title": "Parcial 1 - Álgebra lineal", "date": "2026-05-05", "startTime": "14:00", "endTime": "16:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "alg-parcial1-noc", "type": "parcial", "title": "Parcial 1 - Álgebra lineal", "date": "2026-05-05", "startTime": "19:30", "endTime": "21:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "alg-parcial2-noc", "type": "parcial", "title": "Parcial 2 - Álgebra lineal", "date": "2026-07-13", "startTime": "18:30", "endTime": "21:30", "allDay": false, "turno": "nocturno", "notes": "Entrega de Ejercicios (VER EN AULAS)", "source": "bedelia_pdf" },
+        { "id": "alg-parcial2-mat", "type": "parcial", "title": "Parcial 2 - Álgebra lineal", "date": "2026-07-14", "startTime": "09:00", "endTime": "12:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "alg-ejercicios", "type": "entrega_ejercicios", "title": "Entrega de Ejercicios - Álgebra lineal", "date": "2026-07-13", "allDay": true, "notes": "VER EN AULAS", "source": "bedelia_pdf" },
+        { "id": "alg-2da-parcial2", "type": "parcial_2da", "title": "2da Instancia Parcial 2 - Álgebra lineal", "date": "2026-08-04", "startTime": "14:00", "endTime": "17:00", "allDay": false, "notes": "Todos: 14:00 hs.", "source": "bedelia_pdf" },
+        { "id": "alg-consulta", "type": "consulta", "title": "Consulta 2da Instancia - Álgebra lineal", "date": "2026-07-28", "startTime": "18:00", "endTime": "19:00", "allDay": false, "source": "bedelia_pdf" },
+        { "id": "alg-cierre", "type": "cierre_curso", "title": "Cierre curso - Álgebra lineal", "date": "2026-08-17", "startTime": "18:00", "endTime": "19:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "calculo-1",
+      "name": "Cálculo en una variable",
+      "code": "7660",
+      "semesterNumber": 1,
+      "events": [
+        { "id": "calc-parcial1-mat", "type": "parcial", "title": "Parcial 1 - Cálculo en una variable", "date": "2026-05-25", "startTime": "14:00", "endTime": "16:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "calc-parcial1-noc", "type": "parcial", "title": "Parcial 1 - Cálculo en una variable", "date": "2026-05-25", "startTime": "17:30", "endTime": "19:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "calc-parcial2-noc", "type": "parcial", "title": "Parcial 2 - Cálculo en una variable", "date": "2026-07-09", "startTime": "18:30", "endTime": "21:30", "allDay": false, "turno": "nocturno", "notes": "Entrega de Ejercicios (VER EN AULAS)", "source": "bedelia_pdf" },
+        { "id": "calc-parcial2-mat", "type": "parcial", "title": "Parcial 2 - Cálculo en una variable", "date": "2026-07-10", "startTime": "09:00", "endTime": "12:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "calc-ejercicios", "type": "entrega_ejercicios", "title": "Entrega de Ejercicios - Cálculo en una variable", "date": "2026-07-09", "allDay": true, "notes": "VER EN AULAS", "source": "bedelia_pdf" },
+        { "id": "calc-2da-parcial2", "type": "parcial_2da", "title": "2da Instancia Parcial 2 - Cálculo en una variable", "date": "2026-07-28", "startTime": "14:00", "endTime": "17:00", "allDay": false, "notes": "Todos: 14:00 hs.", "source": "bedelia_pdf" },
+        { "id": "calc-consulta", "type": "consulta", "title": "Consulta 2da Instancia - Cálculo en una variable", "date": "2026-07-20", "startTime": "18:00", "endTime": "19:00", "allDay": false, "source": "bedelia_pdf" },
+        { "id": "calc-cierre", "type": "cierre_curso", "title": "Cierre curso - Cálculo en una variable", "date": "2026-08-10", "startTime": "18:00", "endTime": "19:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "prog-1",
+      "name": "Programación 1",
+      "code": "1479",
+      "semesterNumber": 1,
+      "events": [
+        { "id": "p1-planteo", "type": "planteo_obl", "title": "Planteo OBL 1 y OBL 2 - Programación 1", "date": "2026-05-11", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "p1-entrega1", "type": "entrega_obl", "title": "Entrega OBL 1 - Programación 1", "date": "2026-06-01", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "p1-entrega2", "type": "entrega_obl", "title": "Entrega OBL 2 - Programación 1", "date": "2026-06-29", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "p1-parcial1-mat", "type": "parcial", "title": "Parcial 1 - Programación 1", "date": "2026-04-28", "startTime": "14:00", "endTime": "16:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "p1-parcial1-noc", "type": "parcial", "title": "Parcial 1 - Programación 1", "date": "2026-04-28", "startTime": "20:30", "endTime": "22:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "p1-parcial2-noc", "type": "parcial", "title": "Parcial 2 - Programación 1", "date": "2026-07-06", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "p1-parcial2-mat", "type": "parcial", "title": "Parcial 2 - Programación 1", "date": "2026-07-07", "startTime": "09:00", "endTime": "11:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "p1-cierre", "type": "cierre_curso", "title": "Cierre curso - Programación 1", "date": "2026-07-23", "startTime": "18:00", "endTime": "19:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "taller-tec-1",
+      "name": "Taller de tecnologías 1",
+      "code": "7687",
+      "semesterNumber": 1,
+      "events": [
+        { "id": "tt1-planteo1", "type": "planteo_obl", "title": "Planteo OBL 1 - Taller de Tecnologías 1", "date": "2026-04-06", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "tt1-planteo2", "type": "planteo_obl", "title": "Planteo OBL 2 - Taller de Tecnologías 1", "date": "2026-05-14", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "tt1-entrega1", "type": "entrega_obl", "title": "Entrega OBL 1 - Taller de Tecnologías 1", "date": "2026-05-20", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "tt1-entrega2", "type": "entrega_obl", "title": "Entrega OBL 2 - Taller de Tecnologías 1", "date": "2026-07-16", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "tt1-cierre", "type": "cierre_curso", "title": "Cierre curso - Taller de Tecnologías 1", "date": "2026-07-30", "startTime": "18:00", "endTime": "19:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "fund-comp",
+      "name": "Fundamentos de computación",
+      "code": "6449",
+      "semesterNumber": 2,
+      "events": [
+        { "id": "fc-parcial1-mat", "type": "parcial", "title": "Parcial 1 - Fundamentos de computación (2 hs)", "date": "2026-05-05", "startTime": "14:00", "endTime": "16:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "fc-parcial1-noc", "type": "parcial", "title": "Parcial 1 - Fundamentos de computación (2 hs)", "date": "2026-05-05", "startTime": "20:30", "endTime": "22:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "fc-parcial2-noc", "type": "parcial_2da", "title": "Parcial 2 - Fundamentos de computación (2 hs)", "date": "2026-07-02", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "fc-ejercicios", "type": "entrega_ejercicios", "title": "Entrega de Ejercicios - Fundamentos de computación", "date": "2026-07-02", "allDay": true, "notes": "VER EN AULAS", "source": "bedelia_pdf" },
+        { "id": "fc-parcial2-mat", "type": "parcial_2da", "title": "Parcial 2 - Fundamentos de computación (2 hs)", "date": "2026-07-03", "startTime": "09:00", "endTime": "11:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "fc-cierre", "type": "cierre_curso", "title": "Cierre curso - Fundamentos de computación", "date": "2026-07-16", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "fund-scf",
+      "name": "Fundamentos de sistemas ciberfísicos",
+      "code": "7670",
+      "semesterNumber": 2,
+      "events": [
+        { "id": "fscf-parcial1-mat", "type": "parcial", "title": "Parcial 1 - Fund. de sistemas ciberfísicos (2 hs)", "date": "2026-05-11", "startTime": "14:00", "endTime": "16:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "fscf-parcial1-noc", "type": "parcial", "title": "Parcial 1 - Fund. de sistemas ciberfísicos (2 hs)", "date": "2026-05-11", "startTime": "17:30", "endTime": "19:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "fscf-parcial2-noc", "type": "parcial_2da", "title": "Parcial 2 - Fund. de sistemas ciberfísicos (2 hs)", "date": "2026-07-06", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "fscf-ejercicios", "type": "entrega_ejercicios", "title": "Entrega de Ejercicios - Fund. de sistemas ciberfísicos", "date": "2026-07-06", "allDay": true, "notes": "VER EN AULAS", "source": "bedelia_pdf" },
+        { "id": "fscf-parcial2-mat", "type": "parcial_2da", "title": "Parcial 2 - Fund. de sistemas ciberfísicos (2 hs)", "date": "2026-07-07", "startTime": "09:00", "endTime": "11:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "fscf-cierre", "type": "cierre_curso", "title": "Cierre curso - Fund. de sistemas ciberfísicos", "date": "2026-07-23", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "mat-discreta",
+      "name": "Matemática Discreta",
+      "code": "6580",
+      "semesterNumber": 2,
+      "events": [
+        { "id": "md-parcial1-mat", "type": "parcial", "title": "Parcial 1 - Matemática discreta (2 hs)", "date": "2026-04-29", "startTime": "14:00", "endTime": "16:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "md-parcial1-noc", "type": "parcial", "title": "Parcial 1 - Matemática discreta (2 hs)", "date": "2026-04-29", "startTime": "20:30", "endTime": "22:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "md-parcial2-noc", "type": "parcial_2da", "title": "Parcial 2 - Matemática discreta (3 hs)", "date": "2026-07-09", "startTime": "18:30", "endTime": "21:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "md-ejercicios", "type": "entrega_ejercicios", "title": "Entrega de Ejercicios - Matemática discreta", "date": "2026-07-09", "allDay": true, "notes": "VER EN AULAS", "source": "bedelia_pdf" },
+        { "id": "md-parcial2-mat", "type": "parcial_2da", "title": "Parcial 2 - Matemática discreta (3 hs)", "date": "2026-07-10", "startTime": "09:00", "endTime": "12:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "md-cierre", "type": "cierre_curso", "title": "Cierre curso - Matemática Discreta", "date": "2026-07-23", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "prog-2",
+      "name": "Programación 2",
+      "code": "1743",
+      "semesterNumber": 2,
+      "events": [
+        { "id": "p2-planteo1", "type": "planteo_obl", "title": "Planteo OBL. 1 - Programación 2", "date": "2026-04-20", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "p2-parcial1-mat", "type": "parcial", "title": "Parcial 1 - Programación 2 (2 hs)", "date": "2026-04-22", "startTime": "14:00", "endTime": "16:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "p2-parcial1-noc", "type": "parcial", "title": "Parcial 1 - Programación 2 (2 hs)", "date": "2026-04-22", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "p2-entrega1", "type": "entrega_obl", "title": "Entrega OBL. 1 y Lectura OBL. 2 - Programación 2", "date": "2026-05-19", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "p2-entrega2", "type": "entrega_obl", "title": "Entrega OBL. 2 - Programación 2", "date": "2026-06-22", "allDay": true, "notes": "Defensa a partir del 23/06", "source": "bedelia_pdf" },
+        { "id": "p2-parcial2da-noc", "type": "parcial_2da", "title": "Parcial 2da oportunidad - Programación 2 (2 hs)", "date": "2026-06-29", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "p2-parcial2da-mat", "type": "parcial_2da", "title": "Parcial 2da oportunidad - Programación 2 (2 hs)", "date": "2026-06-30", "startTime": "09:00", "endTime": "11:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "p2-cierre", "type": "cierre_curso", "title": "Cierre curso - Programación 2", "date": "2026-07-16", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "arq-sistemas",
+      "name": "Arquitectura de sistemas",
+      "code": "3831",
+      "semesterNumber": 3,
+      "events": [
+        { "id": "arqs-parcial1-mat", "type": "parcial", "title": "Parcial 1 y Planteo OBL - Arquitectura de sistemas (2hs)", "date": "2026-04-28", "startTime": "14:00", "endTime": "16:00", "allDay": false, "turno": "matutino", "notes": "Incluye planteo del obligatorio", "source": "bedelia_pdf" },
+        { "id": "arqs-parcial1-noc", "type": "parcial", "title": "Parcial 1 y Planteo OBL - Arquitectura de sistemas (2hs)", "date": "2026-04-28", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "notes": "Incluye planteo del obligatorio", "source": "bedelia_pdf" },
+        { "id": "arqs-entrega-obl", "type": "entrega_obl", "title": "Entrega OBL - Arquitectura de sistemas", "date": "2026-06-25", "allDay": true, "notes": "3 integrantes", "source": "bedelia_pdf" },
+        { "id": "arqs-parcial2-mat", "type": "parcial_2da", "title": "Parcial 2 - Arquitectura de sistemas (2hs)", "date": "2026-06-29", "startTime": "09:00", "endTime": "11:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "arqs-parcial2-noc", "type": "parcial_2da", "title": "Parcial 2 - Arquitectura de sistemas (2hs)", "date": "2026-06-29", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "arqs-cierre", "type": "consulta", "title": "Cierre curso - Arquitectura de sistemas", "date": "2026-07-14", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "eda-1",
+      "name": "Estructuras de datos y algoritmos 1",
+      "code": "1774",
+      "semesterNumber": 3,
+      "events": [
+        { "id": "eda1-parcial1-mat", "type": "parcial", "title": "Parcial 1 - Est. de datos y Algoritmos 1 (2hs)", "date": "2026-05-11", "startTime": "14:00", "endTime": "16:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "eda1-parcial1-noc", "type": "parcial", "title": "Parcial 1 - Est. de datos y Algoritmos 1 (2hs)", "date": "2026-05-11", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "eda1-parcial2-mat", "type": "parcial_2da", "title": "Parcial 2 - Est. de datos y Algoritmos 1 (2hs)", "date": "2026-07-06", "startTime": "09:00", "endTime": "11:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "eda1-parcial2-noc", "type": "parcial_2da", "title": "Parcial 2 - Est. de datos y Algoritmos 1 (2hs)", "date": "2026-07-06", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "eda1-ejercicios", "type": "entrega_ejercicios", "title": "Entrega de Ejercicios - Est. de datos y Algoritmos 1", "date": "2026-07-06", "allDay": true, "notes": "VER EN AULAS", "source": "bedelia_pdf" },
+        { "id": "eda1-cierre", "type": "consulta", "title": "Cierre curso - Est. de datos y Algoritmos 1", "date": "2026-07-21", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "logica",
+      "name": "Lógica para computación",
+      "code": "6563",
+      "semesterNumber": 3,
+      "events": [
+        { "id": "log-parcial1-mat", "type": "parcial", "title": "Parcial 1 - Lógica para computación (2hs)", "date": "2026-05-07", "startTime": "14:00", "endTime": "16:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "log-parcial1-noc", "type": "parcial", "title": "Parcial 1 - Lógica para computación (2hs)", "date": "2026-05-07", "startTime": "17:30", "endTime": "19:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "log-parcial2-mat", "type": "parcial_2da", "title": "Parcial 2 - Lógica para computación (2hs)", "date": "2026-07-09", "startTime": "09:00", "endTime": "11:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "log-parcial2-noc", "type": "parcial_2da", "title": "Parcial 2 - Lógica para computación (2hs)", "date": "2026-07-09", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "log-ejercicios", "type": "entrega_ejercicios", "title": "Entrega de Ejercicios - Lógica para computación", "date": "2026-07-09", "allDay": true, "notes": "VER EN AULAS", "source": "bedelia_pdf" },
+        { "id": "log-cierre", "type": "consulta", "title": "Cierre curso - Lógica para computación", "date": "2026-07-23", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "prob-est",
+      "name": "Probabilidad y estadística",
+      "code": "1780",
+      "semesterNumber": 3,
+      "events": [
+        { "id": "pe-parcial1-mat", "type": "parcial", "title": "Parcial 1 - Probabilidad y Estadística (2hs)", "date": "2026-04-22", "startTime": "14:00", "endTime": "16:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "pe-parcial1-noc", "type": "parcial", "title": "Parcial 1 - Probabilidad y Estadística (2hs)", "date": "2026-04-22", "startTime": "17:30", "endTime": "19:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "pe-parcial2-mat", "type": "parcial_2da", "title": "Parcial 2 - Probabilidad y Estadística (3hs)", "date": "2026-07-02", "startTime": "09:00", "endTime": "12:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "pe-parcial2-noc", "type": "parcial_2da", "title": "Parcial 2 - Probabilidad y Estadística (3hs)", "date": "2026-07-02", "startTime": "18:30", "endTime": "21:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "pe-ejercicios", "type": "entrega_ejercicios", "title": "Entrega de Ejercicios - Probabilidad y Estadística", "date": "2026-07-02", "allDay": true, "notes": "VER EN AULAS", "source": "bedelia_pdf" },
+        { "id": "pe-cierre", "type": "consulta", "title": "Cierre curso - Probabilidad y Estadística", "date": "2026-07-16", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "bd-1",
+      "name": "Bases de datos 1",
+      "code": "3837",
+      "semesterNumber": 4,
+      "events": [
+        { "id": "bd1-planteo1", "type": "planteo_obl", "title": "Planteo OBL 1 - BD1", "date": "2026-04-13", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "bd1-entrega1", "type": "entrega_obl", "title": "Entrega OBL 1 - BD1", "date": "2026-05-04", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "bd1-planteo2", "type": "planteo_obl", "title": "Planteo OBL 2 - BD1", "date": "2026-05-14", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "bd1-entrega2", "type": "entrega_obl", "title": "Entrega OBL 2 - BD1", "date": "2026-06-22", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "bd1-parcial-mat", "type": "parcial", "title": "Parcial - BD1", "date": "2026-07-02", "startTime": "09:00", "endTime": "11:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "bd1-parcial-noc", "type": "parcial", "title": "Parcial - BD1", "date": "2026-07-02", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "bd1-cierre", "type": "cierre_curso", "title": "Cierre curso - BD1", "date": "2026-07-16", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "eda-2",
+      "name": "Estructuras de datos y algoritmos 2",
+      "code": "1778",
+      "semesterNumber": 4,
+      "events": [
+        { "id": "eda2-planteo1", "type": "planteo_obl", "title": "Planteo OBL 1 - EDA 2", "date": "2026-03-24", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "eda2-parcial1-mat", "type": "parcial", "title": "Parcial 1 - EDA 2", "date": "2026-05-13", "startTime": "10:00", "endTime": "12:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "eda2-parcial1-noc", "type": "parcial", "title": "Parcial 1 - EDA 2", "date": "2026-05-13", "startTime": "17:30", "endTime": "19:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "eda2-entrega1", "type": "entrega_obl", "title": "Entrega OBL 1 y Planteo OBL 2 - EDA 2", "date": "2026-05-25", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "eda2-entrega2", "type": "entrega_obl", "title": "Entrega OBL 2 - EDA 2", "date": "2026-06-25", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "eda2-parcial2-mat", "type": "parcial", "title": "Parcial 2 - EDA 2", "date": "2026-07-06", "startTime": "09:00", "endTime": "11:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "eda2-parcial2-noc", "type": "parcial", "title": "Parcial 2 - EDA 2", "date": "2026-07-06", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "eda2-cierre", "type": "consulta", "title": "Cierre curso - EDA 2", "date": "2026-07-21", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "fund-is",
+      "name": "Fundamentos de ingeniería de software",
+      "code": "7669",
+      "semesterNumber": 4,
+      "events": [
+        { "id": "fis-planteo", "type": "planteo_obl", "title": "Planteo OBL 1 y 2 - Fund. IS", "date": "2026-03-23", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "fis-entrega1", "type": "entrega_obl", "title": "Entrega OBL 1 - Fund. IS", "date": "2026-05-19", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "fis-entrega2", "type": "entrega_obl", "title": "Entrega OBL 2 y Ejercicios - Fund. IS", "date": "2026-06-29", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "fis-2da-obl2", "type": "entrega_obl_2da", "title": "2da Instancia OBL 2 - Fund. IS", "date": "2026-07-20", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "fis-consulta", "type": "consulta", "title": "Consulta 2da Instancia - Fund. IS", "date": "2026-07-13", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" },
+        { "id": "fis-cierre", "type": "cierre_curso", "title": "Cierre curso - Fund. IS", "date": "2026-07-30", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "opt-algebra",
+      "name": "Optimización con álgebra lineal",
+      "code": "7690",
+      "semesterNumber": 4,
+      "events": [
+        { "id": "oal-parcial1-mat", "type": "parcial", "title": "Parcial 1 - Opt. álgebra lineal", "date": "2026-04-20", "startTime": "10:00", "endTime": "12:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "oal-parcial1-noc", "type": "parcial", "title": "Parcial 1 - Opt. álgebra lineal", "date": "2026-04-20", "startTime": "17:30", "endTime": "19:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "oal-parcial2-mat", "type": "parcial", "title": "Parcial 2 - Opt. álgebra lineal", "date": "2026-07-13", "startTime": "09:00", "endTime": "12:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "oal-parcial2-noc", "type": "parcial", "title": "Parcial 2 - Opt. álgebra lineal", "date": "2026-07-13", "startTime": "18:30", "endTime": "21:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "oal-ejercicios", "type": "entrega_ejercicios", "title": "Entrega de Ejercicios - Opt. álgebra lineal", "date": "2026-07-13", "allDay": true, "notes": "VER EN AULAS", "source": "bedelia_pdf" },
+        { "id": "oal-cierre", "type": "cierre_curso", "title": "Cierre curso - Opt. álgebra lineal", "date": "2026-07-28", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "so",
+      "name": "Sistemas operativos",
+      "code": "6409",
+      "semesterNumber": 4,
+      "events": [
+        { "id": "so-planteo", "type": "planteo_obl", "title": "Planteo OBL - SO", "date": "2026-03-25", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "so-parcial1-mat", "type": "parcial", "title": "Parcial 1 - SO", "date": "2026-04-27", "startTime": "08:00", "endTime": "10:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "so-parcial1-noc", "type": "parcial", "title": "Parcial 1 - SO", "date": "2026-04-29", "startTime": "20:30", "endTime": "22:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "so-parcial2-entrega", "type": "parcial", "title": "Parcial 2 y Entrega OBL - SO", "date": "2026-07-09", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "so-cierre", "type": "cierre_curso", "title": "Cierre curso - SO", "date": "2026-07-23", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "adm-general",
+      "name": "Administración general",
+      "code": "1781",
+      "semesterNumber": 5,
+      "events": [
+        { "id": "ag-parcial1-mat", "type": "parcial", "title": "Parcial 1 - Adm. general (2hs)", "date": "2026-04-23", "startTime": "14:00", "endTime": "16:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "ag-parcial1-noc", "type": "parcial", "title": "Parcial 1 - Adm. general (2hs)", "date": "2026-04-23", "startTime": "17:30", "endTime": "19:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "ag-parcial2-mat", "type": "parcial", "title": "Parcial 2 - Adm. general (2hs)", "date": "2026-07-13", "startTime": "09:00", "endTime": "11:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "ag-parcial2-noc", "type": "parcial", "title": "Parcial 2 - Adm. general (2hs)", "date": "2026-07-13", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "ag-ejercicios", "type": "entrega_ejercicios", "title": "Entrega Ejercicios - Adm. general", "date": "2026-07-13", "allDay": true, "notes": "VER EN AULAS", "source": "bedelia_pdf" },
+        { "id": "ag-cierre", "type": "cierre_curso", "title": "Cierre curso - Adm. general", "date": "2026-07-28", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "bd-2",
+      "name": "Bases de datos 2",
+      "code": "3839",
+      "semesterNumber": 5,
+      "events": [
+        { "id": "bd2-planteo", "type": "planteo_obl", "title": "Lectura OBL - BD2", "date": "2026-04-27", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "bd2-parcial1-mat", "type": "parcial", "title": "Parcial 1 - BD2 (2hs)", "date": "2026-05-28", "startTime": "14:00", "endTime": "16:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "bd2-parcial1-noc", "type": "parcial", "title": "Parcial 1 - BD2 (2hs)", "date": "2026-05-28", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "bd2-entrega", "type": "entrega_obl", "title": "Entrega OBL - BD2", "date": "2026-06-22", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "bd2-parcial2-mat", "type": "parcial", "title": "Parcial 2 - BD2 (2hs)", "date": "2026-07-09", "startTime": "09:00", "endTime": "11:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "bd2-parcial2-noc", "type": "parcial", "title": "Parcial 2 - BD2 (2hs)", "date": "2026-07-09", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "bd2-cierre", "type": "consulta", "title": "Cierre curso - BD2", "date": "2026-07-23", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "da-1",
+      "name": "Diseño de aplicaciones 1",
+      "code": "3924",
+      "semesterNumber": 5,
+      "events": [
+        { "id": "da1-planteo1", "type": "planteo_obl", "title": "Planteo OBL 1 - DA1", "date": "2026-04-06", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "da1-entrega1", "type": "entrega_obl", "title": "Entrega OBL 1 y Planteo OBL 2 - DA1", "date": "2026-05-14", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "da1-entrega2", "type": "entrega_obl", "title": "Entrega OBL 2 - DA1", "date": "2026-06-17", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "da1-parcial-mat", "type": "parcial", "title": "Parcial - DA1 (2hs)", "date": "2026-07-06", "startTime": "09:00", "endTime": "11:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "da1-parcial-noc", "type": "parcial", "title": "Parcial - DA1 (2hs)", "date": "2026-07-06", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "da1-2da-parcial", "type": "parcial_2da", "title": "2da Instancia Parcial - DA1 (2hs)", "date": "2026-07-29", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "da1-consulta-2da", "type": "consulta", "title": "Consulta 2da instancia - DA1", "date": "2026-07-20", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" },
+        { "id": "da1-cierre", "type": "consulta", "title": "Cierre curso - DA1", "date": "2026-08-11", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "redes",
+      "name": "Redes",
+      "code": "3838",
+      "semesterNumber": 5,
+      "events": [
+        { "id": "red-parcial1-mat", "type": "parcial", "title": "Parcial 1 - Redes (3hs)", "date": "2026-05-05", "startTime": "14:00", "endTime": "17:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "red-parcial1-noc", "type": "parcial", "title": "Parcial 1 - Redes (3hs)", "date": "2026-05-05", "startTime": "18:30", "endTime": "21:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "red-parcial2-mat", "type": "parcial", "title": "Parcial 2 - Redes (3hs)", "date": "2026-06-29", "startTime": "09:00", "endTime": "12:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "red-parcial2-noc", "type": "parcial", "title": "Parcial 2 - Redes (3hs)", "date": "2026-06-29", "startTime": "18:30", "endTime": "21:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "red-ejercicios", "type": "entrega_ejercicios", "title": "Entrega Ejercicios - Redes", "date": "2026-06-29", "allDay": true, "notes": "VER EN AULAS", "source": "bedelia_pdf" },
+        { "id": "red-2da-parcial", "type": "parcial_2da", "title": "2da Instancia - Redes (3hs)", "date": "2026-07-20", "startTime": "18:30", "endTime": "21:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "red-consulta-2da", "type": "consulta", "title": "Consulta 2da instancia - Redes", "date": "2026-07-13", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" },
+        { "id": "red-cierre", "type": "consulta", "title": "Cierre curso - Redes", "date": "2026-08-06", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "teoria-comp",
+      "name": "Teoría de la computación",
+      "code": "6452",
+      "semesterNumber": 5,
+      "events": [
+        { "id": "tc-parcial-mat", "type": "parcial", "title": "Parcial - Teoría comp. (2hs)", "date": "2026-07-02", "startTime": "09:00", "endTime": "11:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "tc-parcial-noc", "type": "parcial", "title": "Parcial - Teoría comp. (2hs)", "date": "2026-07-02", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "tc-ejercicios", "type": "entrega_ejercicios", "title": "Entrega de Ejercicios - Teoría comp.", "date": "2026-07-02", "allDay": true, "notes": "VER EN AULAS", "source": "bedelia_pdf" },
+        { "id": "tc-cierre", "type": "cierre_curso", "title": "Cierre curso - Teoría comp.", "date": "2026-07-16", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "da-2",
+      "name": "Diseño de aplicaciones 2",
+      "code": "3925",
+      "semesterNumber": 6,
+      "events": [
+        { "id": "da2-planteo1", "type": "planteo_obl", "title": "Planteo OBL 1 - DA2", "date": "2026-03-24", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "da2-entrega1", "type": "entrega_obl", "title": "Entrega OBL 1 y Planteo OBL 2 - DA2", "date": "2026-04-29", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "da2-entrega2", "type": "entrega_obl", "title": "Entrega OBL 2 - DA2", "date": "2026-06-16", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "da2-parcial-mat", "type": "parcial", "title": "Parcial - DA2 (2hs)", "date": "2026-07-06", "startTime": "09:00", "endTime": "11:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "da2-parcial-noc", "type": "parcial", "title": "Parcial - DA2 (2hs)", "date": "2026-07-06", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "da2-2da-parcial", "type": "parcial_2da", "title": "2da Instancia Parcial - DA2 (2hs)", "date": "2026-07-27", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "da2-consulta-2da", "type": "consulta", "title": "Consulta 2da Instancia - DA2", "date": "2026-07-20", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" },
+        { "id": "da2-cierre", "type": "cierre_curso", "title": "Cierre curso - DA2", "date": "2026-08-12", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "isa-1",
+      "name": "Ingeniería de software ágil 1",
+      "code": "5313",
+      "semesterNumber": 6,
+      "events": [
+        { "id": "isa1-parcial-mat", "type": "parcial", "title": "Parcial - ISA1 (2hs)", "date": "2026-07-02", "startTime": "09:00", "endTime": "11:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "isa1-parcial-noc", "type": "parcial", "title": "Parcial - ISA1 (2hs)", "date": "2026-07-02", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "isa1-ejercicios", "type": "entrega_ejercicios", "title": "Entrega de Ejercicios - ISA1", "date": "2026-07-02", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "isa1-2da-parcial", "type": "parcial_2da", "title": "2da Instancia Parcial - ISA1 (2hs)", "date": "2026-07-23", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "isa1-consulta-2da", "type": "consulta", "title": "Consulta 2da Instancia - ISA1", "date": "2026-07-14", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" },
+        { "id": "isa1-cierre", "type": "cierre_curso", "title": "Cierre curso - ISA1", "date": "2026-08-04", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "prog-redes",
+      "name": "Programación de redes",
+      "code": "6456",
+      "semesterNumber": 6,
+      "events": [
+        { "id": "pr-planteo1", "type": "planteo_obl", "title": "Planteo OBL 1 - Prog. de redes", "date": "2026-03-16", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "pr-entrega1", "type": "entrega_obl", "title": "Entrega OBL 1 y Planteo OBL 2 - Prog. de redes", "date": "2026-04-23", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "pr-entrega2", "type": "entrega_obl", "title": "Entrega OBL 2 y Planteo OBL 3 - Prog. de redes", "date": "2026-05-26", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "pr-entrega3", "type": "entrega_obl", "title": "Entrega OBL 3 - Prog. de redes", "date": "2026-06-22", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "pr-parcial-mat", "type": "parcial", "title": "Parcial - Prog. de redes (2hs)", "date": "2026-06-29", "startTime": "09:00", "endTime": "11:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "pr-parcial-noc", "type": "parcial", "title": "Parcial - Prog. de redes (2hs)", "date": "2026-06-29", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "pr-cierre", "type": "cierre_curso", "title": "Cierre curso - Prog. de redes", "date": "2026-07-14", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
     {
       "id": "taller-tec-2",
       "name": "Taller de tecnologías 2",
       "semesterNumber": 6,
       "events": [
         { "id": "tt2-planteo", "type": "planteo_obl", "title": "Planteo OBL - Taller de Tecnologías 2", "date": "2026-04-13", "allDay": true, "source": "bedelia_pdf" },
-        { "id": "tt2-entrega", "type": "entrega_obl", "title": "ENTREGA OBL y Ejercicios - Taller de Tecnologías 2", "date": "2026-06-25", "allDay": true, "source": "bedelia_pdf" }
-      ]
-    },
-    { "id": "prog-redes", "name": "Programación de redes", "semesterNumber": 6, "events": [] },
-    {
-      "id": "isa-2",
-      "name": "Ingeniería de software ágil 2",
-      "code": "5314",
-      "semesterNumber": 7,
-      "events": [
-        { "id": "isa2-planteo", "type": "planteo_obl", "title": "Planteo OBL - Ing. de software ágil 2", "date": "2026-04-06", "allDay": true, "source": "bedelia_pdf" },
-        { "id": "isa2-entrega", "type": "entrega_obl", "title": "ENTREGA OBL - Ing. de software ágil 2", "date": "2026-06-22", "allDay": true, "source": "bedelia_pdf" },
-        { "id": "isa2-parcial", "type": "parcial", "title": "PARCIAL - Ing. de software ágil 2", "date": "2026-07-01", "startTime": "09:00", "endTime": "11:00", "allDay": false, "notes": "Noct. 18:30 + Entrega Ejercicios", "source": "bedelia_pdf" },
-        { "id": "isa2-2da-entrega", "type": "entrega_obl_2da", "title": "2da Instancia Entrega OBL - Ing. de software ágil 2", "date": "2026-07-22", "allDay": true, "source": "bedelia_pdf" },
-        { "id": "isa2-consulta", "type": "consulta", "title": "2da Instancia consulta - Ing. de software ágil 2", "date": "2026-07-14", "startTime": "18:00", "endTime": "19:00", "allDay": false, "source": "bedelia_pdf" },
-        { "id": "isa2-cierre", "type": "cierre_curso", "title": "Cierre curso - Ing. de software ágil 2", "date": "2026-08-06", "startTime": "18:00", "endTime": "19:00", "allDay": false, "source": "bedelia_pdf" }
+        { "id": "tt2-entrega", "type": "entrega_obl", "title": "ENTREGA OBL y Ejercicios - Taller de Tecnologías 2", "date": "2026-06-25", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "tt2-cierre", "type": "cierre_curso", "title": "Cierre curso - Taller de Tecnologías 2", "date": "2026-07-14", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" }
       ]
     },
     {
@@ -60,6 +389,20 @@
         { "id": "arq-2da-parcial", "type": "parcial_2da", "title": "2da Instancia PARCIAL - Arquitectura de software", "date": "2026-07-27", "startTime": "18:30", "endTime": "20:30", "allDay": false, "source": "bedelia_pdf" },
         { "id": "arq-consulta", "type": "consulta", "title": "2da Instancia consulta - Arquitectura de software", "date": "2026-07-14", "startTime": "18:00", "endTime": "19:00", "allDay": false, "source": "bedelia_pdf" },
         { "id": "arq-cierre", "type": "cierre_curso", "title": "Cierre curso - Arquitectura de software", "date": "2026-08-06", "startTime": "18:00", "endTime": "19:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "seguridad",
+      "name": "Aspectos de seguridad de sistemas informáticos",
+      "planName": "Materia de Seguridad informática",
+      "code": "1492",
+      "semesterNumber": 7,
+      "events": [
+        { "id": "seg-planteo", "type": "planteo_obl", "title": "Planteo OBL - Aspectos de seguridad en sistemas informáticos", "date": "2026-05-07", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "seg-parcial-mat", "type": "parcial", "title": "PARCIAL - Aspectos de seguridad (Mat. 10:00)", "date": "2026-05-25", "startTime": "10:00", "endTime": "12:00", "allDay": false, "notes": "Mat. 10:00", "source": "bedelia_pdf" },
+        { "id": "seg-parcial-noct", "type": "parcial", "title": "PARCIAL - Aspectos de seguridad (Noct. 19:30)", "date": "2026-05-26", "startTime": "19:30", "endTime": "21:30", "allDay": false, "notes": "Noct. 19:30", "source": "bedelia_pdf" },
+        { "id": "seg-entrega", "type": "entrega_obl", "title": "ENTREGA OBL y Ejercicios - Aspectos de seguridad", "date": "2026-07-08", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "seg-cierre", "type": "cierre_curso", "title": "Cierre curso - Aspectos de seguridad", "date": "2026-07-23", "startTime": "18:00", "endTime": "19:00", "allDay": false, "source": "bedelia_pdf" }
       ]
     },
     {
@@ -78,20 +421,6 @@
       ]
     },
     {
-      "id": "seguridad",
-      "name": "Aspectos de seguridad de sistemas informáticos",
-      "planName": "Materia de Seguridad informática",
-      "code": "1492",
-      "semesterNumber": 7,
-      "events": [
-        { "id": "seg-planteo", "type": "planteo_obl", "title": "Planteo OBL - Aspectos de seguridad en sistemas informáticos", "date": "2026-05-07", "allDay": true, "source": "bedelia_pdf" },
-        { "id": "seg-parcial-mat", "type": "parcial", "title": "PARCIAL - Aspectos de seguridad (Mat. 10:00)", "date": "2026-05-25", "startTime": "10:00", "endTime": "12:00", "allDay": false, "notes": "Mat. 10:00", "source": "bedelia_pdf" },
-        { "id": "seg-parcial-noct", "type": "parcial", "title": "PARCIAL - Aspectos de seguridad (Noct. 19:30)", "date": "2026-05-26", "startTime": "19:30", "endTime": "21:30", "allDay": false, "notes": "Noct. 19:30", "source": "bedelia_pdf" },
-        { "id": "seg-entrega", "type": "entrega_obl", "title": "ENTREGA OBL y Ejercicios - Aspectos de seguridad", "date": "2026-07-08", "allDay": true, "source": "bedelia_pdf" },
-        { "id": "seg-cierre", "type": "cierre_curso", "title": "Cierre curso - Aspectos de seguridad", "date": "2026-07-23", "startTime": "18:00", "endTime": "19:00", "allDay": false, "source": "bedelia_pdf" }
-      ]
-    },
-    {
       "id": "ia",
       "name": "Inteligencia artificial",
       "code": "3912",
@@ -103,6 +432,78 @@
         { "id": "ia-consulta", "type": "consulta", "title": "2da Instancia consulta - Inteligencia artificial", "date": "2026-07-07", "startTime": "18:00", "endTime": "19:00", "allDay": false, "source": "bedelia_pdf" },
         { "id": "ia-2da-parcial", "type": "parcial_2da", "title": "2da Instancia PARCIAL 2 - Inteligencia artificial", "date": "2026-07-30", "startTime": "18:30", "endTime": "20:30", "allDay": false, "source": "bedelia_pdf" },
         { "id": "ia-cierre", "type": "cierre_curso", "title": "Cierre curso - Inteligencia artificial", "date": "2026-08-11", "startTime": "18:00", "endTime": "19:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "isa-2",
+      "name": "Ingeniería de software ágil 2",
+      "code": "5314",
+      "semesterNumber": 7,
+      "events": [
+        { "id": "isa2-planteo", "type": "planteo_obl", "title": "Planteo OBL - Ing. de software ágil 2", "date": "2026-04-06", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "isa2-entrega", "type": "entrega_obl", "title": "ENTREGA OBL - Ing. de software ágil 2", "date": "2026-06-22", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "isa2-parcial", "type": "parcial", "title": "PARCIAL - Ing. de software ágil 2", "date": "2026-07-01", "startTime": "09:00", "endTime": "11:00", "allDay": false, "notes": "Noct. 18:30 + Entrega Ejercicios", "source": "bedelia_pdf" },
+        { "id": "isa2-2da-entrega", "type": "entrega_obl_2da", "title": "2da Instancia Entrega OBL - Ing. de software ágil 2", "date": "2026-07-22", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "isa2-consulta", "type": "consulta", "title": "2da Instancia consulta - Ing. de software ágil 2", "date": "2026-07-14", "startTime": "18:00", "endTime": "19:00", "allDay": false, "source": "bedelia_pdf" },
+        { "id": "isa2-cierre", "type": "cierre_curso", "title": "Cierre curso - Ing. de software ágil 2", "date": "2026-08-06", "startTime": "18:00", "endTime": "19:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "arq-software-practica",
+      "name": "Arquitectura de software en la práctica",
+      "code": "6455",
+      "semesterNumber": 8,
+      "events": [
+        { "id": "asp-planteo1", "type": "planteo_obl", "title": "Planteo OBL 1 - Arq. software en la práctica", "date": "2026-03-23", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "asp-entrega1", "type": "entrega_obl", "title": "Entrega OBL 1 y Planteo OBL 2 - Arq. software en la práctica", "date": "2026-05-07", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "asp-entrega2", "type": "entrega_obl", "title": "Entrega OBL 2 - Arq. software en la práctica", "date": "2026-06-22", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "asp-parcial-noc", "type": "parcial", "title": "Parcial - Arq. software en la práctica (2hs)", "date": "2026-07-02", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "asp-2da-obl2", "type": "entrega_obl_2da", "title": "2da Instancia OBL 2 - Arq. software en la práctica", "date": "2026-07-27", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "asp-consulta-2da", "type": "consulta", "title": "Consulta 2da Instancia - Arq. software en la práctica", "date": "2026-07-14", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" },
+        { "id": "asp-cierre", "type": "cierre_curso", "title": "Cierre curso - Arq. software en la práctica", "date": "2026-08-06", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "ihc",
+      "name": "Interacción humano-computadora",
+      "code": "7676",
+      "semesterNumber": 8,
+      "events": [
+        { "id": "ihc-planteo1", "type": "planteo_obl", "title": "Planteo OBL 1 - IHC", "date": "2026-03-24", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "ihc-entrega1", "type": "entrega_obl", "title": "Entrega OBL 1 y Planteo OBL 2 - IHC", "date": "2026-05-13", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "ihc-entrega2", "type": "entrega_obl", "title": "Entrega OBL 2 - IHC", "date": "2026-06-25", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "ihc-parcial-noc", "type": "parcial", "title": "Parcial - IHC (2hs)", "date": "2026-07-06", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "ihc-2da-parcial", "type": "parcial_2da", "title": "2da Instancia Parcial - IHC (2hs)", "date": "2026-08-03", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "ihc-consulta-2da", "type": "consulta", "title": "Consulta 2da Instancia - IHC", "date": "2026-07-20", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" },
+        { "id": "ihc-cierre", "type": "cierre_curso", "title": "Cierre curso - IHC", "date": "2026-08-13", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "dpbt",
+      "name": "Desarrollo de productos de base tecnológica",
+      "code": "7666",
+      "semesterNumber": 8,
+      "events": [
+        { "id": "dpbt-planteo", "type": "planteo_obl", "title": "Planteo OBL - DPBT", "date": "2026-04-20", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "dpbt-parcial-entrega", "type": "parcial", "title": "Parcial y Entrega OBL - DPBT (2hs)", "date": "2026-06-29", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "dpbt-2da-obl2", "type": "entrega_obl_2da", "title": "2da Instancia OBL 2 - DPBT", "date": "2026-07-22", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "dpbt-consulta-2da", "type": "consulta", "title": "Consulta 2da Instancia - DPBT", "date": "2026-07-14", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" },
+        { "id": "dpbt-cierre", "type": "cierre_curso", "title": "Cierre curso - DPBT", "date": "2026-08-04", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" }
+      ]
+    },
+    {
+      "id": "hab-gerenciales",
+      "name": "Habilidades Gerenciales en Grupos de Proyecto",
+      "code": "5733",
+      "semesterNumber": 9,
+      "events": [
+        { "id": "hg-planteo", "type": "planteo_obl", "title": "Planteo OBL - Hab. Gerenciales", "date": "2026-05-04", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "hg-entrega", "type": "entrega_obl", "title": "Entrega OBL - Hab. Gerenciales", "date": "2026-06-11", "allDay": true, "source": "bedelia_pdf" },
+        { "id": "hg-parcial-mat", "type": "parcial", "title": "Parcial - Hab. Gerenciales (2hs)", "date": "2026-07-15", "startTime": "09:00", "endTime": "11:00", "allDay": false, "turno": "matutino", "source": "bedelia_pdf" },
+        { "id": "hg-parcial-noc", "type": "parcial", "title": "Parcial - Hab. Gerenciales (2hs)", "date": "2026-07-15", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "hg-2da-parcial", "type": "parcial_2da", "title": "2da Instancia Parcial - Hab. Gerenciales (2hs)", "date": "2026-08-05", "startTime": "18:30", "endTime": "20:30", "allDay": false, "turno": "nocturno", "source": "bedelia_pdf" },
+        { "id": "hg-consulta-2da", "type": "consulta", "title": "Consulta 2da Instancia - Hab. Gerenciales", "date": "2026-07-28", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" },
+        { "id": "hg-cierre", "type": "cierre_curso", "title": "Cierre curso - Hab. Gerenciales", "date": "2026-08-18", "startTime": "18:00", "allDay": false, "source": "bedelia_pdf" }
       ]
     }
   ]
