@@ -69,29 +69,29 @@ export function CalendarView({ subjects, selectedSubjects }: CalendarViewProps) 
       <div className="flex items-center justify-between">
         <button
           onClick={prevMonth}
-          className="p-2 rounded-lg text-zinc-600 hover:text-zinc-300 hover:bg-zinc-900 transition-all"
+          className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
         >
           <ChevronLeft className="w-4 h-4" />
         </button>
         <h2 className="text-sm font-medium tracking-wide">
-          <span className="text-zinc-200">{monthNames[month]}</span>{" "}
-          <span className="text-zinc-600">{year}</span>
+          {monthNames[month]}{" "}
+          <span className="text-muted-foreground">{year}</span>
         </h2>
         <button
           onClick={nextMonth}
-          className="p-2 rounded-lg text-zinc-600 hover:text-zinc-300 hover:bg-zinc-900 transition-all"
+          className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
         >
           <ChevronRight className="w-4 h-4" />
         </button>
       </div>
 
       {/* Grid */}
-      <div className="rounded-xl border border-zinc-800/80 bg-zinc-950/50 backdrop-blur-sm overflow-hidden">
+      <div className="rounded-xl border border-border bg-card overflow-hidden">
         <div className="grid grid-cols-7">
           {["LU", "MA", "MI", "JU", "VI", "SA", "DO"].map((d) => (
             <div
               key={d}
-              className="text-center text-[10px] tabular-nums text-zinc-600 tracking-wider py-3 border-b border-zinc-800/50"
+              className="text-center text-[10px] font-semibold text-muted-foreground/50 uppercase tracking-wider py-3 border-b border-border"
             >
               {d}
             </div>
@@ -101,11 +101,11 @@ export function CalendarView({ subjects, selectedSubjects }: CalendarViewProps) 
           {days.map((data, i) => (
             <div
               key={i}
-              className={`min-h-[5rem] p-1.5 border-b border-r border-zinc-800/30 transition-colors ${
+              className={`min-h-[5rem] p-1.5 border-b border-r border-border/50 transition-colors ${
                 !data
-                  ? "bg-zinc-950/30"
+                  ? "bg-muted/30"
                   : data.events.length > 0
-                  ? "bg-zinc-900/40"
+                  ? "bg-[#ef063d]/[0.03]"
                   : ""
               }`}
             >
@@ -115,7 +115,7 @@ export function CalendarView({ subjects, selectedSubjects }: CalendarViewProps) 
                     className={`text-[11px] tabular-nums inline-flex items-center justify-center w-6 h-6 rounded-md ${
                       isToday(data.day)
                         ? "bg-[#ef063d] text-white font-bold shadow-[0_0_12px_rgba(239,6,61,0.4)]"
-                        : "text-zinc-600"
+                        : "text-muted-foreground"
                     }`}
                   >
                     {data.day}
@@ -135,7 +135,7 @@ export function CalendarView({ subjects, selectedSubjects }: CalendarViewProps) 
                       );
                     })}
                     {data.events.length > 3 && (
-                      <div className="text-[8px] text-zinc-600 pl-1">
+                      <div className="text-[8px] text-muted-foreground pl-1">
                         +{data.events.length - 3}
                       </div>
                     )}
@@ -149,8 +149,8 @@ export function CalendarView({ subjects, selectedSubjects }: CalendarViewProps) 
 
       {/* Event list */}
       {monthEvents.length > 0 && (
-        <div className="rounded-xl border border-zinc-800/80 bg-zinc-950/50 backdrop-blur-sm p-4 space-y-3">
-          <div className="text-[10px] tabular-nums text-zinc-600 uppercase tracking-wider">
+        <div className="rounded-xl border border-border bg-card p-4 space-y-3">
+          <div className="text-[10px] font-semibold text-muted-foreground/50 uppercase tracking-wider">
             {monthNames[month]} {year}
           </div>
           <div className="space-y-0.5">
@@ -160,19 +160,19 @@ export function CalendarView({ subjects, selectedSubjects }: CalendarViewProps) 
               return (
                 <div
                   key={event.id}
-                  className="flex items-center gap-3 py-2.5 px-3 rounded-lg hover:bg-zinc-900/60 transition-colors group"
+                  className="flex items-center gap-3 py-2.5 px-3 rounded-lg hover:bg-accent transition-colors group"
                 >
-                  <span className="text-sm tabular-nums font-bold text-zinc-600 group-hover:text-zinc-400 min-w-[1.5rem] text-right tabular-nums transition-colors">
+                  <span className="text-sm font-bold tabular-nums text-muted-foreground group-hover:text-foreground min-w-[1.5rem] text-right transition-colors">
                     {parseInt(day)}
                   </span>
                   <div
                     className={`${color.bg} w-0.5 h-7 rounded-full flex-shrink-0 opacity-80`}
                   />
                   <div className="flex-1 min-w-0">
-                    <p className="text-[13px] text-zinc-200 font-medium truncate">
+                    <p className="text-[13px] font-medium truncate">
                       {event.title}
                     </p>
-                    <p className="text-[11px] text-zinc-600">
+                    <p className="text-[11px] text-muted-foreground">
                       {event.allDay
                         ? "Todo el dia"
                         : `${event.startTime} - ${event.endTime}`}
@@ -192,17 +192,17 @@ export function CalendarView({ subjects, selectedSubjects }: CalendarViewProps) 
       )}
 
       {selectedSubjects.size > 0 && monthEvents.length === 0 && (
-        <p className="text-sm text-zinc-600 text-center py-8 tabular-nums">
+        <p className="text-sm text-muted-foreground text-center py-8">
           Sin eventos en {monthNames[month].toLowerCase()}
         </p>
       )}
 
       {selectedSubjects.size === 0 && (
         <div className="text-center py-16 space-y-2">
-          <p className="text-zinc-500 text-sm">
-            Selecciona materias para ver eventos
+          <p className="text-muted-foreground text-sm">
+            Selecciona tus materias para ver los eventos
           </p>
-          <p className="text-zinc-700 text-xs">
+          <p className="text-muted-foreground/50 text-xs">
             Usa &quot;Todas&quot; para seleccionar todas
           </p>
         </div>

@@ -32,14 +32,14 @@ export function SubjectFilter({
   const subjectsWithEvents = subjects.filter(hasEvents);
 
   return (
-    <div className="rounded-xl border border-zinc-800/80 bg-zinc-950/50 backdrop-blur-sm p-4 space-y-3">
+    <div className="rounded-xl border border-border bg-card p-4 space-y-3">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
+          <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
             Materias
           </span>
           {selected.size > 0 && (
-            <span className="text-[11px] tabular-nums text-[#ef063d] bg-[#661020]/50 px-1.5 py-0.5 rounded">
+            <span className="text-[11px] tabular-nums text-[#ef063d] bg-[#ef063d]/10 px-1.5 py-0.5 rounded">
               {selected.size}
             </span>
           )}
@@ -47,13 +47,13 @@ export function SubjectFilter({
         <div className="flex gap-3">
           <button
             onClick={onSelectAll}
-            className="text-[11px] text-zinc-600 hover:text-[#ef063d] transition-colors"
+            className="text-[11px] text-muted-foreground hover:text-[#ef063d] transition-colors"
           >
             Todas
           </button>
           <button
             onClick={onDeselectAll}
-            className="text-[11px] text-zinc-600 hover:text-zinc-400 transition-colors"
+            className="text-[11px] text-muted-foreground hover:text-foreground transition-colors"
           >
             Ninguna
           </button>
@@ -61,12 +61,12 @@ export function SubjectFilter({
       </div>
 
       {subjectsWithEvents.length === 0 && (
-        <p className="text-[11px] text-zinc-700 py-2">
+        <p className="text-[11px] text-muted-foreground/60 py-2">
           Sin eventos cargados aun.
         </p>
       )}
 
-      <div className="space-y-3 max-h-[55vh] overflow-y-auto pr-1 [&::-webkit-scrollbar]:w-[3px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-zinc-700/50 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-zinc-600/70 [scrollbar-width:thin] [scrollbar-color:rgba(113,113,122,0.4)_transparent]">
+      <div className="space-y-3 max-h-[55vh] overflow-y-auto pr-1 [&::-webkit-scrollbar]:w-[3px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-muted-foreground/20 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-muted-foreground/40 [scrollbar-width:thin] [scrollbar-color:rgba(113,113,122,0.2)_transparent]">
         {semesters.map(([semNum, subs]) => {
           if (
             subs.every((s) => !hasEvents(s)) &&
@@ -76,8 +76,8 @@ export function SubjectFilter({
 
           return (
             <div key={semNum}>
-              <div className="text-[10px] tabular-nums text-zinc-700 uppercase tracking-wider mb-1">
-                sem {semNum}
+              <div className="text-[10px] font-semibold text-muted-foreground/50 uppercase tracking-wider mb-1.5">
+                Semestre {semNum}
               </div>
               <div className="space-y-px">
                 {subs.map((subject) => {
@@ -90,8 +90,8 @@ export function SubjectFilter({
                         eventCount === 0
                           ? "opacity-20 cursor-default"
                           : isSelected
-                          ? "bg-[#661020]/20 border border-[#ef063d]/20"
-                          : "hover:bg-zinc-900/50 border border-transparent"
+                          ? "bg-[#ef063d]/[0.06] border border-[#ef063d]/15"
+                          : "hover:bg-accent border border-transparent"
                       }`}
                     >
                       <Checkbox
@@ -100,13 +100,13 @@ export function SubjectFilter({
                           onChange(subject.id, checked === true)
                         }
                         disabled={eventCount === 0}
-                        className="data-[state=checked]:bg-[#ef063d] data-[state=checked]:border-[#ef063d] border-zinc-700"
+                        className="data-[state=checked]:bg-[#ef063d] data-[state=checked]:border-[#ef063d]"
                       />
-                      <span className="text-[13px] text-zinc-300 flex-1 leading-tight">
+                      <span className="text-[13px] flex-1 leading-tight">
                         {subject.name}
                       </span>
                       {eventCount > 0 && (
-                        <span className="text-[11px] tabular-nums text-zinc-600">
+                        <span className="text-[11px] tabular-nums text-muted-foreground">
                           {eventCount}
                         </span>
                       )}

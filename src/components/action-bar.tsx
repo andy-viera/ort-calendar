@@ -35,9 +35,9 @@ export function ActionBar({ careerId, selectedSubjects }: ActionBarProps) {
   const hasSelection = selectedSubjects.length > 0;
 
   const btnActive =
-    "bg-zinc-900 text-zinc-200 border border-zinc-800 hover:border-[#ef063d]/40 hover:text-white transition-all";
+    "bg-[#661020] text-white border border-[#ef063d]/30 shadow-[0_0_20px_rgba(239,6,61,0.15)] hover:shadow-[0_0_30px_rgba(239,6,61,0.3)] hover:bg-[#7a1426] transition-all";
   const btnDisabled =
-    "bg-zinc-900/40 text-zinc-700 cursor-not-allowed border border-zinc-800/40";
+    "bg-muted text-muted-foreground/40 cursor-not-allowed border border-border";
 
   return (
     <div className="space-y-2">
@@ -69,7 +69,9 @@ export function ActionBar({ careerId, selectedSubjects }: ActionBarProps) {
         href={hasSelection ? getDownloadUrl(careerId, selectedSubjects) : "#"}
         download={hasSelection ? `ort-${careerId}.ics` : undefined}
         className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-medium w-full ${
-          hasSelection ? btnActive : btnDisabled
+          hasSelection
+            ? "bg-muted text-foreground border border-border hover:border-[#ef063d]/30 transition-all"
+            : btnDisabled
         }`}
         onClick={(e) => !hasSelection && e.preventDefault()}
       >

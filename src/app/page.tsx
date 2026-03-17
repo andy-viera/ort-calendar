@@ -6,6 +6,7 @@ import { CareerSelector } from "@/components/career-selector";
 import { SubjectFilter } from "@/components/subject-filter";
 import { CalendarView } from "@/components/calendar-view";
 import { ActionBar } from "@/components/action-bar";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { Github } from "lucide-react";
 
 export default function Home() {
@@ -50,31 +51,35 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#09090b] text-white relative">
-      {/* Subtle warm glow */}
-      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#ef063d]/[0.04] rounded-full blur-[150px] pointer-events-none" />
-
+    <div className="min-h-screen bg-background text-foreground relative">
       {/* Header */}
-      <header className="relative sticky top-0 z-50 backdrop-blur-2xl bg-[#09090b]/80 border-b border-white/[0.04]">
+      <header className="relative sticky top-0 z-50 backdrop-blur-2xl bg-background/80 border-b border-border">
         <div className="max-w-5xl mx-auto px-5 py-4 flex items-center justify-between">
           <h1 className="text-base font-semibold tracking-tight">
             <span className="text-[#ef063d]">ORT</span>{" "}
-            <span className="text-zinc-200">Calendar</span>
+            Calendar
           </h1>
-          <a
-            href="/about"
-            className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors"
-          >
-            Acerca de
-          </a>
+          <div className="flex items-center gap-2">
+            <a
+              href="/about"
+              className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Acerca de
+            </a>
+            <ThemeToggle />
+          </div>
         </div>
       </header>
 
       <main className="relative max-w-5xl mx-auto px-5 py-10 space-y-8">
         {/* Hero */}
-        <p className="text-zinc-400 text-[15px]">
-          Tus parciales y entregas en tu calendario, en un click.
-        </p>
+        <div className="space-y-4">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
+            Tus parciales y entregas,
+            <br />
+            <span className="text-muted-foreground">en un click.</span>
+          </h2>
+        </div>
 
         {/* Career selector */}
         <CareerSelector
@@ -106,15 +111,15 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="relative border-t border-white/[0.04] mt-16">
-        <div className="max-w-5xl mx-auto px-5 py-5 flex items-center justify-between text-xs text-zinc-600">
+      <footer className="relative border-t border-border mt-16">
+        <div className="max-w-5xl mx-auto px-5 py-5 flex items-center justify-between text-xs text-muted-foreground">
           <span>
             by{" "}
             <a
               href="https://github.com/andy-viera"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-zinc-400 transition-colors"
+              className="hover:text-foreground transition-colors"
             >
               andy-viera
             </a>
@@ -123,7 +128,7 @@ export default function Home() {
             href="https://github.com/andy-viera/ort-calendar"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 hover:text-zinc-400 transition-colors"
+            className="flex items-center gap-1.5 hover:text-foreground transition-colors"
           >
             <Github className="w-3.5 h-3.5" />
             GitHub
