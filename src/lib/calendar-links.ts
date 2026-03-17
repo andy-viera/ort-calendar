@@ -1,4 +1,4 @@
-const BASE_URL = "https://ortcal.aviera.me";
+const BASE_URL = "https://semester-events.vercel.app";
 
 export function getIcsUrl(careerId: string, subjectIds?: string[]): string {
   const base = `${BASE_URL}/api/cal/${careerId}.ics`;
