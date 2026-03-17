@@ -35,11 +35,11 @@ export function SubjectFilter({
     <div className="rounded-xl border border-border bg-card p-4 space-y-3">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+          <span className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
             Materias
           </span>
           {selected.size > 0 && (
-            <span className="text-[11px] tabular-nums text-[#ef063d] bg-[#ef063d]/10 px-1.5 py-0.5 rounded">
+            <span className="text-[11px] font-mono text-[#ef063d] bg-[#ef063d]/10 px-1.5 py-0.5 rounded">
               {selected.size}
             </span>
           )}
@@ -76,8 +76,8 @@ export function SubjectFilter({
 
           return (
             <div key={semNum}>
-              <div className="text-[10px] font-semibold text-muted-foreground/50 uppercase tracking-wider mb-1.5">
-                Semestre {semNum}
+              <div className="text-[10px] font-mono font-bold text-muted-foreground/50 uppercase tracking-widest mb-1.5">
+                sem {semNum}
               </div>
               <div className="space-y-px">
                 {subs.map((subject) => {
@@ -106,7 +106,7 @@ export function SubjectFilter({
                         {subject.name}
                       </span>
                       {eventCount > 0 && (
-                        <span className="text-[11px] tabular-nums text-muted-foreground">
+                        <span className="text-[11px] font-mono text-muted-foreground">
                           {eventCount}
                         </span>
                       )}

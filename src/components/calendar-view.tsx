@@ -91,7 +91,7 @@ export function CalendarView({ subjects, selectedSubjects }: CalendarViewProps) 
           {["LU", "MA", "MI", "JU", "VI", "SA", "DO"].map((d) => (
             <div
               key={d}
-              className="text-center text-[10px] font-semibold text-muted-foreground/50 uppercase tracking-wider py-3 border-b border-border"
+              className="text-center text-[10px] font-semibold text-muted-foreground/50 uppercase tracking-widest py-3 border-b border-border"
             >
               {d}
             </div>
@@ -112,7 +112,7 @@ export function CalendarView({ subjects, selectedSubjects }: CalendarViewProps) 
               {data && (
                 <>
                   <span
-                    className={`text-[11px] tabular-nums inline-flex items-center justify-center w-6 h-6 rounded-md ${
+                    className={`text-[11px] font-mono inline-flex items-center justify-center w-6 h-6 rounded-md ${
                       isToday(data.day)
                         ? "bg-[#ef063d] text-white font-bold shadow-[0_0_12px_rgba(239,6,61,0.4)]"
                         : "text-muted-foreground"
@@ -150,7 +150,7 @@ export function CalendarView({ subjects, selectedSubjects }: CalendarViewProps) 
       {/* Event list */}
       {monthEvents.length > 0 && (
         <div className="rounded-xl border border-border bg-card p-4 space-y-3">
-          <div className="text-[10px] font-semibold text-muted-foreground/50 uppercase tracking-wider">
+          <div className="text-[10px] font-semibold text-muted-foreground/50 uppercase tracking-widest">
             {monthNames[month]} {year}
           </div>
           <div className="space-y-0.5">
@@ -162,7 +162,7 @@ export function CalendarView({ subjects, selectedSubjects }: CalendarViewProps) 
                   key={event.id}
                   className="flex items-center gap-3 py-2.5 px-3 rounded-lg hover:bg-accent transition-colors group"
                 >
-                  <span className="text-sm font-bold tabular-nums text-muted-foreground group-hover:text-foreground min-w-[1.5rem] text-right transition-colors">
+                  <span className="text-sm font-bold font-mono text-muted-foreground group-hover:text-foreground min-w-[1.5rem] text-right transition-colors">
                     {parseInt(day)}
                   </span>
                   <div

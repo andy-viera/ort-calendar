@@ -51,13 +51,25 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground relative">
+    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      {/* Dot grid bg */}
+      <div
+        className="fixed inset-0 opacity-[0.03] dark:opacity-[0.03]"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, currentColor 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
+        }}
+      />
+      {/* Top glow */}
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#ef063d]/[0.06] dark:bg-[#ef063d]/[0.08] rounded-full blur-[120px] pointer-events-none" />
+
       {/* Header */}
       <header className="relative sticky top-0 z-50 backdrop-blur-2xl bg-background/80 border-b border-border">
         <div className="max-w-5xl mx-auto px-5 py-4 flex items-center justify-between">
           <h1 className="text-base font-semibold tracking-tight">
-            <span className="text-[#ef063d]">ORT</span>{" "}
-            Calendar
+            <span className="text-[#ef063d] font-bold">ORT</span>{" "}
+            <span className="text-muted-foreground">Calendar</span>
           </h1>
           <div className="flex items-center gap-2">
             <a
