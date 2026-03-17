@@ -68,7 +68,7 @@ export default function Home() {
       <header className="relative sticky top-0 z-50 backdrop-blur-2xl bg-background/80 border-b border-border">
         <div className="max-w-5xl mx-auto px-5 py-4 flex items-center justify-between">
           <h1 className="text-base font-semibold tracking-tight">
-            <span className="text-[#ef063d] font-bold">ORT</span>{" "}
+            <span style={{ color: "#ef063d" }} className="font-bold">ORT</span>{" "}
             <span className="text-muted-foreground">Calendar</span>
           </h1>
           <div className="flex items-center gap-2">
