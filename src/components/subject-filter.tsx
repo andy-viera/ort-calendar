@@ -35,11 +35,11 @@ export function SubjectFilter({
     <div className="rounded-xl border border-zinc-800/80 bg-zinc-950/50 backdrop-blur-sm p-4 space-y-3">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className="text-[11px] font-semibold uppercase tracking-widest text-zinc-500">
+          <span className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
             Materias
           </span>
           {selected.size > 0 && (
-            <span className="text-[11px] font-mono text-[#ef063d] bg-[#661020]/50 px-1.5 py-0.5 rounded">
+            <span className="text-[11px] tabular-nums text-[#ef063d] bg-[#661020]/50 px-1.5 py-0.5 rounded">
               {selected.size}
             </span>
           )}
@@ -76,7 +76,7 @@ export function SubjectFilter({
 
           return (
             <div key={semNum}>
-              <div className="text-[10px] font-mono text-zinc-700 uppercase tracking-widest mb-1">
+              <div className="text-[10px] tabular-nums text-zinc-700 uppercase tracking-wider mb-1">
                 sem {semNum}
               </div>
               <div className="space-y-px">
@@ -106,7 +106,7 @@ export function SubjectFilter({
                         {subject.name}
                       </span>
                       {eventCount > 0 && (
-                        <span className="text-[11px] font-mono text-zinc-600">
+                        <span className="text-[11px] tabular-nums text-zinc-600">
                           {eventCount}
                         </span>
                       )}

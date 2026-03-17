@@ -9,8 +9,12 @@ export function getIcsUrl(careerId: string, subjectIds?: string[]): string {
 }
 
 export function getGoogleCalendarUrl(careerId: string, subjectIds?: string[]): string {
+  // Google Calendar expects the URL with webcal:// or https:// passed directly to cid
+  // without double-encoding. It subscribes to the .ics feed.
   const icsUrl = getIcsUrl(careerId, subjectIds);
-  return `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(icsUrl)}`;
+  // Use webcal:// protocol which Google handles better for subscriptions
+  const webcalUrl = icsUrl.replace("https://", "webcal://");
+  return `https://calendar.google.com/calendar/r?cid=${webcalUrl}`;
 }
 
 export function getWebcalUrl(careerId: string, subjectIds?: string[]): string {

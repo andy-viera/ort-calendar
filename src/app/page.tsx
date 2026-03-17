@@ -50,28 +50,17 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#09090b] text-white relative overflow-hidden">
-      {/* Subtle grid bg */}
-      <div
-        className="fixed inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, #ffffff 1px, transparent 1px)",
-          backgroundSize: "24px 24px",
-        }}
-      />
-      {/* Top glow */}
-      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#ef063d]/10 rounded-full blur-[120px] pointer-events-none" />
+    <div className="min-h-screen bg-[#09090b] text-white relative">
+      {/* Subtle warm glow */}
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#ef063d]/[0.04] rounded-full blur-[150px] pointer-events-none" />
 
       {/* Header */}
-      <header className="relative sticky top-0 z-50 backdrop-blur-2xl bg-[#09090b]/70 border-b border-white/[0.04]">
-        <div className="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <h1 className="text-base font-medium tracking-tight">
-              <span className="text-[#ef063d] font-bold">ORT</span>{" "}
-              <span className="text-zinc-300">Calendar</span>
-            </h1>
-          </div>
+      <header className="relative sticky top-0 z-50 backdrop-blur-2xl bg-[#09090b]/80 border-b border-white/[0.04]">
+        <div className="max-w-5xl mx-auto px-5 py-4 flex items-center justify-between">
+          <h1 className="text-base font-semibold tracking-tight">
+            <span className="text-[#ef063d]">ORT</span>{" "}
+            <span className="text-zinc-200">Calendar</span>
+          </h1>
           <a
             href="/about"
             className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors"
@@ -81,15 +70,11 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="relative max-w-6xl mx-auto px-5 py-10 space-y-10">
+      <main className="relative max-w-5xl mx-auto px-5 py-10 space-y-8">
         {/* Hero */}
-        <div className="space-y-4">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-            Tus parciales y entregas,
-            <br />
-            <span className="text-zinc-500">en un click.</span>
-          </h2>
-        </div>
+        <p className="text-zinc-400 text-[15px]">
+          Tus parciales y entregas en tu calendario, en un click.
+        </p>
 
         {/* Career selector */}
         <CareerSelector
@@ -121,9 +106,19 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="relative border-t border-white/[0.04] mt-20">
-        <div className="max-w-6xl mx-auto px-5 py-5 flex items-center justify-between text-xs text-zinc-600">
-          <span>by <a href="https://github.com/andy-viera" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-400 transition-colors">andy-viera</a></span>
+      <footer className="relative border-t border-white/[0.04] mt-16">
+        <div className="max-w-5xl mx-auto px-5 py-5 flex items-center justify-between text-xs text-zinc-600">
+          <span>
+            by{" "}
+            <a
+              href="https://github.com/andy-viera"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-zinc-400 transition-colors"
+            >
+              andy-viera
+            </a>
+          </span>
           <a
             href="https://github.com/andy-viera/ort-calendar"
             target="_blank"

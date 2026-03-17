@@ -91,7 +91,7 @@ export function CalendarView({ subjects, selectedSubjects }: CalendarViewProps) 
           {["LU", "MA", "MI", "JU", "VI", "SA", "DO"].map((d) => (
             <div
               key={d}
-              className="text-center text-[10px] font-mono text-zinc-600 tracking-widest py-3 border-b border-zinc-800/50"
+              className="text-center text-[10px] tabular-nums text-zinc-600 tracking-wider py-3 border-b border-zinc-800/50"
             >
               {d}
             </div>
@@ -112,7 +112,7 @@ export function CalendarView({ subjects, selectedSubjects }: CalendarViewProps) 
               {data && (
                 <>
                   <span
-                    className={`text-[11px] font-mono inline-flex items-center justify-center w-6 h-6 rounded-md ${
+                    className={`text-[11px] tabular-nums inline-flex items-center justify-center w-6 h-6 rounded-md ${
                       isToday(data.day)
                         ? "bg-[#ef063d] text-white font-bold shadow-[0_0_12px_rgba(239,6,61,0.4)]"
                         : "text-zinc-600"
@@ -150,7 +150,7 @@ export function CalendarView({ subjects, selectedSubjects }: CalendarViewProps) 
       {/* Event list */}
       {monthEvents.length > 0 && (
         <div className="rounded-xl border border-zinc-800/80 bg-zinc-950/50 backdrop-blur-sm p-4 space-y-3">
-          <div className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+          <div className="text-[10px] tabular-nums text-zinc-600 uppercase tracking-wider">
             {monthNames[month]} {year}
           </div>
           <div className="space-y-0.5">
@@ -162,7 +162,7 @@ export function CalendarView({ subjects, selectedSubjects }: CalendarViewProps) 
                   key={event.id}
                   className="flex items-center gap-3 py-2.5 px-3 rounded-lg hover:bg-zinc-900/60 transition-colors group"
                 >
-                  <span className="text-sm font-mono font-bold text-zinc-600 group-hover:text-zinc-400 min-w-[1.5rem] text-right tabular-nums transition-colors">
+                  <span className="text-sm tabular-nums font-bold text-zinc-600 group-hover:text-zinc-400 min-w-[1.5rem] text-right tabular-nums transition-colors">
                     {parseInt(day)}
                   </span>
                   <div
@@ -192,7 +192,7 @@ export function CalendarView({ subjects, selectedSubjects }: CalendarViewProps) 
       )}
 
       {selectedSubjects.size > 0 && monthEvents.length === 0 && (
-        <p className="text-sm text-zinc-600 text-center py-8 font-mono">
+        <p className="text-sm text-zinc-600 text-center py-8 tabular-nums">
           Sin eventos en {monthNames[month].toLowerCase()}
         </p>
       )}
@@ -202,8 +202,8 @@ export function CalendarView({ subjects, selectedSubjects }: CalendarViewProps) 
           <p className="text-zinc-500 text-sm">
             Selecciona materias para ver eventos
           </p>
-          <p className="text-zinc-700 text-xs font-mono">
-            click &quot;Todas&quot; para seleccionar todas
+          <p className="text-zinc-700 text-xs">
+            Usa &quot;Todas&quot; para seleccionar todas
           </p>
         </div>
       )}
