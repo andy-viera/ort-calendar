@@ -101,7 +101,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="relative max-w-5xl mx-auto px-5 py-10 space-y-8">
+      <main className="relative max-w-5xl mx-auto px-5 py-10 pb-32 space-y-8">
         {/* Hero */}
         <div className="space-y-4">
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">

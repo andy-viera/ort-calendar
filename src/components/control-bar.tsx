@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import type { Turno } from "@/lib/types";
 import { TURNO_LABELS } from "@/lib/types";
 import {
@@ -53,19 +53,6 @@ export function ControlBar({
 }: ControlBarProps) {
   const hasSelection = selectedSubjects.length > 0;
   const sentinelRef = useRef<HTMLDivElement>(null);
-  const [isFloating, setIsFloating] = useState(false);
-
-  useEffect(() => {
-    const sentinel = sentinelRef.current;
-    if (!sentinel) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => setIsFloating(!entry.isIntersecting),
-      { threshold: 0 }
-    );
-    observer.observe(sentinel);
-    return () => observer.disconnect();
-  }, []);
 
   const btnActive =
     "bg-[#661020] text-white border border-[#ef063d]/30 shadow-[0_0_20px_rgba(239,6,61,0.15)] hover:shadow-[0_0_30px_rgba(239,6,61,0.3)] hover:bg-[#7a1426] transition-all";
@@ -74,11 +61,7 @@ export function ControlBar({
 
   const bar = (
     <div
-      className={`rounded-xl border border-border bg-card transition-all duration-300 ${
-        isFloating
-          ? "fixed bottom-4 left-1/2 -translate-x-1/2 z-40 w-[min(calc(100%-2.5rem),64rem)] backdrop-blur-2xl bg-card/95 shadow-[0_-4px_40px_rgba(0,0,0,0.3)] border-[#ef063d]/20"
-          : ""
-      }`}
+      className="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 w-[min(calc(100%-2.5rem),64rem)] rounded-xl border border-border/50 backdrop-blur-2xl bg-card/90 shadow-[0_0_50px_rgba(0,0,0,0.4),0_0_20px_rgba(239,6,61,0.08)]"
     >
       <div className="flex flex-col sm:flex-row sm:items-stretch">
         {/* Calendar buttons */}
@@ -172,11 +155,8 @@ export function ControlBar({
 
   return (
     <>
-      {/* Sentinel — when this scrolls out of view, the bar floats */}
       <div ref={sentinelRef} className="h-0" />
       {bar}
-      {/* Spacer when floating to prevent content jump */}
-      {isFloating && <div className="h-[108px] sm:h-[88px]" />}
     </>
   );
 }
