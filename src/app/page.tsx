@@ -118,6 +118,22 @@ export default function Home() {
           onChange={handleCareerChange}
         />
 
+        {/* Action bar - always visible */}
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+          <div className="flex-1">
+            <ActionBar
+              careerId={selectedCareer}
+              selectedSubjects={Array.from(selectedSubjects)}
+            />
+          </div>
+          {hasTurnoData && (
+            <TurnoFilter
+              selected={selectedTurnos}
+              onChange={handleTurnoChange}
+            />
+          )}
+        </div>
+
         {/* Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6">
           <div className="space-y-4">
@@ -127,16 +143,6 @@ export default function Home() {
               onChange={handleSubjectChange}
               onSelectAll={handleSelectAll}
               onDeselectAll={handleDeselectAll}
-            />
-            {hasTurnoData && (
-              <TurnoFilter
-                selected={selectedTurnos}
-                onChange={handleTurnoChange}
-              />
-            )}
-            <ActionBar
-              careerId={selectedCareer}
-              selectedSubjects={Array.from(selectedSubjects)}
             />
           </div>
 

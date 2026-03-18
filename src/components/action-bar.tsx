@@ -40,35 +40,33 @@ export function ActionBar({ careerId, selectedSubjects }: ActionBarProps) {
     "bg-muted text-muted-foreground/40 cursor-not-allowed border border-border";
 
   return (
-    <div className="space-y-2">
-      <div className="grid grid-cols-2 gap-2">
-        <a
-          href={hasSelection ? getGoogleCalendarUrl(careerId, selectedSubjects) : "#"}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-medium ${
-            hasSelection ? btnActive : btnDisabled
-          }`}
-          onClick={(e) => !hasSelection && e.preventDefault()}
-        >
-          <GoogleIcon className="w-4 h-4" />
-          Google
-        </a>
-        <a
-          href={hasSelection ? getWebcalUrl(careerId, selectedSubjects) : "#"}
-          className={`flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-medium ${
-            hasSelection ? btnActive : btnDisabled
-          }`}
-          onClick={(e) => !hasSelection && e.preventDefault()}
-        >
-          <AppleIcon className="w-4 h-4" />
-          Apple
-        </a>
-      </div>
+    <div className="flex items-center gap-2">
+      <a
+        href={hasSelection ? getGoogleCalendarUrl(careerId, selectedSubjects) : "#"}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium flex-1 ${
+          hasSelection ? btnActive : btnDisabled
+        }`}
+        onClick={(e) => !hasSelection && e.preventDefault()}
+      >
+        <GoogleIcon className="w-4 h-4" />
+        Google
+      </a>
+      <a
+        href={hasSelection ? getWebcalUrl(careerId, selectedSubjects) : "#"}
+        className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium flex-1 ${
+          hasSelection ? btnActive : btnDisabled
+        }`}
+        onClick={(e) => !hasSelection && e.preventDefault()}
+      >
+        <AppleIcon className="w-4 h-4" />
+        Apple
+      </a>
       <a
         href={hasSelection ? getDownloadUrl(careerId, selectedSubjects) : "#"}
         download={hasSelection ? `ort-${careerId}.ics` : undefined}
-        className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-medium w-full ${
+        className={`flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl text-xs font-medium ${
           hasSelection
             ? "bg-muted text-foreground border border-border hover:border-[#ef063d]/30 transition-all"
             : btnDisabled
@@ -76,7 +74,7 @@ export function ActionBar({ careerId, selectedSubjects }: ActionBarProps) {
         onClick={(e) => !hasSelection && e.preventDefault()}
       >
         <Download className="w-3.5 h-3.5" />
-        Descargar .ics
+        <span className="hidden sm:inline">.ics</span>
       </a>
     </div>
   );
