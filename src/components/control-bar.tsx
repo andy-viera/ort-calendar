@@ -54,90 +54,81 @@ export function ControlBar({
   const hasSelection = selectedSubjects.length > 0;
   const sentinelRef = useRef<HTMLDivElement>(null);
 
-  const btnActive =
-    "bg-[#661020] text-white border border-[#ef063d]/30 shadow-[0_0_20px_rgba(239,6,61,0.15)] hover:shadow-[0_0_30px_rgba(239,6,61,0.3)] hover:bg-[#7a1426] transition-all";
-  const btnDisabled =
-    "bg-muted text-muted-foreground/40 cursor-not-allowed border border-border";
+  return (
+    <>
+      <div ref={sentinelRef} className="h-0" />
 
-  const bar = (
-    <div
-      className="fixed bottom-3 left-1/2 -translate-x-1/2 z-40 w-[min(calc(100%-2rem),52rem)] rounded-xl border border-[#ef063d]/15 backdrop-blur-2xl bg-card/85 shadow-[0_0_60px_rgba(0,0,0,0.5),0_0_30px_rgba(239,6,61,0.12),0_0_80px_rgba(239,6,61,0.06)]"
-    >
-      <div className="flex flex-col sm:flex-row sm:items-stretch">
-        {/* Calendar buttons */}
-        <div className="flex-1 p-2.5 space-y-1.5">
-          <div className="flex gap-1.5">
-            <a
-              href={
-                hasSelection
-                  ? getGoogleCalendarUrl(careerId, selectedSubjects)
-                  : "#"
-              }
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-[12px] font-medium flex-1 ${
-                hasSelection ? btnActive : btnDisabled
-              }`}
-              onClick={(e) => !hasSelection && e.preventDefault()}
-            >
-              <GoogleIcon className="w-3.5 h-3.5 shrink-0" />
-              Google
-            </a>
-            <a
-              href={
-                hasSelection
-                  ? getWebcalUrl(careerId, selectedSubjects)
-                  : "#"
-              }
-              className={`flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-[12px] font-medium flex-1 ${
-                hasSelection ? btnActive : btnDisabled
-              }`}
-              onClick={(e) => !hasSelection && e.preventDefault()}
-            >
-              <AppleIcon className="w-3.5 h-3.5 shrink-0" />
-              Apple
-            </a>
-          </div>
+      {/* Glow layer behind the bar */}
+      <div className="fixed bottom-0 left-0 right-0 h-24 z-30 pointer-events-none bg-gradient-to-t from-[#ef063d]/[0.04] via-[#ef063d]/[0.02] to-transparent" />
+
+      {/* Floating dock */}
+      <div className="fixed bottom-3 left-1/2 -translate-x-1/2 z-40 w-auto max-w-[calc(100%-1.5rem)]">
+        {/* Outer glow */}
+        <div className="absolute -inset-px rounded-2xl bg-gradient-to-b from-white/[0.08] to-white/[0.02] dark:from-white/[0.06] dark:to-white/[0.01]" />
+
+        <div className="relative flex items-center gap-1.5 rounded-2xl bg-[#1a1a1c]/95 dark:bg-[#0e0e10]/95 backdrop-blur-xl border border-white/[0.08] px-2 py-1.5 shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(255,255,255,0.05)]">
+          {/* Google */}
           <a
-            href={
+            href={hasSelection ? getGoogleCalendarUrl(careerId, selectedSubjects) : "#"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-[12px] font-medium transition-all ${
               hasSelection
-                ? getDownloadUrl(careerId, selectedSubjects)
-                : "#"
-            }
-            download={hasSelection ? `ort-${careerId}.ics` : undefined}
-            className={`flex items-center justify-center gap-1.5 px-3 py-1 rounded-lg text-[10px] font-medium w-full ${
-              hasSelection
-                ? "bg-muted text-foreground border border-border hover:border-[#ef063d]/30 transition-all"
-                : btnDisabled
+                ? "bg-[#661020] text-white hover:bg-[#7a1426] shadow-[0_0_16px_rgba(239,6,61,0.25)]"
+                : "text-white/25 cursor-not-allowed"
             }`}
             onClick={(e) => !hasSelection && e.preventDefault()}
           >
-            <Download className="w-2.5 h-2.5 shrink-0" />
-            Descargar .ics
+            <GoogleIcon className="w-3.5 h-3.5" />
+            <span className="hidden sm:inline">Google</span>
           </a>
-        </div>
 
-        {/* Divider + Turno */}
-        {hasTurnoData && (
-          <>
-            <div className="hidden sm:block w-px bg-border my-2.5" />
-            <div className="sm:hidden h-px bg-border mx-2.5" />
+          {/* Apple */}
+          <a
+            href={hasSelection ? getWebcalUrl(careerId, selectedSubjects) : "#"}
+            className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-[12px] font-medium transition-all ${
+              hasSelection
+                ? "bg-[#661020] text-white hover:bg-[#7a1426] shadow-[0_0_16px_rgba(239,6,61,0.25)]"
+                : "text-white/25 cursor-not-allowed"
+            }`}
+            onClick={(e) => !hasSelection && e.preventDefault()}
+          >
+            <AppleIcon className="w-3.5 h-3.5" />
+            <span className="hidden sm:inline">Apple</span>
+          </a>
 
-            <div className="p-2.5 flex flex-col justify-center gap-1.5 sm:min-w-[130px]">
-              <span className="text-[9px] font-mono font-bold text-muted-foreground/40 uppercase tracking-widest">
-                Turno
-              </span>
-              <div className="flex gap-1">
+          {/* Download */}
+          <a
+            href={hasSelection ? getDownloadUrl(careerId, selectedSubjects) : "#"}
+            download={hasSelection ? `ort-${careerId}.ics` : undefined}
+            className={`flex items-center gap-1.5 px-2.5 py-2 rounded-xl text-[12px] font-medium transition-all ${
+              hasSelection
+                ? "text-white/70 hover:text-white hover:bg-white/[0.08]"
+                : "text-white/20 cursor-not-allowed"
+            }`}
+            onClick={(e) => !hasSelection && e.preventDefault()}
+          >
+            <Download className="w-3.5 h-3.5" />
+            <span className="hidden sm:inline">.ics</span>
+          </a>
+
+          {/* Turno section */}
+          {hasTurnoData && (
+            <>
+              {/* Divider */}
+              <div className="w-px h-6 bg-white/10 mx-1" />
+
+              <div className="flex items-center gap-1">
                 {TURNOS.map((turno) => {
                   const isSelected = selectedTurnos.has(turno);
                   return (
                     <button
                       key={turno}
                       onClick={() => onTurnoChange(turno, !isSelected)}
-                      className={`text-[10px] px-2.5 py-1 rounded-md font-medium transition-all flex-1 ${
+                      className={`text-[10px] px-2 py-1.5 rounded-lg font-medium transition-all ${
                         isSelected
-                          ? "bg-[#661020] text-white border border-[#ef063d]/30"
-                          : "bg-muted text-muted-foreground/30 border border-transparent hover:text-muted-foreground/60"
+                          ? "bg-white/[0.12] text-white"
+                          : "text-white/25 hover:text-white/50"
                       }`}
                       title={TURNO_LABELS[turno]}
                     >
@@ -146,17 +137,10 @@ export function ControlBar({
                   );
                 })}
               </div>
-            </div>
-          </>
-        )}
+            </>
+          )}
+        </div>
       </div>
-    </div>
-  );
-
-  return (
-    <>
-      <div ref={sentinelRef} className="h-0" />
-      {bar}
     </>
   );
 }
