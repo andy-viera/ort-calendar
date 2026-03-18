@@ -32,7 +32,7 @@ export function SubjectFilter({
   const subjectsWithEvents = subjects.filter(hasEvents);
 
   return (
-    <div className="rounded-xl border border-border bg-card p-4 space-y-3 h-full">
+    <div className="rounded-xl border border-border bg-card p-4 space-y-3">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">

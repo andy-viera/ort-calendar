@@ -127,7 +127,7 @@ export default function Home() {
         />
 
         {/* Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6 items-start">
           <div className="space-y-4">
             <SubjectFilter
               subjects={career.subjects}
