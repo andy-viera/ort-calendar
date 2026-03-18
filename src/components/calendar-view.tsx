@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import type { AcademicEvent, Subject, Turno } from "@/lib/types";
 import { EVENT_COLORS, TURNO_LABELS } from "@/lib/types";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -55,11 +55,19 @@ export function CalendarView({ subjects, selectedSubjects, selectedTurnos }: Cal
   const prevMonth = () => setCurrentDate(new Date(year, month - 1, 1));
   const nextMonth = () => setCurrentDate(new Date(year, month + 1, 1));
 
-  const today = new Date();
+  // Use state for "today" to avoid SSR/client hydration mismatch
+  // (server uses UTC, client uses local timezone → two days highlighted)
+  const [todayDate, setTodayDate] = useState<{d: number, m: number, y: number} | null>(null);
+  useEffect(() => {
+    const now = new Date();
+    setTodayDate({ d: now.getDate(), m: now.getMonth(), y: now.getFullYear() });
+  }, []);
+
   const isToday = (d: number) =>
-    d === today.getDate() &&
-    month === today.getMonth() &&
-    year === today.getFullYear();
+    todayDate !== null &&
+    d === todayDate.d &&
+    month === todayDate.m &&
+    year === todayDate.y;
 
   const monthEvents = allEvents
     .filter((e) => {
