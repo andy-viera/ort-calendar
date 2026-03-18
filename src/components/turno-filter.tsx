@@ -18,27 +18,29 @@ const TURNO_SHORT: Record<Turno, string> = {
 
 export function TurnoFilter({ selected, onChange }: TurnoFilterProps) {
   return (
-    <div className="flex items-center gap-1.5">
-      <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground mr-1">
+    <div className="rounded-xl border border-border bg-card p-3 space-y-2">
+      <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/50 font-mono">
         Turno
       </span>
-      {TURNOS.map((turno) => {
-        const isSelected = selected.has(turno);
-        return (
-          <button
-            key={turno}
-            onClick={() => onChange(turno, !isSelected)}
-            className={`text-[11px] px-2.5 py-1.5 rounded-lg font-medium transition-all ${
-              isSelected
-                ? "bg-[#661020] text-white border border-[#ef063d]/30"
-                : "bg-muted text-muted-foreground/50 border border-border hover:text-muted-foreground"
-            }`}
-            title={TURNO_LABELS[turno]}
-          >
-            {TURNO_SHORT[turno]}
-          </button>
-        );
-      })}
+      <div className="flex gap-1.5">
+        {TURNOS.map((turno) => {
+          const isSelected = selected.has(turno);
+          return (
+            <button
+              key={turno}
+              onClick={() => onChange(turno, !isSelected)}
+              className={`text-[11px] px-3 py-1.5 rounded-lg font-medium transition-all flex-1 ${
+                isSelected
+                  ? "bg-[#661020] text-white border border-[#ef063d]/30"
+                  : "bg-muted text-muted-foreground/40 border border-border hover:text-muted-foreground"
+              }`}
+              title={TURNO_LABELS[turno]}
+            >
+              {TURNO_SHORT[turno]}
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 }

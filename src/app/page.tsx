@@ -118,14 +118,12 @@ export default function Home() {
           onChange={handleCareerChange}
         />
 
-        {/* Action bar - always visible */}
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-          <div className="flex-1">
-            <ActionBar
-              careerId={selectedCareer}
-              selectedSubjects={Array.from(selectedSubjects)}
-            />
-          </div>
+        {/* Action bar + Turno - always visible */}
+        <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-3 items-end">
+          <ActionBar
+            careerId={selectedCareer}
+            selectedSubjects={Array.from(selectedSubjects)}
+          />
           {hasTurnoData && (
             <TurnoFilter
               selected={selectedTurnos}
