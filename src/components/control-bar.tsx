@@ -58,8 +58,8 @@ export function ControlBar({
     <>
       <div ref={sentinelRef} className="h-0" />
 
-      {/* Glow layer behind the bar */}
-      <div className="fixed bottom-0 left-0 right-0 h-24 z-30 pointer-events-none bg-gradient-to-t from-[#ef063d]/[0.04] via-[#ef063d]/[0.02] to-transparent" />
+      {/* Glow layer anchored to bottom edge */}
+      <div className="fixed bottom-0 left-0 right-0 h-20 z-30 pointer-events-none bg-gradient-to-t from-background via-background/60 to-transparent" />
 
       {/* Floating dock */}
       <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 w-auto max-w-[calc(100%-1.5rem)]">
