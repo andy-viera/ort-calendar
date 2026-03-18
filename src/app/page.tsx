@@ -5,9 +5,8 @@ import { getAllCareers } from "@/lib/data";
 import type { Turno } from "@/lib/types";
 import { CareerSelector } from "@/components/career-selector";
 import { SubjectFilter } from "@/components/subject-filter";
-import { TurnoFilter } from "@/components/turno-filter";
 import { CalendarView } from "@/components/calendar-view";
-import { ActionBar } from "@/components/action-bar";
+import { ControlBar } from "@/components/control-bar";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Github } from "lucide-react";
 
@@ -118,19 +117,14 @@ export default function Home() {
           onChange={handleCareerChange}
         />
 
-        {/* Action bar + Turno - always visible */}
-        <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-3 items-end">
-          <ActionBar
-            careerId={selectedCareer}
-            selectedSubjects={Array.from(selectedSubjects)}
-          />
-          {hasTurnoData && (
-            <TurnoFilter
-              selected={selectedTurnos}
-              onChange={handleTurnoChange}
-            />
-          )}
-        </div>
+        {/* Control bar - always visible */}
+        <ControlBar
+          careerId={selectedCareer}
+          selectedSubjects={Array.from(selectedSubjects)}
+          hasTurnoData={hasTurnoData}
+          selectedTurnos={selectedTurnos}
+          onTurnoChange={handleTurnoChange}
+        />
 
         {/* Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6">
