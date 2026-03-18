@@ -58,8 +58,8 @@ export function ControlBar({
     <>
       <div ref={sentinelRef} className="h-0" />
 
-      {/* Bottom fade — covers from dock to very bottom edge */}
-      <div className="fixed inset-x-0 bottom-0 h-24 z-30 pointer-events-none" style={{ background: 'linear-gradient(to top, var(--background) 0%, var(--background) 20%, transparent 100%)' }} />
+      {/* Bottom fade — fully opaque below dock, smooth fade above */}
+      <div className="z-30 pointer-events-none" style={{ position: 'fixed', left: 0, right: 0, bottom: 0, height: '9rem', background: 'linear-gradient(to top, var(--background) 0%, var(--background) 65%, transparent 100%)' }} />
 
       {/* Floating dock */}
       <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 w-auto max-w-[calc(100%-1.5rem)]">

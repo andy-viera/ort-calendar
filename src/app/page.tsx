@@ -146,27 +146,24 @@ export default function Home() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="relative border-t border-border mt-4">
-        <div className="max-w-5xl mx-auto px-5 py-5 flex items-center justify-between text-xs text-muted-foreground">
-          <span>
-            by{" "}
-            <a
-              href="https://github.com/andy-viera"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-foreground transition-colors"
-            >
-              andy-viera
-            </a>
-          </span>
+      {/* Footer — hidden behind dock, only visible if scrolled all the way */}
+      <footer className="relative mt-4 pb-20">
+        <div className="max-w-5xl mx-auto px-5 py-3 flex items-center justify-between text-[10px] text-muted-foreground/40">
+          <a
+            href="https://github.com/andy-viera"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-muted-foreground transition-colors"
+          >
+            andy-viera
+          </a>
           <a
             href="https://github.com/andy-viera/ort-calendar"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 hover:text-foreground transition-colors"
+            className="flex items-center gap-1 hover:text-muted-foreground transition-colors"
           >
-            <Github className="w-3.5 h-3.5" />
+            <Github className="w-3 h-3" />
             GitHub
           </a>
         </div>
