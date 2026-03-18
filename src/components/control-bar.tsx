@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import type { Turno } from "@/lib/types";
 import { TURNO_LABELS } from "@/lib/types";
 import {
@@ -51,94 +52,131 @@ export function ControlBar({
   onTurnoChange,
 }: ControlBarProps) {
   const hasSelection = selectedSubjects.length > 0;
+  const sentinelRef = useRef<HTMLDivElement>(null);
+  const [isFloating, setIsFloating] = useState(false);
+
+  useEffect(() => {
+    const sentinel = sentinelRef.current;
+    if (!sentinel) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsFloating(!entry.isIntersecting),
+      { threshold: 0 }
+    );
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, []);
 
   const btnActive =
     "bg-[#661020] text-white border border-[#ef063d]/30 shadow-[0_0_20px_rgba(239,6,61,0.15)] hover:shadow-[0_0_30px_rgba(239,6,61,0.3)] hover:bg-[#7a1426] transition-all";
   const btnDisabled =
     "bg-muted text-muted-foreground/40 cursor-not-allowed border border-border";
 
-  return (
-    <div className="rounded-xl border border-border bg-card px-4 py-3 flex flex-col sm:flex-row sm:items-center gap-3">
-      {/* Calendar buttons */}
-      <div className="flex items-center gap-2 flex-1 min-w-0">
-        <a
-          href={
-            hasSelection
-              ? getGoogleCalendarUrl(careerId, selectedSubjects)
-              : "#"
-          }
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-[13px] font-medium flex-1 ${
-            hasSelection ? btnActive : btnDisabled
-          }`}
-          onClick={(e) => !hasSelection && e.preventDefault()}
-        >
-          <GoogleIcon className="w-4 h-4 shrink-0" />
-          Google
-        </a>
-        <a
-          href={
-            hasSelection ? getWebcalUrl(careerId, selectedSubjects) : "#"
-          }
-          className={`flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-[13px] font-medium flex-1 ${
-            hasSelection ? btnActive : btnDisabled
-          }`}
-          onClick={(e) => !hasSelection && e.preventDefault()}
-        >
-          <AppleIcon className="w-4 h-4 shrink-0" />
-          Apple
-        </a>
-        <a
-          href={
-            hasSelection ? getDownloadUrl(careerId, selectedSubjects) : "#"
-          }
-          download={hasSelection ? `ort-${careerId}.ics` : undefined}
-          className={`flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-[13px] font-medium ${
-            hasSelection
-              ? "bg-muted text-foreground border border-border hover:border-[#ef063d]/30 transition-all"
-              : btnDisabled
-          }`}
-          onClick={(e) => !hasSelection && e.preventDefault()}
-        >
-          <Download className="w-3.5 h-3.5 shrink-0" />
-          .ics
-        </a>
-      </div>
-
-      {/* Divider */}
-      {hasTurnoData && (
-        <>
-          <div className="hidden sm:block w-px h-8 bg-border" />
-          <div className="sm:hidden h-px w-full bg-border" />
-        </>
-      )}
-
-      {/* Turno toggles */}
-      {hasTurnoData && (
-        <div className="flex items-center gap-1.5 shrink-0">
-          <span className="text-[10px] font-mono font-semibold text-muted-foreground/40 uppercase tracking-widest mr-1">
-            Turno
-          </span>
-          {TURNOS.map((turno) => {
-            const isSelected = selectedTurnos.has(turno);
-            return (
-              <button
-                key={turno}
-                onClick={() => onTurnoChange(turno, !isSelected)}
-                className={`text-[11px] px-2.5 py-1.5 rounded-md font-medium transition-all ${
-                  isSelected
-                    ? "bg-[#661020] text-white border border-[#ef063d]/30"
-                    : "bg-muted text-muted-foreground/30 border border-transparent hover:text-muted-foreground/60"
-                }`}
-                title={TURNO_LABELS[turno]}
-              >
-                {TURNO_SHORT[turno]}
-              </button>
-            );
-          })}
+  const bar = (
+    <div
+      className={`rounded-xl border border-border bg-card transition-all duration-300 ${
+        isFloating
+          ? "fixed bottom-4 left-1/2 -translate-x-1/2 z-40 w-[min(calc(100%-2.5rem),64rem)] backdrop-blur-2xl bg-card/95 shadow-[0_-4px_40px_rgba(0,0,0,0.3)] border-[#ef063d]/20"
+          : ""
+      }`}
+    >
+      <div className="flex flex-col sm:flex-row sm:items-stretch">
+        {/* Calendar buttons */}
+        <div className="flex-1 p-3 space-y-2">
+          <div className="flex gap-2">
+            <a
+              href={
+                hasSelection
+                  ? getGoogleCalendarUrl(careerId, selectedSubjects)
+                  : "#"
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-[13px] font-medium flex-1 ${
+                hasSelection ? btnActive : btnDisabled
+              }`}
+              onClick={(e) => !hasSelection && e.preventDefault()}
+            >
+              <GoogleIcon className="w-4 h-4 shrink-0" />
+              Google
+            </a>
+            <a
+              href={
+                hasSelection
+                  ? getWebcalUrl(careerId, selectedSubjects)
+                  : "#"
+              }
+              className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-[13px] font-medium flex-1 ${
+                hasSelection ? btnActive : btnDisabled
+              }`}
+              onClick={(e) => !hasSelection && e.preventDefault()}
+            >
+              <AppleIcon className="w-4 h-4 shrink-0" />
+              Apple
+            </a>
+          </div>
+          <a
+            href={
+              hasSelection
+                ? getDownloadUrl(careerId, selectedSubjects)
+                : "#"
+            }
+            download={hasSelection ? `ort-${careerId}.ics` : undefined}
+            className={`flex items-center justify-center gap-2 px-4 py-1.5 rounded-lg text-[11px] font-medium w-full ${
+              hasSelection
+                ? "bg-muted text-foreground border border-border hover:border-[#ef063d]/30 transition-all"
+                : btnDisabled
+            }`}
+            onClick={(e) => !hasSelection && e.preventDefault()}
+          >
+            <Download className="w-3 h-3 shrink-0" />
+            Descargar .ics
+          </a>
         </div>
-      )}
+
+        {/* Divider + Turno */}
+        {hasTurnoData && (
+          <>
+            <div className="hidden sm:block w-px bg-border my-3" />
+            <div className="sm:hidden h-px bg-border mx-3" />
+
+            <div className="p-3 flex flex-col justify-center gap-2 sm:min-w-[140px]">
+              <span className="text-[10px] font-mono font-bold text-muted-foreground/40 uppercase tracking-widest">
+                Turno
+              </span>
+              <div className="flex gap-1.5">
+                {TURNOS.map((turno) => {
+                  const isSelected = selectedTurnos.has(turno);
+                  return (
+                    <button
+                      key={turno}
+                      onClick={() => onTurnoChange(turno, !isSelected)}
+                      className={`text-[11px] px-3 py-1.5 rounded-md font-medium transition-all flex-1 ${
+                        isSelected
+                          ? "bg-[#661020] text-white border border-[#ef063d]/30"
+                          : "bg-muted text-muted-foreground/30 border border-transparent hover:text-muted-foreground/60"
+                      }`}
+                      title={TURNO_LABELS[turno]}
+                    >
+                      {TURNO_SHORT[turno]}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </>
+        )}
+      </div>
     </div>
+  );
+
+  return (
+    <>
+      {/* Sentinel — when this scrolls out of view, the bar floats */}
+      <div ref={sentinelRef} className="h-0" />
+      {bar}
+      {/* Spacer when floating to prevent content jump */}
+      {isFloating && <div className="h-[108px] sm:h-[88px]" />}
+    </>
   );
 }
