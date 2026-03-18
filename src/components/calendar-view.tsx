@@ -206,13 +206,13 @@ export function CalendarView({ subjects, selectedSubjects, selectedTurnos }: Cal
       )}
 
       {selectedSubjects.size > 0 && monthEvents.length === 0 && (
-        <p className="text-sm text-muted-foreground text-center py-8">
+        <p className="text-sm text-muted-foreground text-center py-4">
           Sin eventos en {monthNames[month].toLowerCase()}
         </p>
       )}
 
       {selectedSubjects.size === 0 && (
-        <div className="text-center py-16 space-y-2">
+        <div className="text-center py-6 space-y-1">
           <p className="text-muted-foreground text-sm">
             Selecciona tus materias para ver los eventos
           </p>

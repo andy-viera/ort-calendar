@@ -101,7 +101,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="relative max-w-5xl mx-auto px-5 py-10 pb-32 space-y-8">
+      <main className="relative max-w-5xl mx-auto px-5 py-10 pb-20 space-y-8">
         {/* Hero */}
         <div className="space-y-4">
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
@@ -147,7 +147,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="relative border-t border-border mt-16">
+      <footer className="relative border-t border-border mt-4">
         <div className="max-w-5xl mx-auto px-5 py-5 flex items-center justify-between text-xs text-muted-foreground">
           <span>
             by{" "}

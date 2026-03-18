@@ -62,38 +62,40 @@ export function ControlBar({
       <div className="fixed bottom-0 left-0 right-0 h-24 z-30 pointer-events-none bg-gradient-to-t from-[#ef063d]/[0.04] via-[#ef063d]/[0.02] to-transparent" />
 
       {/* Floating dock */}
-      <div className="fixed bottom-3 left-1/2 -translate-x-1/2 z-40 w-auto max-w-[calc(100%-1.5rem)]">
-        {/* Outer glow */}
-        <div className="absolute -inset-px rounded-2xl bg-gradient-to-b from-white/[0.08] to-white/[0.02] dark:from-white/[0.06] dark:to-white/[0.01]" />
+      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 w-auto max-w-[calc(100%-1.5rem)]">
+        {/* Red glow underneath */}
+        <div className="absolute -inset-4 rounded-3xl bg-[#ef063d]/[0.06] blur-2xl pointer-events-none" />
+        {/* Outer border glow */}
+        <div className="absolute -inset-px rounded-2xl bg-gradient-to-b from-white/[0.12] to-white/[0.03]" />
 
-        <div className="relative flex items-center gap-1.5 rounded-2xl bg-[#1a1a1c]/95 dark:bg-[#0e0e10]/95 backdrop-blur-xl border border-white/[0.08] px-2 py-1.5 shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(255,255,255,0.05)]">
+        <div className="relative flex items-center gap-2 rounded-2xl bg-[#18181b]/95 backdrop-blur-xl border border-white/[0.1] px-3 py-2 shadow-[0_8px_40px_rgba(0,0,0,0.5),0_0_60px_rgba(239,6,61,0.08)]">
           {/* Google */}
           <a
             href={hasSelection ? getGoogleCalendarUrl(careerId, selectedSubjects) : "#"}
             target="_blank"
             rel="noopener noreferrer"
-            className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-[12px] font-medium transition-all ${
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-[13px] font-medium transition-all ${
               hasSelection
-                ? "bg-[#661020] text-white hover:bg-[#7a1426] shadow-[0_0_16px_rgba(239,6,61,0.25)]"
-                : "text-white/25 cursor-not-allowed"
+                ? "bg-white text-[#18181b] hover:bg-white/90 shadow-[0_0_20px_rgba(255,255,255,0.15)]"
+                : "text-white/20 cursor-not-allowed"
             }`}
             onClick={(e) => !hasSelection && e.preventDefault()}
           >
-            <GoogleIcon className="w-3.5 h-3.5" />
+            <GoogleIcon className="w-4 h-4" />
             <span className="hidden sm:inline">Google</span>
           </a>
 
           {/* Apple */}
           <a
             href={hasSelection ? getWebcalUrl(careerId, selectedSubjects) : "#"}
-            className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-[12px] font-medium transition-all ${
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-[13px] font-medium transition-all ${
               hasSelection
-                ? "bg-[#661020] text-white hover:bg-[#7a1426] shadow-[0_0_16px_rgba(239,6,61,0.25)]"
-                : "text-white/25 cursor-not-allowed"
+                ? "bg-white text-[#18181b] hover:bg-white/90 shadow-[0_0_20px_rgba(255,255,255,0.15)]"
+                : "text-white/20 cursor-not-allowed"
             }`}
             onClick={(e) => !hasSelection && e.preventDefault()}
           >
-            <AppleIcon className="w-3.5 h-3.5" />
+            <AppleIcon className="w-4 h-4" />
             <span className="hidden sm:inline">Apple</span>
           </a>
 
@@ -101,10 +103,10 @@ export function ControlBar({
           <a
             href={hasSelection ? getDownloadUrl(careerId, selectedSubjects) : "#"}
             download={hasSelection ? `ort-${careerId}.ics` : undefined}
-            className={`flex items-center gap-1.5 px-2.5 py-2 rounded-xl text-[12px] font-medium transition-all ${
+            className={`flex items-center gap-1.5 px-3 py-2.5 rounded-xl text-[12px] font-medium transition-all ${
               hasSelection
                 ? "text-white/70 hover:text-white hover:bg-white/[0.08]"
-                : "text-white/20 cursor-not-allowed"
+                : "text-white/15 cursor-not-allowed"
             }`}
             onClick={(e) => !hasSelection && e.preventDefault()}
           >
