@@ -61,12 +61,12 @@ export function ControlBar({
 
   const bar = (
     <div
-      className="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 w-[min(calc(100%-2.5rem),64rem)] rounded-xl border border-border/50 backdrop-blur-2xl bg-card/90 shadow-[0_0_50px_rgba(0,0,0,0.4),0_0_20px_rgba(239,6,61,0.08)]"
+      className="fixed bottom-3 left-1/2 -translate-x-1/2 z-40 w-[min(calc(100%-2rem),52rem)] rounded-xl border border-[#ef063d]/15 backdrop-blur-2xl bg-card/85 shadow-[0_0_60px_rgba(0,0,0,0.5),0_0_30px_rgba(239,6,61,0.12),0_0_80px_rgba(239,6,61,0.06)]"
     >
       <div className="flex flex-col sm:flex-row sm:items-stretch">
         {/* Calendar buttons */}
-        <div className="flex-1 p-3 space-y-2">
-          <div className="flex gap-2">
+        <div className="flex-1 p-2.5 space-y-1.5">
+          <div className="flex gap-1.5">
             <a
               href={
                 hasSelection
@@ -75,12 +75,12 @@ export function ControlBar({
               }
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-[13px] font-medium flex-1 ${
+              className={`flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-[12px] font-medium flex-1 ${
                 hasSelection ? btnActive : btnDisabled
               }`}
               onClick={(e) => !hasSelection && e.preventDefault()}
             >
-              <GoogleIcon className="w-4 h-4 shrink-0" />
+              <GoogleIcon className="w-3.5 h-3.5 shrink-0" />
               Google
             </a>
             <a
@@ -89,12 +89,12 @@ export function ControlBar({
                   ? getWebcalUrl(careerId, selectedSubjects)
                   : "#"
               }
-              className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-[13px] font-medium flex-1 ${
+              className={`flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-[12px] font-medium flex-1 ${
                 hasSelection ? btnActive : btnDisabled
               }`}
               onClick={(e) => !hasSelection && e.preventDefault()}
             >
-              <AppleIcon className="w-4 h-4 shrink-0" />
+              <AppleIcon className="w-3.5 h-3.5 shrink-0" />
               Apple
             </a>
           </div>
@@ -105,14 +105,14 @@ export function ControlBar({
                 : "#"
             }
             download={hasSelection ? `ort-${careerId}.ics` : undefined}
-            className={`flex items-center justify-center gap-2 px-4 py-1.5 rounded-lg text-[11px] font-medium w-full ${
+            className={`flex items-center justify-center gap-1.5 px-3 py-1 rounded-lg text-[10px] font-medium w-full ${
               hasSelection
                 ? "bg-muted text-foreground border border-border hover:border-[#ef063d]/30 transition-all"
                 : btnDisabled
             }`}
             onClick={(e) => !hasSelection && e.preventDefault()}
           >
-            <Download className="w-3 h-3 shrink-0" />
+            <Download className="w-2.5 h-2.5 shrink-0" />
             Descargar .ics
           </a>
         </div>
@@ -120,21 +120,21 @@ export function ControlBar({
         {/* Divider + Turno */}
         {hasTurnoData && (
           <>
-            <div className="hidden sm:block w-px bg-border my-3" />
-            <div className="sm:hidden h-px bg-border mx-3" />
+            <div className="hidden sm:block w-px bg-border my-2.5" />
+            <div className="sm:hidden h-px bg-border mx-2.5" />
 
-            <div className="p-3 flex flex-col justify-center gap-2 sm:min-w-[140px]">
-              <span className="text-[10px] font-mono font-bold text-muted-foreground/40 uppercase tracking-widest">
+            <div className="p-2.5 flex flex-col justify-center gap-1.5 sm:min-w-[130px]">
+              <span className="text-[9px] font-mono font-bold text-muted-foreground/40 uppercase tracking-widest">
                 Turno
               </span>
-              <div className="flex gap-1.5">
+              <div className="flex gap-1">
                 {TURNOS.map((turno) => {
                   const isSelected = selectedTurnos.has(turno);
                   return (
                     <button
                       key={turno}
                       onClick={() => onTurnoChange(turno, !isSelected)}
-                      className={`text-[11px] px-3 py-1.5 rounded-md font-medium transition-all flex-1 ${
+                      className={`text-[10px] px-2.5 py-1 rounded-md font-medium transition-all flex-1 ${
                         isSelected
                           ? "bg-[#661020] text-white border border-[#ef063d]/30"
                           : "bg-muted text-muted-foreground/30 border border-transparent hover:text-muted-foreground/60"
