@@ -1,7 +1,10 @@
 "use client";
 
-import type { Subject } from "@/lib/types";
+import type { Subject, Turno } from "@/lib/types";
+import { TURNO_LABELS } from "@/lib/types";
 import { Checkbox } from "@/components/ui/checkbox";
+
+const TURNOS: Turno[] = ["matutino", "vespertino", "nocturno"];
 
 interface SubjectFilterProps {
   subjects: Subject[];
@@ -9,6 +12,9 @@ interface SubjectFilterProps {
   onChange: (subjectId: string, checked: boolean) => void;
   onSelectAll: () => void;
   onDeselectAll: () => void;
+  hasTurnoData?: boolean;
+  selectedTurnos?: Set<Turno>;
+  onTurnoChange?: (turno: Turno, checked: boolean) => void;
 }
 
 export function SubjectFilter({
@@ -17,6 +23,9 @@ export function SubjectFilter({
   onChange,
   onSelectAll,
   onDeselectAll,
+  hasTurnoData,
+  selectedTurnos,
+  onTurnoChange,
 }: SubjectFilterProps) {
   const bySemester = new Map<number, Subject[]>();
   for (const subject of subjects) {
@@ -118,6 +127,32 @@ export function SubjectFilter({
           );
         })}
       </div>
+
+      {hasTurnoData && selectedTurnos && onTurnoChange && (
+        <div className="pt-3 border-t border-border space-y-1.5">
+          <span className="text-[10px] font-mono font-bold text-muted-foreground/50 uppercase tracking-widest">
+            Turno
+          </span>
+          <div className="flex gap-1.5">
+            {TURNOS.map((turno) => {
+              const isSelected = selectedTurnos.has(turno);
+              return (
+                <button
+                  key={turno}
+                  onClick={() => onTurnoChange(turno, !isSelected)}
+                  className={`text-[11px] px-2.5 py-1 rounded-md font-medium transition-all ${
+                    isSelected
+                      ? "bg-[#ef063d]/10 text-[#ef063d] border border-[#ef063d]/20"
+                      : "text-muted-foreground/50 hover:text-muted-foreground border border-transparent hover:border-border"
+                  }`}
+                >
+                  {TURNO_LABELS[turno]}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

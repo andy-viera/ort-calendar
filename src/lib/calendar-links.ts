@@ -1,31 +1,40 @@
 const BASE_URL = "https://semester-events.vercel.app";
 
-export function getIcsUrl(careerId: string, subjectIds?: string[]): string {
-  const base = `${BASE_URL}/api/cal/${careerId}.ics`;
+function buildParams(subjectIds?: string[], turnos?: string[]): string {
+  const params = new URLSearchParams();
   if (subjectIds && subjectIds.length > 0) {
-    return `${base}?subjects=${subjectIds.join(",")}`;
+    params.set("subjects", subjectIds.join(","));
   }
-  return base;
+  if (turnos && turnos.length > 0) {
+    params.set("turnos", turnos.join(","));
+  }
+  const str = params.toString();
+  return str ? `?${str}` : "";
 }
 
-export function getGoogleCalendarUrl(careerId: string, subjectIds?: string[]): string {
-  // Google Calendar expects the URL with webcal:// or https:// passed directly to cid
-  // without double-encoding. It subscribes to the .ics feed.
-  const icsUrl = getIcsUrl(careerId, subjectIds);
-  // Use webcal:// protocol which Google handles better for subscriptions
+export function getIcsUrl(careerId: string, subjectIds?: string[], turnos?: string[]): string {
+  return `${BASE_URL}/api/cal/${careerId}.ics${buildParams(subjectIds, turnos)}`;
+}
+
+export function getGoogleCalendarUrl(careerId: string, subjectIds?: string[], turnos?: string[]): string {
+  const icsUrl = getIcsUrl(careerId, subjectIds, turnos);
   const webcalUrl = icsUrl.replace("https://", "webcal://");
-  return `https://calendar.google.com/calendar/r?cid=${webcalUrl}`;
+  return `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(webcalUrl)}`;
 }
 
-export function getWebcalUrl(careerId: string, subjectIds?: string[]): string {
-  const icsUrl = getIcsUrl(careerId, subjectIds);
+export function getWebcalUrl(careerId: string, subjectIds?: string[], turnos?: string[]): string {
+  const icsUrl = getIcsUrl(careerId, subjectIds, turnos);
   return icsUrl.replace("https://", "webcal://");
 }
 
-export function getDownloadUrl(careerId: string, subjectIds?: string[]): string {
-  const base = `/api/cal/${careerId}.ics`;
+export function getDownloadUrl(careerId: string, subjectIds?: string[], turnos?: string[]): string {
+  const params = new URLSearchParams();
   if (subjectIds && subjectIds.length > 0) {
-    return `${base}?subjects=${subjectIds.join(",")}&download=1`;
+    params.set("subjects", subjectIds.join(","));
   }
-  return `${base}?download=1`;
+  if (turnos && turnos.length > 0) {
+    params.set("turnos", turnos.join(","));
+  }
+  params.set("download", "1");
+  return `/api/cal/${careerId}.ics?${params.toString()}`;
 }

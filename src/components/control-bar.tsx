@@ -1,8 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-import type { Turno } from "@/lib/types";
-import { TURNO_LABELS } from "@/lib/types";
 import {
   getGoogleCalendarUrl,
   getWebcalUrl,
@@ -29,27 +27,16 @@ function AppleIcon({ className }: { className?: string }) {
   );
 }
 
-const TURNOS: Turno[] = ["matutino", "vespertino", "nocturno"];
-const TURNO_SHORT: Record<Turno, string> = {
-  matutino: "Mat",
-  vespertino: "Vesp",
-  nocturno: "Noct",
-};
-
 interface ControlBarProps {
   careerId: string;
   selectedSubjects: string[];
-  hasTurnoData: boolean;
-  selectedTurnos: Set<Turno>;
-  onTurnoChange: (turno: Turno, checked: boolean) => void;
+  selectedTurnos?: string[];
 }
 
 export function ControlBar({
   careerId,
   selectedSubjects,
-  hasTurnoData,
   selectedTurnos,
-  onTurnoChange,
 }: ControlBarProps) {
   const hasSelection = selectedSubjects.length > 0;
   const sentinelRef = useRef<HTMLDivElement>(null);
@@ -58,9 +45,6 @@ export function ControlBar({
     <>
       <div ref={sentinelRef} className="h-0" />
 
-      {/* Bottom fade — fully opaque below dock, smooth fade above */}
-      <div className="z-30 pointer-events-none" style={{ position: 'fixed', left: 0, right: 0, bottom: 0, height: '9rem', background: 'linear-gradient(to top, var(--background) 0%, var(--background) 65%, transparent 100%)' }} />
-
       {/* Floating dock */}
       <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 w-auto max-w-[calc(100%-1.5rem)]">
         {/* Red glow underneath */}
@@ -68,44 +52,48 @@ export function ControlBar({
         {/* Outer border glow */}
         <div className="absolute -inset-px rounded-2xl bg-gradient-to-b from-white/[0.12] to-white/[0.03]" />
 
-        <div className="relative flex items-center gap-2 rounded-2xl bg-[#18181b]/95 backdrop-blur-xl border border-white/[0.1] px-3 py-2 shadow-[0_8px_40px_rgba(0,0,0,0.5),0_0_60px_rgba(239,6,61,0.08)]">
+        <div className="relative flex items-center gap-1.5 rounded-2xl bg-[#18181b]/95 backdrop-blur-xl border border-white/[0.1] px-2.5 py-2 shadow-[0_8px_40px_rgba(0,0,0,0.5),0_0_60px_rgba(239,6,61,0.08)]">
           {/* Google */}
           <a
-            href={hasSelection ? getGoogleCalendarUrl(careerId, selectedSubjects) : "#"}
+            href={hasSelection ? getGoogleCalendarUrl(careerId, selectedSubjects, selectedTurnos) : "#"}
             target="_blank"
             rel="noopener noreferrer"
-            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-[13px] font-medium transition-all ${
+            className={`group relative flex items-center gap-2 px-4 py-2 rounded-xl text-[13px] font-medium transition-all duration-200 overflow-hidden ${
               hasSelection
-                ? "bg-white text-[#18181b] hover:bg-white/90 shadow-[0_0_20px_rgba(255,255,255,0.15)]"
+                ? "text-white/90 hover:text-white"
                 : "text-white/20 cursor-not-allowed"
             }`}
             onClick={(e) => !hasSelection && e.preventDefault()}
           >
-            <GoogleIcon className="w-4 h-4" />
-            <span className="hidden sm:inline">Google</span>
+            {hasSelection && <span className="absolute inset-0 rounded-xl bg-white/[0.06] group-hover:bg-[#ef063d]/20 transition-all duration-300" />}
+            {hasSelection && <span className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[inset_0_0_12px_rgba(239,6,61,0.15)]" />}
+            <GoogleIcon className="w-4 h-4 relative z-10" />
+            <span className="hidden sm:inline relative z-10">Google</span>
           </a>
 
           {/* Apple */}
           <a
-            href={hasSelection ? getWebcalUrl(careerId, selectedSubjects) : "#"}
-            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-[13px] font-medium transition-all ${
+            href={hasSelection ? getWebcalUrl(careerId, selectedSubjects, selectedTurnos) : "#"}
+            className={`group relative flex items-center gap-2 px-4 py-2 rounded-xl text-[13px] font-medium transition-all duration-200 overflow-hidden ${
               hasSelection
-                ? "bg-white text-[#18181b] hover:bg-white/90 shadow-[0_0_20px_rgba(255,255,255,0.15)]"
+                ? "text-white/90 hover:text-white"
                 : "text-white/20 cursor-not-allowed"
             }`}
             onClick={(e) => !hasSelection && e.preventDefault()}
           >
-            <AppleIcon className="w-4 h-4" />
-            <span className="hidden sm:inline">Apple</span>
+            {hasSelection && <span className="absolute inset-0 rounded-xl bg-white/[0.06] group-hover:bg-[#ef063d]/20 transition-all duration-300" />}
+            {hasSelection && <span className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[inset_0_0_12px_rgba(239,6,61,0.15)]" />}
+            <AppleIcon className="w-4 h-4 relative z-10" />
+            <span className="hidden sm:inline relative z-10">Apple</span>
           </a>
 
-          {/* Download */}
+          {/* Download .ics */}
           <a
-            href={hasSelection ? getDownloadUrl(careerId, selectedSubjects) : "#"}
+            href={hasSelection ? getDownloadUrl(careerId, selectedSubjects, selectedTurnos) : "#"}
             download={hasSelection ? `ort-${careerId}.ics` : undefined}
-            className={`flex items-center gap-1.5 px-3 py-2.5 rounded-xl text-[12px] font-medium transition-all ${
+            className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-[12px] font-medium transition-colors duration-200 ${
               hasSelection
-                ? "text-white/70 hover:text-white hover:bg-white/[0.08]"
+                ? "text-white/40 hover:text-[#ef063d]"
                 : "text-white/15 cursor-not-allowed"
             }`}
             onClick={(e) => !hasSelection && e.preventDefault()}
@@ -114,33 +102,6 @@ export function ControlBar({
             <span className="hidden sm:inline">.ics</span>
           </a>
 
-          {/* Turno section */}
-          {hasTurnoData && (
-            <>
-              {/* Divider */}
-              <div className="w-px h-6 bg-white/10 mx-1" />
-
-              <div className="flex items-center gap-1">
-                {TURNOS.map((turno) => {
-                  const isSelected = selectedTurnos.has(turno);
-                  return (
-                    <button
-                      key={turno}
-                      onClick={() => onTurnoChange(turno, !isSelected)}
-                      className={`text-[10px] px-2 py-1.5 rounded-lg font-medium transition-all ${
-                        isSelected
-                          ? "bg-white/[0.12] text-white"
-                          : "text-white/25 hover:text-white/50"
-                      }`}
-                      title={TURNO_LABELS[turno]}
-                    >
-                      {TURNO_SHORT[turno]}
-                    </button>
-                  );
-                })}
-              </div>
-            </>
-          )}
         </div>
       </div>
     </>

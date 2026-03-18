@@ -19,8 +19,21 @@ export function CalendarView({ subjects, selectedSubjects, selectedTurnos }: Cal
       .filter((s) => selectedSubjects.has(s.id))
       .flatMap((s) => s.events.map((e) => ({ ...e, subjectName: s.name })))
       .filter((e) => {
-        if (!selectedTurnos || !e.turno) return true;
-        return selectedTurnos.has(e.turno);
+        if (!selectedTurnos || selectedTurnos.size === 0) return true;
+        // If event has explicit turno field, use it
+        if (e.turno) return selectedTurnos.has(e.turno);
+        // For events without turno field, try to infer from title/notes
+        const text = `${e.title} ${e.notes || ""}`.toLowerCase();
+        const hasTurnoHint = text.includes("mat.") || text.includes("mat ") || text.includes("matutino")
+          || text.includes("vesp.") || text.includes("vesp ") || text.includes("vespertino")
+          || text.includes("noct.") || text.includes("noct ") || text.includes("nocturno");
+        // If no turno hint in text, it's a generic event — always show
+        if (!hasTurnoHint) return true;
+        // Match against selected turnos by text
+        if (selectedTurnos.has("matutino") && (text.includes("mat.") || text.includes("mat ") || text.includes("matutino"))) return true;
+        if (selectedTurnos.has("vespertino") && (text.includes("vesp.") || text.includes("vesp ") || text.includes("vespertino"))) return true;
+        if (selectedTurnos.has("nocturno") && (text.includes("noct.") || text.includes("noct ") || text.includes("nocturno"))) return true;
+        return false;
       });
   }, [subjects, selectedSubjects, selectedTurnos]);
 

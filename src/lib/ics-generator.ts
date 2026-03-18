@@ -51,8 +51,16 @@ export function generateIcs(career: Career, subjectIds?: string[], turnos?: Turn
   const allEvents = subjects
     .flatMap((s) => s.events)
     .filter((e) => {
-      if (!turnoSet || !e.turno) return true;
-      return turnoSet.has(e.turno);
+      if (!turnoSet) return true;
+      if (e.turno) return turnoSet.has(e.turno);
+      // Infer turno from title/notes for untagged events
+      const text = `${e.title} ${e.notes || ""}`.toLowerCase();
+      const hasTurnoHint = /\b(mat\.|vesp\.|noct\.|matutino|vespertino|nocturno)/i.test(text);
+      if (!hasTurnoHint) return true;
+      if (turnoSet.has("matutino") && /\b(mat\.|matutino)/i.test(text)) return true;
+      if (turnoSet.has("vespertino") && /\b(vesp\.|vespertino)/i.test(text)) return true;
+      if (turnoSet.has("nocturno") && /\b(noct\.|nocturno)/i.test(text)) return true;
+      return false;
     });
 
   if (allEvents.length === 0) {

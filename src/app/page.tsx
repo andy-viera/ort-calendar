@@ -63,9 +63,12 @@ export default function Home() {
     });
   }, []);
 
-  // Check if any events in the current career have turno data
+  // Check if any events in the career have turno data (explicit or in title)
   const hasTurnoData = useMemo(() => {
-    return career.subjects.some((s) => s.events.some((e) => e.turno));
+    const turnoPattern = /\b(mat\.|vesp\.|noct\.|matutino|vespertino|nocturno)/i;
+    return career.subjects.some((s) =>
+      s.events.some((e) => e.turno || turnoPattern.test(e.title) || turnoPattern.test(e.notes || ""))
+    );
   }, [career]);
 
   return (
@@ -83,7 +86,7 @@ export default function Home() {
       <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#ef063d]/[0.06] dark:bg-[#ef063d]/[0.08] rounded-full blur-[120px] pointer-events-none" />
 
       {/* Header */}
-      <header className="relative sticky top-0 z-50 backdrop-blur-2xl bg-background/80 border-b border-border">
+      <header className="relative z-50">
         <div className="max-w-5xl mx-auto px-5 py-4 flex items-center justify-between">
           <h1 className="text-base font-semibold tracking-tight">
             <span style={{ color: "#661020" }} className="font-bold">ORT</span>{" "}
@@ -101,7 +104,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="relative max-w-5xl mx-auto px-5 py-10 pb-20 space-y-8">
+      <main className="relative max-w-5xl mx-auto px-5 py-10 pb-8 space-y-8">
         {/* Hero */}
         <div className="space-y-4">
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
@@ -121,9 +124,7 @@ export default function Home() {
         <ControlBar
           careerId={selectedCareer}
           selectedSubjects={Array.from(selectedSubjects)}
-          hasTurnoData={hasTurnoData}
-          selectedTurnos={selectedTurnos}
-          onTurnoChange={handleTurnoChange}
+          selectedTurnos={Array.from(selectedTurnos)}
         />
 
         {/* Layout */}
@@ -135,6 +136,9 @@ export default function Home() {
               onChange={handleSubjectChange}
               onSelectAll={handleSelectAll}
               onDeselectAll={handleDeselectAll}
+              hasTurnoData={hasTurnoData}
+              selectedTurnos={selectedTurnos}
+              onTurnoChange={handleTurnoChange}
             />
           </div>
 
@@ -146,9 +150,8 @@ export default function Home() {
         </div>
       </main>
 
-      {/* Footer — hidden behind dock, only visible if scrolled all the way */}
-      <footer className="relative mt-4 pb-20">
-        <div className="max-w-5xl mx-auto px-5 py-3 flex items-center justify-between text-[10px] text-muted-foreground/40">
+      <footer className="relative border-t border-border">
+        <div className="max-w-5xl mx-auto px-5 py-4 flex items-center justify-between text-[10px] text-muted-foreground/40">
           <a
             href="https://github.com/andy-viera"
             target="_blank"
