@@ -15,7 +15,9 @@
 <i>Tus eventos del semestre, directo a tu calendario, en un click.</i>
   <br/>
   <br/>
-  <h1>ORT Calendar</h1>
+  <picture>
+    <img src="public/logo-readme.svg" alt="ORT Calendar" width="300">
+  </picture>
 
   <p align="center">
     <a href="https://ortcal.aviera.me/"><strong><u>Check it out &raquo;</u></strong></a>
