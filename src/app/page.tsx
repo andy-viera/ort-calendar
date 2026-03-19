@@ -108,7 +108,9 @@ export default function Home() {
         {/* Hero */}
         <div className="space-y-4">
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-            Tus parciales y entregas,
+            Tus eventos del semestre,
+            <br />
+            directo a tu calendario,
             <br />
             <span className="text-muted-foreground">en un click.</span>
           </h2>
